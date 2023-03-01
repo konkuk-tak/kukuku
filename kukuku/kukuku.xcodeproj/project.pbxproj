@@ -17,6 +17,7 @@
 		145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* UserRepository.swift */; };
 		145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A829AF59B2008CCBC7 /* UserUseCase.swift */; };
 		145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */; };
+		145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B229AF5CA4008CCBC7 /* UIFont+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		145A28A629AF59AC008CCBC7 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		145A28A829AF59B2008CCBC7 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		145A28B229AF5CA4008CCBC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */,
+				145A28B229AF5CA4008CCBC7 /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				142A2F4229AF34C900ACFFDD /* ViewController.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
+				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
