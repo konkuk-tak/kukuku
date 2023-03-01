@@ -45,5 +45,5 @@ jobs:
       run: >
         xcodebuild build
         -project ${{ env.XCODEPROJ }}
-        -scheme burstcamp 
+        -scheme kukuku
         -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
