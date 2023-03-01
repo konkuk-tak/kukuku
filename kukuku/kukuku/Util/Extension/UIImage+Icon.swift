@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIImage {
-    static let checkIcon = UIImage(systemName: "checkmark")
-    static let lockIcon = UIImage(systemName: "lock")
-    static let cameraCircleFillIcon = UIImage(systemName: "camera.circle.fill")
-    static let chevronRight = UIImage(systemName: "chevron.right")
+    static let checkIcon = UIImage(systemName: "checkmark")!
+    static let lockIcon = UIImage(systemName: "lock")!
+    static let cameraFillIcon = UIImage(systemName: "camera.fill")!
+    static let chevronRight = UIImage(systemName: "chevron.right")!
 }
