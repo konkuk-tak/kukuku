@@ -35,6 +35,8 @@
 		1429328229AF8C22009B9B7F /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		1429328629AF8C2E009B9B7F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1429328A29AF8C41009B9B7F /* ARGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameViewController.swift; sourceTree = "<group>"; };
+		1429329029AF8F4B009B9B7F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		1429329229AF8FF0009B9B7F /* .swiftlint.auto.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.auto.yml; sourceTree = "<group>"; };
 		142A2F3A29AF34C900ACFFDD /* kukuku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kukuku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,9 +137,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		1429329129AF8F79009B9B7F /* UI+Asset */ = {
+			isa = PBXGroup;
+			children = (
+				145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */,
+				145A28B229AF5CA4008CCBC7 /* UIFont+.swift */,
+				145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */,
+			);
+			path = "UI+Asset";
+			sourceTree = "<group>";
+		};
 		142A2F3129AF34C900ACFFDD = {
 			isa = PBXGroup;
 			children = (
+				1429329229AF8FF0009B9B7F /* .swiftlint.auto.yml */,
+				1429329029AF8F4B009B9B7F /* .swiftlint.yml */,
 				142A2F3C29AF34C900ACFFDD /* kukuku */,
 				142A2F3B29AF34C900ACFFDD /* Products */,
 			);
@@ -223,9 +237,7 @@
 		145A28AB29AF5BA8008CCBC7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */,
-				145A28B229AF5CA4008CCBC7 /* UIFont+.swift */,
-				145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */,
+				1429329129AF8F79009B9B7F /* UI+Asset */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,6 +286,7 @@
 				142A2F3629AF34C900ACFFDD /* Sources */,
 				142A2F3729AF34C900ACFFDD /* Frameworks */,
 				142A2F3829AF34C900ACFFDD /* Resources */,
+				1429329329AF900B009B9B7F /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -336,6 +349,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1429329329AF900B009B9B7F /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix --config \".swiftlint.auto.yml\" && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		142A2F3629AF34C900ACFFDD /* Sources */ = {

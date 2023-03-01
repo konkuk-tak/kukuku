@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import FlexLayout
 import PinLayout
 
@@ -17,11 +18,11 @@ class HomeViewController: UIViewController {
         }
         return view
     }
-    
+
     override func loadView() {
         view = HomeView()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()

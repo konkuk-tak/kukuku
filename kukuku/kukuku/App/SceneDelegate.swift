@@ -17,10 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = configureNavigationController()
         window?.makeKeyAndVisible()
     }
-    
+
     func configureNavigationController() -> UINavigationController {
         let homeViewController = HomeViewController()
         return UINavigationController(rootViewController: homeViewController)
     }
 }
-
