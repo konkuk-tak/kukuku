@@ -12,9 +12,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hello")
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .green
     }
-
-
 }
-
