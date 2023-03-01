@@ -24,6 +24,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
+        configureNavigationBar()
+    }
+
+    private func configureNavigationBar() {
+        let label = UILabel()
+        label.textColor = .dynamicBlack
+        label.text = "쿠쿠쿠"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
     }
 }
