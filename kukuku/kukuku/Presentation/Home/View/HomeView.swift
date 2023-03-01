@@ -64,11 +64,16 @@ class HomeView: UIView {
         config.image = cameraIcon.withTintColor(.white, renderingMode: .alwaysOriginal)
         arButton.configuration = config
         arButton.backgroundColor = .green
-        arButton.addTarget(self, action: #selector(touch), for: .touchUpInside)
+        arButton.addTarget(self, action: #selector(arButtonTouchDown), for: .touchDown)
+        arButton.addTarget(self, action: #selector(arButtonTouchUpInside), for: .touchUpInside)
     }
     
-    @objc func touch() {
-        print("hh")
+    @objc private func arButtonTouchDown() {
+        arButton.layer.opacity = 0.7
+    }
+    
+    @objc private func arButtonTouchUpInside() {
+        arButton.layer.opacity = 1.0
     }
     
     private func configureFlexLayout() {
