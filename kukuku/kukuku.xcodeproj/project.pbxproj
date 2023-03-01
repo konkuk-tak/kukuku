@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1429327929AF8982009B9B7F /* HomeDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327829AF8982009B9B7F /* HomeDefaultButton.swift */; };
+		1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327C29AF8C07009B9B7F /* HomeViewModel.swift */; };
+		1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */; };
+		1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429328229AF8C22009B9B7F /* GuideViewController.swift */; };
+		1429328729AF8C2E009B9B7F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429328629AF8C2E009B9B7F /* SettingViewController.swift */; };
+		1429328B29AF8C41009B9B7F /* ARGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429328A29AF8C41009B9B7F /* ARGameViewController.swift */; };
 		142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */; };
 		142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */; };
 		142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F4129AF34C900ACFFDD /* HomeViewController.swift */; };
@@ -25,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		1429327829AF8982009B9B7F /* HomeDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultButton.swift; sourceTree = "<group>"; };
+		1429327C29AF8C07009B9B7F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoListViewController.swift; sourceTree = "<group>"; };
+		1429328229AF8C22009B9B7F /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		1429328629AF8C2E009B9B7F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1429328A29AF8C41009B9B7F /* ARGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameViewController.swift; sourceTree = "<group>"; };
 		142A2F3A29AF34C900ACFFDD /* kukuku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kukuku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +69,70 @@
 				1429327829AF8982009B9B7F /* HomeDefaultButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1429327A29AF8BE7009B9B7F /* KonkukInfoList */ = {
+			isa = PBXGroup;
+			children = (
+				1429327B29AF8BF7009B9B7F /* ViewController */,
+			);
+			path = KonkukInfoList;
+			sourceTree = "<group>";
+		};
+		1429327B29AF8BF7009B9B7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1429328029AF8C17009B9B7F /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				1429328129AF8C1B009B9B7F /* ViewController */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		1429328129AF8C1B009B9B7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1429328229AF8C22009B9B7F /* GuideViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1429328429AF8C25009B9B7F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				1429328529AF8C27009B9B7F /* ViewController */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		1429328529AF8C27009B9B7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1429328629AF8C2E009B9B7F /* SettingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1429328829AF8C30009B9B7F /* ARGame */ = {
+			isa = PBXGroup;
+			children = (
+				1429328929AF8C37009B9B7F /* ViewController */,
+			);
+			path = ARGame;
+			sourceTree = "<group>";
+		};
+		1429328929AF8C37009B9B7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1429328A29AF8C41009B9B7F /* ARGameViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		142A2F3129AF34C900ACFFDD = {
@@ -104,6 +178,10 @@
 			children = (
 				1429327729AF8974009B9B7F /* Common */,
 				145A28B629AF606A008CCBC7 /* Home */,
+				1429328829AF8C30009B9B7F /* ARGame */,
+				1429327A29AF8BE7009B9B7F /* KonkukInfoList */,
+				1429328029AF8C17009B9B7F /* Guide */,
+				1429328429AF8C25009B9B7F /* Setting */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -181,6 +259,7 @@
 		145A28B929AF6077008CCBC7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1429327C29AF8C07009B9B7F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,15 +343,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				145A28BB29AF60A1008CCBC7 /* HomeView.swift in Sources */,
+				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
+				1429328729AF8C2E009B9B7F /* SettingViewController.swift in Sources */,
 				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
+				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
 				1429327929AF8982009B9B7F /* HomeDefaultButton.swift in Sources */,
 				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
+				1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
+				1429328B29AF8C41009B9B7F /* ARGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
