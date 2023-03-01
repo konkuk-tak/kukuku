@@ -10,11 +10,15 @@
 		142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */; };
 		142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */; };
 		142A2F4229AF34C900ACFFDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A2F4129AF34C900ACFFDD /* ViewController.swift */; };
-		142A2F4529AF34C900ACFFDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4329AF34C900ACFFDD /* Main.storyboard */; };
 		142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4629AF34CA00ACFFDD /* Assets.xcassets */; };
 		142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */; };
 		142A2F5329AF4A0400ACFFDD /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 142A2F5229AF4A0400ACFFDD /* PinLayout */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
+		145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* UserRepository.swift */; };
+		145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A829AF59B2008CCBC7 /* UserUseCase.swift */; };
+		145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */; };
+		145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B229AF5CA4008CCBC7 /* UIFont+.swift */; };
+		145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +26,14 @@
 		142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		142A2F4129AF34C900ACFFDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		142A2F4429AF34C900ACFFDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		142A2F4629AF34CA00ACFFDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142A2F4929AF34CA00ACFFDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142A2F4B29AF34CA00ACFFDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		145A28A629AF59AC008CCBC7 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		145A28A829AF59B2008CCBC7 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
+		145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		145A28B229AF5CA4008CCBC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +68,75 @@
 		142A2F3C29AF34C900ACFFDD /* kukuku */ = {
 			isa = PBXGroup;
 			children = (
-				142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */,
-				142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */,
-				142A2F4129AF34C900ACFFDD /* ViewController.swift */,
-				142A2F4329AF34C900ACFFDD /* Main.storyboard */,
-				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
-				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
-				142A2F4B29AF34CA00ACFFDD /* Info.plist */,
+				145A28A129AF5912008CCBC7 /* App */,
+				145A28A229AF5916008CCBC7 /* Presentation */,
+				145A28A329AF5919008CCBC7 /* Domain */,
+				145A28A429AF5927008CCBC7 /* Data */,
+				145A28AA29AF5B9B008CCBC7 /* Util */,
+				145A28A529AF5952008CCBC7 /* Resources */,
 			);
 			path = kukuku;
+			sourceTree = "<group>";
+		};
+		145A28A129AF5912008CCBC7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				142A2F3D29AF34C900ACFFDD /* AppDelegate.swift */,
+				142A2F3F29AF34C900ACFFDD /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		145A28A229AF5916008CCBC7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				142A2F4129AF34C900ACFFDD /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		145A28A329AF5919008CCBC7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				145A28A829AF59B2008CCBC7 /* UserUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		145A28A429AF5927008CCBC7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				145A28A629AF59AC008CCBC7 /* UserRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		145A28A529AF5952008CCBC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				142A2F4B29AF34CA00ACFFDD /* Info.plist */,
+				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
+				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		145A28AA29AF5B9B008CCBC7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				145A28AB29AF5BA8008CCBC7 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		145A28AB29AF5BA8008CCBC7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */,
+				145A28B229AF5CA4008CCBC7 /* UIFont+.swift */,
+				145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +207,6 @@
 			files = (
 				142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */,
 				142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */,
-				142A2F4529AF34C900ACFFDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,22 +218,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A2F4229AF34C900ACFFDD /* ViewController.swift in Sources */,
+				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
+				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
+				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
+				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
+				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		142A2F4329AF34C900ACFFDD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				142A2F4429AF34C900ACFFDD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -308,9 +372,8 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "AR 기능을 이용하기 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,9 +406,8 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "AR 기능을 이용하기 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
