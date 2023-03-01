@@ -12,9 +12,9 @@ class HomeView: UIView {
     private let containerView = UIView()
     private let titleLabel = UILabel()
     private let scoreLabel = UILabel()
-    private let konkukInfoListButton = UIButton()
-    private let guideButton = UIButton()
-    private let settingButton = UIButton()
+    private let konkukInfoListButton = HomeDefaultButton(title: "알쓸건잡")
+    private let guideButton = HomeDefaultButton(title: "이용법")
+    private let settingButton = HomeDefaultButton(title: "설정")
     private let arButton = UIButton()
     
     override init(frame: CGRect) {
@@ -42,9 +42,6 @@ class HomeView: UIView {
         addSubview(containerView)
         configureTitleLabel()
         configureScoreLabel()
-        configureKonkukInfoListButton()
-        configureGuideButton()
-        configureSettingButton()
         configureArButton()
     }
     
@@ -59,28 +56,6 @@ class HomeView: UIView {
         scoreLabel.text = "0"
         scoreLabel.textColor = .dynamicBlack
         scoreLabel.font = .bitText
-    }
-    
-    private func configureKonkukInfoListButton() {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .green
-        config.baseForegroundColor = .dynamicBlack
-        var titleAttribute = AttributedString("알쓸건잡")
-        titleAttribute.font = .body
-        config.attributedTitle = titleAttribute
-        konkukInfoListButton.configuration = config
-    }
-    
-    private func configureGuideButton() {
-        guideButton.backgroundColor = .green
-        guideButton.setTitle("사용법", for: .normal)
-        guideButton.setTitleColor(.dynamicBlack, for: .normal)
-    }
-    
-    private func configureSettingButton() {
-        settingButton.backgroundColor = .green
-        settingButton.setTitle("설정", for: .normal)
-        settingButton.setTitleColor(.dynamicBlack, for: .normal)
     }
     
     private func configureArButton() {
