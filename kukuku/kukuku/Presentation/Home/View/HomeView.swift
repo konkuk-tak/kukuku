@@ -101,3 +101,21 @@ class HomeView: UIView {
         }
     }
 }
+
+extension HomeView {
+    func konkukInfoListButtonPublisher() -> AnyPublisher<Void, Never> {
+        return konkukInfoListButton.tapPublisher
+    }
+
+    func guideButtonPublisher() -> AnyPublisher<Void, Never> {
+        return guideButton.tapPublisher
+    }
+
+    func settingButtonPublisher() -> AnyPublisher<Void, Never> {
+        return settingButton.tapPublisher
+    }
+
+    func arButtonPublisher() -> AnyPublisher<Void, Never> {
+        return arButton.tapPublisher
+    }
+}
