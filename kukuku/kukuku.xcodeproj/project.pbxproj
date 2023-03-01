@@ -13,6 +13,8 @@
 		142A2F4529AF34C900ACFFDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4329AF34C900ACFFDD /* Main.storyboard */; };
 		142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4629AF34CA00ACFFDD /* Assets.xcassets */; };
 		142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */; };
+		142A2F5329AF4A0400ACFFDD /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 142A2F5229AF4A0400ACFFDD /* PinLayout */; };
+		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142A2F5329AF4A0400ACFFDD /* PinLayout in Frameworks */,
+				145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = kukuku;
+			packageProductDependencies = (
+				142A2F5229AF4A0400ACFFDD /* PinLayout */,
+				145A289B29AF4F56008CCBC7 /* FlexLayout */,
+			);
 			productName = kukuku;
 			productReference = 142A2F3A29AF34C900ACFFDD /* kukuku.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,10 @@
 				Base,
 			);
 			mainGroup = 142A2F3129AF34C900ACFFDD;
+			packageReferences = (
+				142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */,
+				145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+			);
 			productRefGroup = 142A2F3B29AF34C900ACFFDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,6 +222,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -288,13 +301,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kukuku/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR 기능을 이용하기 위해 위치 정보가 필요합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "AR 기능을 이용하기 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +319,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukuku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,13 +336,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kukuku/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR 기능을 이용하기 위해 위치 정보가 필요합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "AR 기능을 이용하기 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +354,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukuku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +385,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+		145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		142A2F5229AF4A0400ACFFDD /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+		145A289B29AF4F56008CCBC7 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 142A2F3229AF34C900ACFFDD /* Project object */;
 }
