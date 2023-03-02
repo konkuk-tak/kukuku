@@ -57,8 +57,6 @@ final class GuideView: UIView {
         collectionView.backgroundColor = .clear
         collectionView.clipsToBounds = true
         collectionView.register(GuideCollectionCell.self, forCellWithReuseIdentifier: GuideCollectionCell.identifier)
-
-        collectionView.backgroundColor = .systemPink
     }
 
     private func configurePageControl() {

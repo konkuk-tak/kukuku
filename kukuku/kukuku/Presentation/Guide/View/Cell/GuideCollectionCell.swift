@@ -8,25 +8,39 @@
 import UIKit
 
 import FlexLayout
+import PinLayout
 
 final class GuideCollectionCell: UICollectionViewCell {
 
+    private let containerView = UIView()
     private let imageView = UIImageView()
     private let descriptionLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureCell()
-        configureImageView()
-        configureDescriptionLabel()
+        configureSubview()
+        configureFlexLayout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        containerView.pin.all()
+        containerView.flex.layout()
+    }
+
     private func configureCell() {
-        backgroundColor = .systemBlue
+        backgroundColor = .clear
+    }
+
+    private func configureSubview() {
+        addSubview(containerView)
+        configureImageView()
+        configureDescriptionLabel()
     }
 
     private func configureImageView() {
@@ -36,14 +50,21 @@ final class GuideCollectionCell: UICollectionViewCell {
     private func configureDescriptionLabel() {
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.font = .body
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.backgroundColor = .orange
+    }
+
+    private func configureFlexLayout() {
+        containerView.flex.direction(.column).paddingHorizontal(32).define { flex in
+            flex.addItem(imageView).aspectRatio(1)
+            flex.addItem(descriptionLabel).marginTop(20)
+        }
     }
 }
 
 extension GuideCollectionCell {
     func updateCell(_ guideInfo: GuideInfo) {
-        DispatchQueue.main.async {
-            self.imageView.image = UIImage(systemName: guideInfo.imageName) // TODO: UIImage(named:)로 변경
-            self.descriptionLabel.text = guideInfo.description
-        }
+        imageView.image = UIImage(systemName: guideInfo.imageName) // TODO: UIImage(named:)로 변경
+        descriptionLabel.text = guideInfo.description
     }
 }

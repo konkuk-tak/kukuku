@@ -44,7 +44,8 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
         ) as? GuideCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.updateCell(GuideInfo(imageName: "person", description: "설명 뭐시기 \(indexPath.row)"))
+        let description = String(repeating: "ㅋ", count: 100)
+        cell.updateCell(GuideInfo(imageName: "person", description: description))
         return cell
     }
 
