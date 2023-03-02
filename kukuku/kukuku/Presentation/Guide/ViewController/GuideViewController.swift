@@ -22,21 +22,38 @@ final class GuideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureDelegate()
+        configureCollectionViewDelegate()
         print("가이드")
     }
 
-    private func configureDelegate() {
+    private func configureCollectionViewDelegate() {
         guideView.collectionViewDatasource(self)
+        guideView.collectionViewDelegate(self)
     }
 }
 
-extension GuideViewController: UICollectionViewDataSource {
+extension GuideViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: GuideCollectionCell.identifier,
+            for: indexPath
+        ) as? GuideCollectionCell else {
+            return UICollectionViewCell()
+        }
+        cell.updateCell(GuideInfo(imageName: "person", description: "설명 뭐시기 \(indexPath.row)"))
+        return cell
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let size = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+        return size
     }
 }

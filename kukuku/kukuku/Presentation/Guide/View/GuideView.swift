@@ -11,6 +11,8 @@ final class GuideView: UIView {
 
     private let containerView = UIView()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+    private let pageControl = UIPageControl()
+    private let button = UIButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +27,7 @@ final class GuideView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        containerView.frame = CGRect(x: 0, y: 0, width: frame.width, height: containerView.frame.height)
+        containerView.pin.all(pin.safeArea)
         containerView.flex.layout()
     }
 
@@ -36,11 +38,14 @@ final class GuideView: UIView {
     private func configureSubViews() {
         addSubview(containerView)
         configureCollectionView()
+        configurePageControl()
+        configureButton()
     }
 
     private func createLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
         return layout
     }
 
@@ -51,10 +56,34 @@ final class GuideView: UIView {
         collectionView.contentInset = .zero
         collectionView.backgroundColor = .clear
         collectionView.clipsToBounds = true
+        collectionView.register(GuideCollectionCell.self, forCellWithReuseIdentifier: GuideCollectionCell.identifier)
+
+        collectionView.backgroundColor = .systemPink
+    }
+
+    private func configurePageControl() {
+        pageControl.backgroundColor = .orange
+        pageControl.numberOfPages = 4
+        pageControl.currentPage = 0
+        pageControl.isUserInteractionEnabled = false
+    }
+
+    private func configureButton() {
+        button.setTitle("다음", for: .normal)
+        button.backgroundColor = .green
     }
 
     private func configureFlexLayout() {
         containerView.flex.direction(.column).define { flex in
+            flex.addItem(collectionView).grow(5).marginTop(40)
+
+            flex.addItem().grow(1)
+
+            flex.addItem(pageControl)
+
+            flex.addItem().justifyContent(.center).paddingHorizontal(16).define { flex in
+                flex.addItem(button).paddingHorizontal(16)
+            }
         }
     }
 }
