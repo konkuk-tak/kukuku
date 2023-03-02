@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import RealityKit
 import UIKit
 
@@ -104,5 +105,11 @@ final class ARGameView: UIView {
             exitButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             exitButton.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+}
+
+extension ARGameView {
+    func exitButtonPublisher() -> AnyPublisher<Void, Never> {
+        return exitButton.tapPublisher
     }
 }
