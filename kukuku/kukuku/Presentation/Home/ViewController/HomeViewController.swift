@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
-        moveToGuideView()
+        moveToSettingView()
     }
 
     private func configureNavigationBar() {
@@ -78,9 +78,8 @@ class HomeViewController: UIViewController {
 // For fast
 
 extension HomeViewController {
-    private func moveToGuideView() {
-        let guideViewModel = GuideViewModel()
-        let guideViewController = GuideViewController(viewModel: guideViewModel)
-        navigationController?.pushViewController(guideViewController, animated: true)
+    private func moveToSettingView() {
+        let settingViewController = SettingViewController()
+        navigationController?.pushViewController(settingViewController, animated: true)
     }
 }
