@@ -22,7 +22,7 @@ final class ARGameViewController: UIViewController {
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
-    
+
     override func loadView() {
         view = ARGameView()
     }
