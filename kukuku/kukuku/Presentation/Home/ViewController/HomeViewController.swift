@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
-        moveToTargetView()
+//        moveToTargetView()
     }
 
     private func configureNavigationBar() {
