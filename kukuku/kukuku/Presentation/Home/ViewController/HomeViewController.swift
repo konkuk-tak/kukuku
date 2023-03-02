@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
+        moveToGuideView()
     }
 
     private func configureNavigationBar() {
@@ -70,5 +71,14 @@ class HomeViewController: UIViewController {
                 self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+}
+
+// For fast
+
+extension HomeViewController {
+    private func moveToGuideView() {
+        let guideViewController = GuideViewController()
+        navigationController?.pushViewController(guideViewController, animated: true)
     }
 }
