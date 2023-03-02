@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
+        moveToGuideView()
     }
 
     private func configureNavigationBar() {
@@ -51,7 +52,8 @@ class HomeViewController: UIViewController {
 
         homeView.guideButtonPublisher()
             .sink { [weak self] _ in
-                let guideViewController = GuideViewController()
+                let guideViewModel = GuideViewModel()
+                let guideViewController = GuideViewController(viewModel: guideViewModel)
                 self?.navigationController?.pushViewController(guideViewController, animated: true)
             }
             .store(in: &cancellable)
@@ -70,5 +72,15 @@ class HomeViewController: UIViewController {
                 self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+}
+
+// For fast
+
+extension HomeViewController {
+    private func moveToGuideView() {
+        let guideViewModel = GuideViewModel()
+        let guideViewController = GuideViewController(viewModel: guideViewModel)
+        navigationController?.pushViewController(guideViewController, animated: true)
     }
 }

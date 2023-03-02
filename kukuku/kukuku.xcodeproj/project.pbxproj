@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1429327929AF8982009B9B7F /* HomeDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327829AF8982009B9B7F /* HomeDefaultButton.swift */; };
+		1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327829AF8982009B9B7F /* KuDefaultButton.swift */; };
 		1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327C29AF8C07009B9B7F /* HomeViewModel.swift */; };
 		1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */; };
 		1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429328229AF8C22009B9B7F /* GuideViewController.swift */; };
@@ -27,10 +27,16 @@
 		145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B229AF5CA4008CCBC7 /* UIFont+.swift */; };
 		145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */; };
 		145A28BB29AF60A1008CCBC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28BA29AF60A1008CCBC7 /* HomeView.swift */; };
+		14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D729B0364E00900EEC /* GuideInfo.swift */; };
+		14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DB29B0367C00900EEC /* GuideView.swift */; };
+		14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DD29B0368100900EEC /* GuideViewModel.swift */; };
+		14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77E429B03ADF00900EEC /* GuideCollectionCell.swift */; };
+		14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77E729B03B5000900EEC /* ReusableView.swift */; };
+		14FE77EB29B03B7400900EEC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1429327829AF8982009B9B7F /* HomeDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultButton.swift; sourceTree = "<group>"; };
+		1429327829AF8982009B9B7F /* KuDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuDefaultButton.swift; sourceTree = "<group>"; };
 		1429327C29AF8C07009B9B7F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoListViewController.swift; sourceTree = "<group>"; };
 		1429328229AF8C22009B9B7F /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +58,12 @@
 		145A28B229AF5CA4008CCBC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icon.swift"; sourceTree = "<group>"; };
 		145A28BA29AF60A1008CCBC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14FE77D729B0364E00900EEC /* GuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInfo.swift; sourceTree = "<group>"; };
+		14FE77DB29B0367C00900EEC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		14FE77DD29B0368100900EEC /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
+		14FE77E429B03ADF00900EEC /* GuideCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionCell.swift; sourceTree = "<group>"; };
+		14FE77E729B03B5000900EEC /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +82,7 @@
 		1429327729AF8974009B9B7F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1429327829AF8982009B9B7F /* HomeDefaultButton.swift */,
+				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -94,7 +106,9 @@
 		1429328029AF8C17009B9B7F /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				14FE77DA29B0367500900EEC /* ViewModel */,
 				1429328129AF8C1B009B9B7F /* ViewController */,
+				14FE77D929B0366A00900EEC /* View */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -213,7 +227,8 @@
 		145A28A329AF5919008CCBC7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				145A28A829AF59B2008CCBC7 /* UserUseCase.swift */,
+				14FE77D629B0362700900EEC /* UseCase */,
+				14FE77D529B0362400900EEC /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -239,6 +254,7 @@
 		145A28AA29AF5B9B008CCBC7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				14FE77E629B03B4300900EEC /* Protocol */,
 				145A28AB29AF5BA8008CCBC7 /* Extension */,
 			);
 			path = Util;
@@ -247,6 +263,7 @@
 		145A28AB29AF5BA8008CCBC7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				14FE77E929B03B5600900EEC /* UI */,
 				1429329429AF91D6009B9B7F /* Combine */,
 				1429329129AF8F79009B9B7F /* UI+Asset */,
 			);
@@ -285,6 +302,63 @@
 				1429327C29AF8C07009B9B7F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14FE77D529B0362400900EEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77D729B0364E00900EEC /* GuideInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FE77D629B0362700900EEC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				145A28A829AF59B2008CCBC7 /* UserUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		14FE77D929B0366A00900EEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77E329B03AC400900EEC /* Cell */,
+				14FE77DB29B0367C00900EEC /* GuideView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14FE77DA29B0367500900EEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77DD29B0368100900EEC /* GuideViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14FE77E329B03AC400900EEC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77E429B03ADF00900EEC /* GuideCollectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		14FE77E629B03B4300900EEC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77E729B03B5000900EEC /* ReusableView.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		14FE77E929B03B5600900EEC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,15 +468,21 @@
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
 				1429328729AF8C2E009B9B7F /* SettingViewController.swift in Sources */,
+				14FE77EB29B03B7400900EEC /* UICollectionViewCell.swift in Sources */,
 				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
+				14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
+				14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,
-				1429327929AF8982009B9B7F /* HomeDefaultButton.swift in Sources */,
+				14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */,
+				1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */,
 				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
+				14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */,
 				1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
+				14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */,
 				1429328B29AF8C41009B9B7F /* ARGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
