@@ -14,7 +14,9 @@ final class SettingCell: UITableViewCell {
     let titleLabel = UILabel()
     let valueLabel = UILabel()
 
-    private let paddingHorizontal: CGFloat = 16
+    private enum Constant {
+        static let paddingHorizontal: CGFloat = 16
+    }
 
     // MARK: - Life Cycle
 
@@ -58,7 +60,7 @@ final class SettingCell: UITableViewCell {
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         NSLayoutConstraint.activate([
             titleLabel.heightAnchor.constraint(equalTo: heightAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingHorizontal),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constant.paddingHorizontal),
             titleLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor)
         ])
 
@@ -66,7 +68,7 @@ final class SettingCell: UITableViewCell {
         valueLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         NSLayoutConstraint.activate([
             valueLabel.heightAnchor.constraint(equalTo: heightAnchor),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paddingHorizontal),
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constant.paddingHorizontal),
             valueLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }

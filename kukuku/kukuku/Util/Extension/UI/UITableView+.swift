@@ -6,5 +6,7 @@
 //
 
 import UIKit.UITableViewCell
+import UIKit.UITableViewHeaderFooterView
 
 extension UITableViewCell: ReusableView { }
+extension UITableViewHeaderFooterView: ReusableView {}

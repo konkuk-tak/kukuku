@@ -13,6 +13,10 @@ final class SettingView: UIView {
 
     private let tableView = UITableView()
 
+    private enum Constant {
+        static let headerPaddingTop: CGFloat = 5
+    }
+
     // MARK: - Life Cycle
 
     override init(frame: CGRect) {
@@ -34,6 +38,8 @@ final class SettingView: UIView {
 
     private func configureTableView() {
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
+        tableView.sectionHeaderTopPadding = Constant.headerPaddingTop
         tableView.register(SettingCell.self, forCellReuseIdentifier: SettingCell.identifier)
     }
 
@@ -57,5 +63,11 @@ extension SettingView {
 
     func tableViewDelegate(_ delegate: UITableViewDelegate) {
         tableView.delegate = delegate
+    }
+
+    func deSelectTableViewCell() {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
     }
 }

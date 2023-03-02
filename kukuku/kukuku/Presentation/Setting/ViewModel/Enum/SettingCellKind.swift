@@ -5,11 +5,17 @@
 //  Created by youtak on 2023/03/02.
 //
 
-enum SettingCellKind: CaseIterable {
+enum SettingCellKind: Int, CaseIterable {
     case language
     case darkMode
     case deleteData
     case developerMode
+}
+
+extension SettingCellKind {
+    init?(index: Int) {
+        self.init(rawValue: index)
+    }
 
     var title: String {
         switch self {
@@ -21,11 +27,10 @@ enum SettingCellKind: CaseIterable {
     }
 
     var index: Int {
-        switch self {
-        case .language: return 0
-        case .darkMode: return 1
-        case .deleteData: return 2
-        case .developerMode: return 3
-        }
+        return self.rawValue
+    }
+
+    static var count: Int {
+        return Self.allCases.count
     }
 }
