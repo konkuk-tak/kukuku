@@ -40,7 +40,6 @@ final class GuideView: UIView {
         addSubview(containerView)
         configureCollectionView()
         configurePageControl()
-        configureButton()
     }
 
     private func createLayout() -> UICollectionViewFlowLayout {
@@ -66,9 +65,6 @@ final class GuideView: UIView {
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
-    }
-
-    private func configureButton() {
     }
 
     private func configureFlexLayout() {

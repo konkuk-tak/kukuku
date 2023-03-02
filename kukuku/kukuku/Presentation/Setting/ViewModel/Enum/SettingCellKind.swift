@@ -11,7 +11,6 @@ enum SettingCellKind: CaseIterable {
     case deleteData
     case developerMode
 
-
     var title: String {
         switch self {
         case .language: return "언어 / language"
@@ -20,7 +19,7 @@ enum SettingCellKind: CaseIterable {
         case .developerMode: return "개발자 모드"
         }
     }
-    
+
     var index: Int {
         switch self {
         case .language: return 0
