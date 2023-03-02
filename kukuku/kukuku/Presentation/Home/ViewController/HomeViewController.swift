@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
-        moveToSettingView()
+        moveToTargetView()
     }
 
     private func configureNavigationBar() {
@@ -77,9 +77,11 @@ class HomeViewController: UIViewController {
 
 // For fast
 
+#if DEBUG
 extension HomeViewController {
-    private func moveToSettingView() {
-        let settingViewController = SettingViewController()
-        navigationController?.pushViewController(settingViewController, animated: true)
+    private func moveToTargetView() {
+        let targetViewController = KonkukInfoListViewController()
+        navigationController?.pushViewController(targetViewController, animated: true)
     }
 }
+#endif

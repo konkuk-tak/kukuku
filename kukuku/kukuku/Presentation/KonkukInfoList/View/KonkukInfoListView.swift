@@ -1,5 +1,5 @@
 //
-//  SettingView.swift
+//  KonkukInfoListView.swift
 //  kukuku
 //
 //  Created by youtak on 2023/03/02.
@@ -7,15 +7,9 @@
 
 import UIKit
 
-final class SettingView: UIView {
-
-    // MARK: - Property
+final class KonkukInfoListView: UIView {
 
     private let tableView = UITableView()
-
-    private enum Constant {
-        static let headerPaddingTop: CGFloat = 5
-    }
 
     // MARK: - Life Cycle
 
@@ -42,14 +36,11 @@ final class SettingView: UIView {
     }
 
     private func configureTableView() {
-        tableView.separatorStyle = .none
-        tableView.isScrollEnabled = false
-        tableView.sectionHeaderTopPadding = Constant.headerPaddingTop
-        tableView.register(SettingCell.self, forCellReuseIdentifier: SettingCell.identifier)
+        tableView.separatorStyle = .singleLine
+        tableView.register(KonkukInfoListCell.self, forCellReuseIdentifier: KonkukInfoListCell.identifier)
     }
 
     private func configureConstraints() {
-
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -61,7 +52,7 @@ final class SettingView: UIView {
     }
 }
 
-extension SettingView {
+extension KonkukInfoListView {
     func tableViewDatasource(_ dataSource: UITableViewDataSource) {
         tableView.dataSource = dataSource
     }
