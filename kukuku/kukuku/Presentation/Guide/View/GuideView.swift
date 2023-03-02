@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import UIKit
 
 final class GuideView: UIView {
@@ -12,7 +13,7 @@ final class GuideView: UIView {
     private let containerView = UIView()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     private let pageControl = UIPageControl()
-    private let button = UIButton()
+    private let button = KUDefaultButton(title: "다음", style: .heavy)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +51,7 @@ final class GuideView: UIView {
     }
 
     private func configureCollectionView() {
-        collectionView.isScrollEnabled = true // TODO: false 로 변경
+        collectionView.isScrollEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset = .zero
@@ -60,15 +61,14 @@ final class GuideView: UIView {
     }
 
     private func configurePageControl() {
-        pageControl.backgroundColor = .orange
+        pageControl.pageIndicatorTintColor = .systemGray5
+        pageControl.currentPageIndicatorTintColor = .green
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
     }
 
     private func configureButton() {
-        button.setTitle("다음", for: .normal)
-        button.backgroundColor = .green
     }
 
     private func configureFlexLayout() {
@@ -93,5 +93,27 @@ extension GuideView {
 
     func collectionViewDatasource(_ viewController: UICollectionViewDataSource) {
         collectionView.dataSource = viewController
+    }
+}
+
+extension GuideView {
+    func getCollectionView() -> UICollectionView {
+        return collectionView
+    }
+
+    func buttonPublisher() -> AnyPublisher<Void, Never> {
+        return button.tapPublisher
+    }
+
+    func updatePageControl(_ page: Int) {
+        pageControl.currentPage = page
+    }
+
+    func updateButtonTitle() {
+        button.updateButtonTitle(text: "완료")
+    }
+
+    func moveToNextPage(index: Int) {
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
     }
 }

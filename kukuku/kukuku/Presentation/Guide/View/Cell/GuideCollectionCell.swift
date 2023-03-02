@@ -51,7 +51,6 @@ final class GuideCollectionCell: UICollectionViewCell {
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.font = .body
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.backgroundColor = .orange
     }
 
     private func configureFlexLayout() {

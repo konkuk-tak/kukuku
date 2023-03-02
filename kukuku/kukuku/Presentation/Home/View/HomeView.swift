@@ -13,9 +13,9 @@ class HomeView: UIView {
     private let containerView = UIView()
     private let titleLabel = UILabel()
     private let scoreLabel = UILabel()
-    private let konkukInfoListButton = HomeDefaultButton(title: "알쓸건잡")
-    private let guideButton = HomeDefaultButton(title: "이용법")
-    private let settingButton = HomeDefaultButton(title: "설정")
+    private let konkukInfoListButton = KUDefaultButton(title: "알쓸건잡")
+    private let guideButton = KUDefaultButton(title: "이용법")
+    private let settingButton = KUDefaultButton(title: "설정")
     private let arButton = UIButton()
 
     override init(frame: CGRect) {
