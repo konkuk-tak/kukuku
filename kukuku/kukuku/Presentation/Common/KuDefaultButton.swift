@@ -60,4 +60,18 @@ extension KUDefaultButton {
             configuration = config
         }
     }
+
+    func updateButtonColor(color: UIColor) {
+        if var config = configuration {
+            config.baseBackgroundColor = color
+            configuration = config
+        }
+    }
+
+    func updateTitleColor(color: UIColor) {
+        if var config = configuration {
+            config.baseForegroundColor = color
+            configuration = config
+        }
+    }
 }
