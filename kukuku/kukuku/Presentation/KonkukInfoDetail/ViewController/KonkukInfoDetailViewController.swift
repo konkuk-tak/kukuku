@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import UIKit
 
 final class KonkukInfoDetailViewController: UIViewController {
@@ -18,6 +19,8 @@ final class KonkukInfoDetailViewController: UIViewController {
         return view
     }
 
+    private var cancellable = Set<AnyCancellable>()
+
     // MARK: - Life Cycle
 
     override func loadView() {
@@ -26,6 +29,18 @@ final class KonkukInfoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
+        subscribePublisher()
+    }
+
+    private func subscribePublisher() {
+        konkukInfoDetailView.completeButtonPublisher()
+            .sink { [weak self] _ in
+                self?.moveToBackScreen()
+            }
+            .store(in: &cancellable)
+    }
+
+    private func moveToBackScreen() {
+        dismiss(animated: true)
     }
 }

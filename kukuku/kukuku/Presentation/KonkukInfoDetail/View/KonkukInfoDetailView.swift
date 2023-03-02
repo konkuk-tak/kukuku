@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import UIKit
 
 import FlexLayout
@@ -102,5 +103,11 @@ final class KonkukInfoDetailView: UIView {
         }
 
         completeButton.flex.position(.absolute).left(16).right(16).bottom(10)
+    }
+}
+
+extension KonkukInfoDetailView {
+    func completeButtonPublisher() -> AnyPublisher<Void, Never> {
+        return completeButton.tapPublisher
     }
 }
