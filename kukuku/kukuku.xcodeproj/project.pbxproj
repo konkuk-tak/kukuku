@@ -65,6 +65,7 @@
 		1482F5EB29B209B3000B5320 /* DefaultGuideRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EA29B209B3000B5320 /* DefaultGuideRepository.swift */; };
 		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
 		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
+		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
 		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
@@ -139,6 +140,7 @@
 		1482F5EA29B209B3000B5320 /* DefaultGuideRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideRepository.swift; sourceTree = "<group>"; };
 		1482F5ED29B20A51000B5320 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
+		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				142A2F4B29AF34CA00ACFFDD /* Info.plist */,
 				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
 				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
+				1482F5F129B20BA5000B5320 /* Images.xcassets */,
 				14644E9729B1A11F00176342 /* KonkukInfoList.json */,
 			);
 			path = Resources;
@@ -870,6 +873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */,
+				1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */,
 				142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */,
 				14644EA029B1A44300176342 /* KonkukInfoList.json in Resources */,
 			);
