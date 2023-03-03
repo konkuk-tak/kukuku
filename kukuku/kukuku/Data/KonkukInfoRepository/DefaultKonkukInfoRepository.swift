@@ -9,22 +9,26 @@ import Foundation
 
 struct DefaultKonkukInfoRepository {
 
-    func konkukInfoList() -> [KonkukInfo] {
+    func konkukInfoList() -> [KonkukInfo]? {
 
         guard let path = Bundle.main.path(forResource: "KonkukInfoList", ofType: "json") else {
-            fatalError("알쓸건잡 데이터 없음1")
+            print("알쓸건잡 데이터 없음1")
+            return nil
         }
 
         guard let jsonString = try? String(contentsOfFile: path) else {
-            fatalError("알쓸건잡 데이터 없음2")
+            print("알쓸건잡 데이터 없음2")
+            return nil
         }
 
         guard let data = jsonString.data(using: .utf8) else {
-            fatalError("알쓸건잡 데이터 없음3")
+            print("알쓸건잡 데이터 없음3")
+            return nil
         }
 
         guard let decodeKonkukInfoList = try? JSONDecoder().decode(KonkukInfoList.self, from: data) else {
-            fatalError("알쓸건잡 디코딩")
+            print("디코딩 실패")
+            return nil
         }
 
         return decodeKonkukInfoList.list

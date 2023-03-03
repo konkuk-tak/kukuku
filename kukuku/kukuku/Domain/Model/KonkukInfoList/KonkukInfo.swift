@@ -9,7 +9,7 @@ import Foundation
 
 struct KonkukInfo: Decodable {
     let id: String
-    let imageURL: String
+    let imageURL: String?
     let title: String
     let description: String
 }
