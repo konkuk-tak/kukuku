@@ -6,6 +6,7 @@
 //
 
 import Combine
+import CoreLocation
 import UIKit
 
 import FlexLayout
@@ -22,6 +23,7 @@ class HomeViewController: UIViewController {
         return view
     }
 
+//    private var locationManager = LocationManger()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
@@ -35,6 +37,7 @@ class HomeViewController: UIViewController {
         configureNavigationBar()
         subscribeButtonPublisher()
         moveToTargetView()
+        testLocation()
     }
 
     private func configureNavigationBar() {
@@ -84,12 +87,16 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-//        let targetViewController = SettingViewController()
+//        let targetViewController = ARGameViewController()
 //        navigationController?.pushViewController(targetViewController, animated: true)
 //        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
 //        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
 //        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
 //        present(konkukInfoDetailViewController, animated: true)
+    }
+
+    private func testLocation() {
+//        locationManager.requestAuthorization()
     }
 }
 #endif
