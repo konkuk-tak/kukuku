@@ -58,6 +58,7 @@
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
 		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
 		14F9D53329B1D4C40005B74F /* DefaultUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D53229B1D4C40005B74F /* DefaultUserUseCase.swift */; };
+		14F9D53529B1DA450005B74F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D53429B1DA450005B74F /* LocationManager.swift */; };
 		14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D729B0364E00900EEC /* GuideInfo.swift */; };
 		14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DB29B0367C00900EEC /* GuideView.swift */; };
 		14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DD29B0368100900EEC /* GuideViewModel.swift */; };
@@ -120,6 +121,7 @@
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		14F9D53229B1D4C40005B74F /* DefaultUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserUseCase.swift; sourceTree = "<group>"; };
+		14F9D53429B1DA450005B74F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		14FE77D729B0364E00900EEC /* GuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInfo.swift; sourceTree = "<group>"; };
 		14FE77DB29B0367C00900EEC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		14FE77DD29B0368100900EEC /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				14F9D52729B1C7030005B74F /* KeyChainManager.swift */,
+				14F9D53429B1DA450005B74F /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				142F01A129B0AB25001D5DCD /* KonkukInfoListCell.swift in Sources */,
 				14F9D53329B1D4C40005B74F /* DefaultUserUseCase.swift in Sources */,
 				142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */,
+				14F9D53529B1DA450005B74F /* LocationManager.swift in Sources */,
 				14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */,
 				1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */,
 				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
