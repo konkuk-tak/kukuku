@@ -39,8 +39,13 @@ final class GuideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureCollectionViewDelegate()
         subscribePublisher()
+    }
+
+    private func configureNavigationBar() {
+        navigationItem.title = "이용법"
     }
 
     private func configureCollectionViewDelegate() {

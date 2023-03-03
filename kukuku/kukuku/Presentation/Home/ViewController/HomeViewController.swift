@@ -45,6 +45,8 @@ class HomeViewController: UIViewController {
         label.textColor = .dynamicBlack
         label.text = "쿠쿠쿠"
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
+        navigationController?.navigationBar.tintColor = .green
+        navigationItem.backButtonTitle = ""
     }
 
     // MARK: - Navigation
