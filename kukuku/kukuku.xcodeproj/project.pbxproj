@@ -100,6 +100,7 @@
 		14644E8C29B1818D00176342 /* SettingDarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDarkModeView.swift; sourceTree = "<group>"; };
 		14644E8F29B1839700176342 /* DarkModeKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeKind.swift; sourceTree = "<group>"; };
 		14644E9129B1860A00176342 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		14644E9729B1A11F00176342 /* KonkukInfoList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList.json; sourceTree = "<group>"; };
 		14FE77D729B0364E00900EEC /* GuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInfo.swift; sourceTree = "<group>"; };
 		14FE77DB29B0367C00900EEC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		14FE77DD29B0368100900EEC /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
@@ -420,6 +421,7 @@
 				142A2F4B29AF34CA00ACFFDD /* Info.plist */,
 				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
 				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
+				14644E9729B1A11F00176342 /* KonkukInfoList.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
