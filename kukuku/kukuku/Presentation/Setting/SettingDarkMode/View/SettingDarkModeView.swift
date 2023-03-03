@@ -1,21 +1,18 @@
 //
-//  KonkukInfoListView.swift
+//  SettingDarkModeView.swift
 //  kukuku
 //
-//  Created by youtak on 2023/03/02.
+//  Created by youtak on 2023/03/03.
 //
 
 import UIKit
 
-final class KonkukInfoListView: KUContainTableView {
-
-    // MARK: - Life Cycle
+final class SettingDarkModeView: KUContainTableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
-        configureSubview()
-        configureTableView()
+        configureSubView()
         configureConstraints()
     }
 
@@ -23,19 +20,20 @@ final class KonkukInfoListView: KUContainTableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: configure
-
     private func configureView() {
         backgroundColor = .background
     }
 
-    private func configureSubview() {
+    private func configureSubView() {
         addSubview(tableView)
+        configureTableView()
     }
 
     private func configureTableView() {
-        tableView.separatorStyle = .singleLine
-        tableView.register(KonkukInfoListCell.self, forCellReuseIdentifier: KonkukInfoListCell.identifier)
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
+        tableView.register(SettingCheckCell.self, forCellReuseIdentifier: SettingCheckCell.identifier)
     }
 
     private func configureConstraints() {

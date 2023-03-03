@@ -13,6 +13,8 @@ import PinLayout
 
 class HomeViewController: UIViewController {
 
+    // MARK: - Property
+
     private var homeView: HomeView {
         guard let view = view as? HomeView else {
             return HomeView()
@@ -21,6 +23,8 @@ class HomeViewController: UIViewController {
     }
 
     private var cancellable = Set<AnyCancellable>()
+
+    // MARK: - Life Cycle
 
     override func loadView() {
         view = HomeView()
@@ -80,11 +84,11 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-        let targetViewController = KonkukInfoListViewController()
+        let targetViewController = SettingViewController()
         navigationController?.pushViewController(targetViewController, animated: true)
-        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
-        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-        present(konkukInfoDetailViewController, animated: true)
+//        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
+//        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+//        present(konkukInfoDetailViewController, animated: true)
     }
 }
 #endif

@@ -42,7 +42,7 @@ final class SettingViewController: UIViewController {
     // MARK: - Configure
 
     private func configureTableView() {
-        settingView.tableViewDatasource(self)
+        settingView.tableViewDataSource(self)
         settingView.tableViewDelegate(self)
     }
 
@@ -52,7 +52,7 @@ final class SettingViewController: UIViewController {
     }
 
     private func moveToSettingDarkMode() {
-        let settingDarkModeViewController = SettingDarkMoveViewController()
+        let settingDarkModeViewController = SettingDarkModeViewController()
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
 

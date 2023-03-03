@@ -13,7 +13,7 @@ final class ARGameView: UIView {
 
     // MARK: - Property
 
-    private let arView = ARView()
+    private var arView: ARView! = ARView()
     private let statusBar = UILabel()
     private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
 
