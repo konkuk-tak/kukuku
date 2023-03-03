@@ -65,6 +65,10 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
+        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+        present(konkukInfoDetailViewController, animated: true)
+
         konkukInfoListView.deSelectTableViewCell()
     }
 }

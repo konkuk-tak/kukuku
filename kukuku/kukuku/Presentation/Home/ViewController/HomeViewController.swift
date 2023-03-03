@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
-//        moveToTargetView()
+        moveToTargetView()
     }
 
     private func configureNavigationBar() {
@@ -82,6 +82,9 @@ extension HomeViewController {
     private func moveToTargetView() {
         let targetViewController = KonkukInfoListViewController()
         navigationController?.pushViewController(targetViewController, animated: true)
+        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
+        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+        present(konkukInfoDetailViewController, animated: true)
     }
 }
 #endif

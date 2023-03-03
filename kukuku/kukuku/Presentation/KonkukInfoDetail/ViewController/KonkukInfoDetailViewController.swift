@@ -1,20 +1,20 @@
 //
-//  ARGameViewController.swift
+//  KonkukInfoDetailViewController.swift
 //  kukuku
 //
-//  Created by youtak on 2023/03/01.
+//  Created by youtak on 2023/03/02.
 //
 
 import Combine
 import UIKit
 
-final class ARGameViewController: UIViewController {
+final class KonkukInfoDetailViewController: UIViewController {
 
     // MARK: - Property
 
-    private var arGameView: ARGameView {
-        guard let view = view as? ARGameView else {
-            return ARGameView()
+    private var konkukInfoDetailView: KonkukInfoDetailView {
+        guard let view = view as? KonkukInfoDetailView else {
+            return KonkukInfoDetailView()
         }
         return view
     }
@@ -24,7 +24,7 @@ final class ARGameViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func loadView() {
-        view = ARGameView()
+        view = KonkukInfoDetailView()
     }
 
     override func viewDidLoad() {
@@ -33,14 +33,14 @@ final class ARGameViewController: UIViewController {
     }
 
     private func subscribePublisher() {
-        arGameView.exitButtonPublisher()
+        konkukInfoDetailView.completeButtonPublisher()
             .sink { [weak self] _ in
-                self?.moveToHomeView()
+                self?.moveToBackScreen()
             }
             .store(in: &cancellable)
     }
 
-    private func moveToHomeView() {
+    private func moveToBackScreen() {
         dismiss(animated: true)
     }
 }
