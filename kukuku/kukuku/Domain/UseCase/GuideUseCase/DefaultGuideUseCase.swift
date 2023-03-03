@@ -11,6 +11,10 @@ struct DefaultGuideUseCase: GuideUseCase {
 
     private var guideRepository: GuideRepository
 
+    init(guideRepository: GuideRepository) {
+        self.guideRepository = guideRepository
+    }
+
     func guideInfo() -> [GuideInfo] {
         return guideRepository.guideInfo()
     }

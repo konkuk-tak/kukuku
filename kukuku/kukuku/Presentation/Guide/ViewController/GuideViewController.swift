@@ -41,7 +41,6 @@ final class GuideViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionViewDelegate()
         subscribePublisher()
-        viewModel.setGuideInfoList()
     }
 
     private func configureCollectionViewDelegate() {

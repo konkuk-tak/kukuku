@@ -59,7 +59,9 @@ class HomeViewController: UIViewController {
 
         homeView.guideButtonPublisher()
             .sink { [weak self] _ in
-                let guideViewModel = GuideViewModel()
+                let guideRepository = DefaultGuideRepository()
+                let guideUseCase = DefaultGuideUseCase(guideRepository: guideRepository)
+                let guideViewModel = GuideViewModel(guideUseCase: guideUseCase)
                 let guideViewController = GuideViewController(viewModel: guideViewModel)
                 self?.navigationController?.pushViewController(guideViewController, animated: true)
             }

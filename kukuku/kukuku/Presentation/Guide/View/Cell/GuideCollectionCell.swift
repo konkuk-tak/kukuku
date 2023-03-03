@@ -63,7 +63,8 @@ final class GuideCollectionCell: UICollectionViewCell {
 
 extension GuideCollectionCell {
     func updateCell(_ guideInfo: GuideInfo) {
-        imageView.image = UIImage(systemName: guideInfo.imageName) // TODO: UIImage(named:)로 변경
+        print(guideInfo.imageName)
+        imageView.image = UIImage(named: guideInfo.imageName)
         descriptionLabel.text = guideInfo.description
     }
 }
