@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
     let type: UserType
     let score: Int
     let log: [Date]
 }
 
-enum UserType {
+enum UserType: Codable {
     case normal
     case developer
 }

@@ -52,8 +52,12 @@ final class KeyChainManger {
 }
 
 extension KeyChainManger {
-    func createUser() throws {
-        let query = createQuery(data: Data())
+    func createUser(user: User) throws {
+        guard let data = try? JSONEncoder().encode(user) else {
+            throw KeychainError.jsonCoding
+        }
+
+        let query = createQuery(data: data)
         let status = SecItemAdd(query, nil)
         guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
     }
@@ -67,11 +71,13 @@ extension KeyChainManger {
         }
 
         guard let typeRef = typeRef as? [CFString: Any],
-              let data = typeRef[kSecValueData] as? Data else {
+              let data = typeRef[kSecValueData] as? Data,
+              let user = try? JSONDecoder().decode(User.self, from: data)
+        else {
             throw KeychainError.noData
         }
 
-        return User(type: .normal, score: 0, log: [])
+        return user
     }
 
     func updateUser(user: User) throws {
@@ -90,7 +96,7 @@ extension KeyChainManger {
 }
 
 enum KeychainError: Error {
-    case jsonParsing
+    case jsonCoding
     case noData
     case unhandledError(status: OSStatus)
 }
