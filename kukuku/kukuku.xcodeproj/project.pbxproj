@@ -36,7 +36,7 @@
 		142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */; };
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
-		145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* UserRepository.swift */; };
+		145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */; };
 		145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A829AF59B2008CCBC7 /* UserUseCase.swift */; };
 		145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */; };
 		145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B229AF5CA4008CCBC7 /* UIFont+.swift */; };
@@ -56,6 +56,7 @@
 		14644EAA29B1A9D000176342 /* print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA929B1A9D000176342 /* print.swift */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
+		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
 		14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D729B0364E00900EEC /* GuideInfo.swift */; };
 		14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DB29B0367C00900EEC /* GuideView.swift */; };
 		14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DD29B0368100900EEC /* GuideViewModel.swift */; };
@@ -96,7 +97,7 @@
 		142F01A729B0B030001D5DCD /* ARGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameView.swift; sourceTree = "<group>"; };
 		142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailViewController.swift; sourceTree = "<group>"; };
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
-		145A28A629AF59AC008CCBC7 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		145A28A829AF59B2008CCBC7 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		145A28B229AF5CA4008CCBC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		14644EA929B1A9D000176342 /* print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = print.swift; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		14FE77D729B0364E00900EEC /* GuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInfo.swift; sourceTree = "<group>"; };
 		14FE77DB29B0367C00900EEC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		14FE77DD29B0368100900EEC /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
@@ -428,7 +430,7 @@
 			children = (
 				14F9D52629B1C6FB0005B74F /* Manager */,
 				14644E9D29B1A24500176342 /* KonkukInfoRepository */,
-				145A28A629AF59AC008CCBC7 /* UserRepository.swift */,
+				14F9D52D29B1D06B0005B74F /* UserRepository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -575,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				14644EA529B1A8F300176342 /* KonkukInfoRepository */,
+				14F9D52E29B1D07D0005B74F /* UserRepository */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -609,6 +612,22 @@
 				14F9D52729B1C7030005B74F /* KeyChainManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		14F9D52D29B1D06B0005B74F /* UserRepository */ = {
+			isa = PBXGroup;
+			children = (
+				145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */,
+			);
+			path = UserRepository;
+			sourceTree = "<group>";
+		};
+		14F9D52E29B1D07D0005B74F /* UserRepository */ = {
+			isa = PBXGroup;
+			children = (
+				14F9D52F29B1D08C0005B74F /* UserRepository.swift */,
+			);
+			path = UserRepository;
 			sourceTree = "<group>";
 		};
 		14FE77D529B0362400900EEC /* Model */ = {
@@ -794,9 +813,10 @@
 				14FE77EB29B03B7400900EEC /* UICollectionViewCell.swift in Sources */,
 				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				14644EAA29B1A9D000176342 /* print.swift in Sources */,
-				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
+				145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */,
 				14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */,
 				14644E9C29B1A1CE00176342 /* KonkukInfo.swift in Sources */,
+				14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */,
 				14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
 				14644EA329B1A48500176342 /* KonkukInfoList.swift in Sources */,
