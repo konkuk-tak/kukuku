@@ -31,6 +31,15 @@ final class KonkukInfoDetailView: UIView {
         configureFlexLayout()
     }
 
+    init(konkukInfo: KonkukInfo) {
+        super.init(frame: .zero)
+        configureView()
+        configureSubView()
+        configureFlexLayout()
+        titleLabel.text = konkukInfo.title
+        descriptionLabel.text = konkukInfo.description
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
