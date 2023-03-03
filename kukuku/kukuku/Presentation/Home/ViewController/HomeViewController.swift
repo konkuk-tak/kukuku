@@ -91,5 +91,22 @@ extension HomeViewController {
 //        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
 //        present(konkukInfoDetailViewController, animated: true)
     }
+
+    private func testKeyChain() {
+        do {
+            try KeyChainManger.main.deleteUser()
+            let user = User(type: .normal, score: 0, log: [])
+            try KeyChainManger.main.createUser(user: user)
+            let readUser = try KeyChainManger.main.readUser()
+            print("readUser 1 ", readUser)
+            let updateUser = User(type: .normal, score: 12, log: [Date()])
+            try KeyChainManger.main.updateUser(user: updateUser)
+            let readUser2 = try KeyChainManger.main.readUser()
+            print("readUser 2 ", readUser2)
+            try KeyChainManger.main.deleteUser()
+        } catch {
+            print(error)
+        }
+    }
 }
 #endif

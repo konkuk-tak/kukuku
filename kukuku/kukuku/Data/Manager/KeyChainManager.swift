@@ -81,8 +81,12 @@ extension KeyChainManger {
     }
 
     func updateUser(user: User) throws {
+        guard let data = try? JSONEncoder().encode(user) else {
+            throw KeychainError.jsonCoding
+        }
+
         let query = updateQuery()
-        let attributes = updateAttributes(data: Data())
+        let attributes = updateAttributes(data: data)
         let status = SecItemUpdate(query, attributes)
         guard status != errSecItemNotFound else { throw KeychainError.noData }
         guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
