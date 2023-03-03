@@ -63,6 +63,9 @@ final class SettingViewController: UIViewController {
     }
 
     private func showDeveloperCodeAlert() {
+        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { text in
+            print(text)
+        }
     }
 }
 
