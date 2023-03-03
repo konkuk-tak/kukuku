@@ -9,16 +9,18 @@ import UIKit
 
 final class GuideViewModel {
 
+    private var guideUseCase: GuideUseCase
     private var guideInfoList: [GuideInfo] = []
     private (set)var currentIndex = 0
+
+    init(guideUseCase: GuideUseCase) {
+        self.guideUseCase = guideUseCase
+        guideInfoList = guideUseCase.guideInfo()
+    }
 
     var nextIndex: Int {
         currentIndex += 1
         return currentIndex
-    }
-
-    func setGuideInfoList() {
-        guideInfoList = getGuideInfoList()
     }
 
     func infoListCount() -> Int {
@@ -27,10 +29,5 @@ final class GuideViewModel {
 
     func guideInfo(index: Int) -> GuideInfo? {
         return index < guideInfoList.count ? guideInfoList[index] : nil
-    }
-
-    private func getGuideInfoList() -> [GuideInfo] {
-        let dummy = GuideInfo(imageName: "person", description: "안녕하세요. 안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.")
-        return Array(repeating: dummy, count: 4)
     }
 }

@@ -45,6 +45,8 @@ class HomeViewController: UIViewController {
         label.textColor = .dynamicBlack
         label.text = "쿠쿠쿠"
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
+        navigationController?.navigationBar.tintColor = .green
+        navigationItem.backButtonTitle = ""
     }
 
     // MARK: - Navigation
@@ -59,7 +61,9 @@ class HomeViewController: UIViewController {
 
         homeView.guideButtonPublisher()
             .sink { [weak self] _ in
-                let guideViewModel = GuideViewModel()
+                let guideRepository = DefaultGuideRepository()
+                let guideUseCase = DefaultGuideUseCase(guideRepository: guideRepository)
+                let guideViewModel = GuideViewModel(guideUseCase: guideUseCase)
                 let guideViewController = GuideViewController(viewModel: guideViewModel)
                 self?.navigationController?.pushViewController(guideViewController, animated: true)
             }

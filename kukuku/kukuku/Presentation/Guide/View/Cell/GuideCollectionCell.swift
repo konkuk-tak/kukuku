@@ -54,7 +54,7 @@ final class GuideCollectionCell: UICollectionViewCell {
     }
 
     private func configureFlexLayout() {
-        containerView.flex.direction(.column).paddingHorizontal(32).define { flex in
+        containerView.flex.direction(.column).justifyContent(.start).paddingHorizontal(32).define { flex in
             flex.addItem(imageView).aspectRatio(1)
             flex.addItem(descriptionLabel).marginTop(20)
         }
@@ -63,7 +63,9 @@ final class GuideCollectionCell: UICollectionViewCell {
 
 extension GuideCollectionCell {
     func updateCell(_ guideInfo: GuideInfo) {
-        imageView.image = UIImage(systemName: guideInfo.imageName) // TODO: UIImage(named:)로 변경
+        imageView.image = UIImage(named: guideInfo.imageName)
         descriptionLabel.text = guideInfo.description
+        descriptionLabel.flex.markDirty()
+        containerView.flex.layout()
     }
 }
