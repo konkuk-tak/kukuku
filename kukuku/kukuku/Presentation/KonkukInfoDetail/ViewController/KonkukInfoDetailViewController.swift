@@ -20,11 +20,20 @@ final class KonkukInfoDetailViewController: UIViewController {
     }
 
     private var cancellable = Set<AnyCancellable>()
+    private let konkukInfo: KonkukInfo
 
     // MARK: - Life Cycle
+    init(konkukInfo: KonkukInfo) {
+        self.konkukInfo = konkukInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
-        view = KonkukInfoDetailView()
+        view = KonkukInfoDetailView(konkukInfo: konkukInfo)
     }
 
     override func viewDidLoad() {

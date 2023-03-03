@@ -84,9 +84,10 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-        let targetViewController = SettingViewController()
-        navigationController?.pushViewController(targetViewController, animated: true)
-//        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
+//        let targetViewController = SettingViewController()
+//        navigationController?.pushViewController(targetViewController, animated: true)
+//        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
+//        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
 //        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
 //        present(konkukInfoDetailViewController, animated: true)
     }
