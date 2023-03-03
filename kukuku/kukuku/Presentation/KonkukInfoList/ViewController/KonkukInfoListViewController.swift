@@ -42,7 +42,7 @@ final class KonkukInfoListViewController: UIViewController {
 
     private func configureTableView() {
         konkukInfoListView.tableViewDelegate(self)
-        konkukInfoListView.tableViewDatasource(self)
+        konkukInfoListView.tableViewDataSource(self)
     }
 }
 

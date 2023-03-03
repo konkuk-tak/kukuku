@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class KonkukInfoListView: UIView {
-
-    private let tableView = UITableView()
+final class KonkukInfoListView: KUContainTableView {
 
     // MARK: - Life Cycle
 
@@ -49,21 +47,5 @@ final class KonkukInfoListView: UIView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
-    }
-}
-
-extension KonkukInfoListView {
-    func tableViewDatasource(_ dataSource: UITableViewDataSource) {
-        tableView.dataSource = dataSource
-    }
-
-    func tableViewDelegate(_ delegate: UITableViewDelegate) {
-        tableView.delegate = delegate
-    }
-
-    func deSelectTableViewCell() {
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedIndexPath, animated: true)
-        }
     }
 }

@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class SettingView: UIView {
+final class SettingView: KUContainTableView {
 
     // MARK: - Property
-
-    private let tableView = UITableView()
 
     private enum Constant {
         static let headerPaddingTop: CGFloat = 5
@@ -58,21 +56,5 @@ final class SettingView: UIView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
-    }
-}
-
-extension SettingView {
-    func tableViewDatasource(_ dataSource: UITableViewDataSource) {
-        tableView.dataSource = dataSource
-    }
-
-    func tableViewDelegate(_ delegate: UITableViewDelegate) {
-        tableView.delegate = delegate
-    }
-
-    func deSelectTableViewCell() {
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedIndexPath, animated: true)
-        }
     }
 }

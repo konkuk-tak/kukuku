@@ -42,7 +42,7 @@ final class SettingViewController: UIViewController {
     // MARK: - Configure
 
     private func configureTableView() {
-        settingView.tableViewDatasource(self)
+        settingView.tableViewDataSource(self)
         settingView.tableViewDelegate(self)
     }
 
