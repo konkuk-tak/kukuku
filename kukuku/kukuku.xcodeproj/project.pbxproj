@@ -61,6 +61,10 @@
 		1482F5DD29B1EE48000B5320 /* DefaultLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5DC29B1EE48000B5320 /* DefaultLocationUseCase.swift */; };
 		1482F5E029B1EF1C000B5320 /* LocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5DF29B1EF1C000B5320 /* LocationStatus.swift */; };
 		1482F5E329B1EFB6000B5320 /* GameCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5E229B1EFB6000B5320 /* GameCoordinate.swift */; };
+		1482F5E929B2098D000B5320 /* GuideRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5E829B2098D000B5320 /* GuideRepository.swift */; };
+		1482F5EB29B209B3000B5320 /* DefaultGuideRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EA29B209B3000B5320 /* DefaultGuideRepository.swift */; };
+		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
+		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
 		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
@@ -131,6 +135,10 @@
 		1482F5DC29B1EE48000B5320 /* DefaultLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationUseCase.swift; sourceTree = "<group>"; };
 		1482F5DF29B1EF1C000B5320 /* LocationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatus.swift; sourceTree = "<group>"; };
 		1482F5E229B1EFB6000B5320 /* GameCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinate.swift; sourceTree = "<group>"; };
+		1482F5E829B2098D000B5320 /* GuideRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRepository.swift; sourceTree = "<group>"; };
+		1482F5EA29B209B3000B5320 /* DefaultGuideRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideRepository.swift; sourceTree = "<group>"; };
+		1482F5ED29B20A51000B5320 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
+		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -593,6 +601,7 @@
 		14644EA429B1A8EA00176342 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				1482F5E729B20984000B5320 /* GuideRepository */,
 				1482F5CE29B1EC10000B5320 /* LocationRepository */,
 				14644EA529B1A8F300176342 /* KonkukInfoRepository */,
 				14F9D52E29B1D07D0005B74F /* UserRepository */,
@@ -645,6 +654,7 @@
 		1482F5D529B1ECCD000B5320 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1482F5E629B2097D000B5320 /* GuideRepository */,
 				1482F5D429B1ECBC000B5320 /* LocationRepository */,
 				14644E9D29B1A24500176342 /* KonkukInfoRepository */,
 				14F9D52D29B1D06B0005B74F /* UserRepository */,
@@ -659,6 +669,31 @@
 				1482F5DC29B1EE48000B5320 /* DefaultLocationUseCase.swift */,
 			);
 			path = LocationUseCase;
+			sourceTree = "<group>";
+		};
+		1482F5E629B2097D000B5320 /* GuideRepository */ = {
+			isa = PBXGroup;
+			children = (
+				1482F5EA29B209B3000B5320 /* DefaultGuideRepository.swift */,
+			);
+			path = GuideRepository;
+			sourceTree = "<group>";
+		};
+		1482F5E729B20984000B5320 /* GuideRepository */ = {
+			isa = PBXGroup;
+			children = (
+				1482F5E829B2098D000B5320 /* GuideRepository.swift */,
+			);
+			path = GuideRepository;
+			sourceTree = "<group>";
+		};
+		1482F5EC29B20A48000B5320 /* GuideUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				1482F5ED29B20A51000B5320 /* GuideUseCase.swift */,
+				1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */,
+			);
+			path = GuideUseCase;
 			sourceTree = "<group>";
 		};
 		14F9D51F29B1C6130005B74F /* User */ = {
@@ -717,6 +752,7 @@
 		14FE77D629B0362700900EEC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				1482F5EC29B20A48000B5320 /* GuideUseCase */,
 				1482F5D829B1EDE1000B5320 /* LocationUseCase */,
 				14F9D53129B1D4BA0005B74F /* UserUseCase */,
 			);
@@ -868,6 +904,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1482F5EB29B209B3000B5320 /* DefaultGuideRepository.swift in Sources */,
 				142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */,
 				145A28BB29AF60A1008CCBC7 /* HomeView.swift in Sources */,
 				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
@@ -883,6 +920,7 @@
 				1482F5E329B1EFB6000B5320 /* GameCoordinate.swift in Sources */,
 				1482F5DD29B1EE48000B5320 /* DefaultLocationUseCase.swift in Sources */,
 				1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */,
+				1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */,
 				14644E9F29B1A25E00176342 /* DefaultKonkukInfoRepository.swift in Sources */,
 				142F019E29B0A9B9001D5DCD /* KonkukInfoListView.swift in Sources */,
 				14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */,
@@ -891,6 +929,7 @@
 				14FE77EB29B03B7400900EEC /* UICollectionViewCell.swift in Sources */,
 				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				14644EAA29B1A9D000176342 /* print.swift in Sources */,
+				1482F5E929B2098D000B5320 /* GuideRepository.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */,
 				14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */,
 				14644E9C29B1A1CE00176342 /* KonkukInfo.swift in Sources */,
@@ -918,6 +957,7 @@
 				142F01A629B0B029001D5DCD /* ARGameViewModel.swift in Sources */,
 				142F018529B08588001D5DCD /* AppInfoCellKind.swift in Sources */,
 				14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */,
+				1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */,
 				1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */,
 				14F9D52129B1C6160005B74F /* User.swift in Sources */,
 				142F019229B09525001D5DCD /* SettingSectionHeader.swift in Sources */,
