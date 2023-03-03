@@ -57,6 +57,9 @@ final class SettingViewController: UIViewController {
     }
 
     private func deleteData() {
+        showConfirmAlert(title: "데이터 삭제", message: "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") {
+            print("hello")
+        }
     }
 
     private func showDeveloperCodeAlert() {
