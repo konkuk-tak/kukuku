@@ -15,6 +15,12 @@ final class GuideView: UIView {
     private let pageControl = UIPageControl()
     private let button = KUDefaultButton(title: "다음", style: .heavy)
 
+    private enum Constant {
+        static let paddingHorizontal: CGFloat = 16
+        static let imageMarginTop: CGFloat = 40
+        static let buttonMarginBottom: CGFloat = 12
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureGuideView()
@@ -69,15 +75,17 @@ final class GuideView: UIView {
 
     private func configureFlexLayout() {
         containerView.flex.direction(.column).define { flex in
-            flex.addItem(collectionView).grow(5).marginTop(40)
+            flex.addItem().grow(0.3)
+            flex.addItem(collectionView).grow(5)
 
             flex.addItem().grow(1)
 
             flex.addItem(pageControl)
 
-            flex.addItem().justifyContent(.center).paddingHorizontal(16).define { flex in
-                flex.addItem(button).paddingHorizontal(16)
+            flex.addItem().justifyContent(.center).paddingHorizontal(Constant.paddingHorizontal).define { flex in
+                flex.addItem(button)
             }
+            .marginBottom(Constant.buttonMarginBottom)
         }
     }
 }
