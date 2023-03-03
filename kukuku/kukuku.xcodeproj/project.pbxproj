@@ -45,6 +45,8 @@
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
+		14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8C29B1818D00176342 /* SettingDarkModeView.swift */; };
+		14644E9029B1839700176342 /* DarkModeKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8F29B1839700176342 /* DarkModeKind.swift */; };
 		14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D729B0364E00900EEC /* GuideInfo.swift */; };
 		14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DB29B0367C00900EEC /* GuideView.swift */; };
 		14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77DD29B0368100900EEC /* GuideViewModel.swift */; };
@@ -94,6 +96,8 @@
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
+		14644E8C29B1818D00176342 /* SettingDarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDarkModeView.swift; sourceTree = "<group>"; };
+		14644E8F29B1839700176342 /* DarkModeKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeKind.swift; sourceTree = "<group>"; };
 		14FE77D729B0364E00900EEC /* GuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInfo.swift; sourceTree = "<group>"; };
 		14FE77DB29B0367C00900EEC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		14FE77DD29B0368100900EEC /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
@@ -296,7 +300,9 @@
 		142F019429B09CED001D5DCD /* SettingDarkMode */ = {
 			isa = PBXGroup;
 			children = (
-				142F019529B09D02001D5DCD /* SettingDarkMoveViewController.swift */,
+				14644E8E29B1838300176342 /* Enum */,
+				14644E8B29B1818000176342 /* ViewController */,
+				14644E8A29B1817D00176342 /* View */,
 			);
 			path = SettingDarkMode;
 			sourceTree = "<group>";
@@ -501,6 +507,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		14644E8A29B1817D00176342 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14644E8C29B1818D00176342 /* SettingDarkModeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14644E8B29B1818000176342 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				142F019529B09D02001D5DCD /* SettingDarkMoveViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14644E8E29B1838300176342 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				14644E8F29B1839700176342 /* DarkModeKind.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		14FE77D529B0362400900EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +698,7 @@
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				142F018929B089F6001D5DCD /* UITableView+.swift in Sources */,
+				14644E9029B1839700176342 /* DarkModeKind.swift in Sources */,
 				142F017E29B08026001D5DCD /* SettingView.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
 				14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */,
@@ -679,6 +710,7 @@
 				145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* UserRepository.swift in Sources */,
 				14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */,
+				14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
 				14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,

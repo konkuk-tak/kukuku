@@ -52,7 +52,7 @@ final class SettingViewController: UIViewController {
     }
 
     private func moveToSettingDarkMode() {
-        let settingDarkModeViewController = SettingDarkMoveViewController()
+        let settingDarkModeViewController = SettingDarkModeViewController()
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
 

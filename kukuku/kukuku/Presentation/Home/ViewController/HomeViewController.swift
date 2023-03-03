@@ -13,6 +13,8 @@ import PinLayout
 
 class HomeViewController: UIViewController {
 
+    // MARK: - Property
+
     private var homeView: HomeView {
         guard let view = view as? HomeView else {
             return HomeView()
@@ -21,6 +23,8 @@ class HomeViewController: UIViewController {
     }
 
     private var cancellable = Set<AnyCancellable>()
+
+    // MARK: - Life Cycle
 
     override func loadView() {
         view = HomeView()
