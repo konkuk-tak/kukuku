@@ -20,6 +20,8 @@ final class ARGameView: UIView {
     private var targetScene: RealityComposerManager.TargetScene?
     private var targetTouchSubject = PassthroughSubject<Void, Never>()
 
+    private var hasHamburger: Bool = false
+
     private enum Constant {
         static let opacity: Float = 0.5
         static let textOpacity: Float = 0.7
@@ -78,9 +80,7 @@ final class ARGameView: UIView {
             targetScene.hamburgerTouched.onAction = { [weak self] entity in
                 guard entity != nil else { return }
                 self?.targetTouchSubject.send(Void())
-                print("터치")
             }
-            arView.scene.anchors.append(targetScene)
         }
     }
 
@@ -147,20 +147,40 @@ final class ARGameView: UIView {
             exitButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constant.paddingHorizontal)
         ])
     }
+
+    private func updateStatusBarNotDetermined(text: String) {
+        statusBarContainer.backgroundColor = .blue.withAlphaComponent(CGFloat(Constant.opacity))
+        statusBar.text = text
+    }
+
+    private func updateStatusBarSuccess(text: String) {
+        statusBarContainer.backgroundColor = .green.withAlphaComponent(CGFloat(Constant.opacity))
+        statusBar.text = text
+        if !hasHamburger, let targetScene = targetScene {
+            arView.scene.anchors.append(targetScene)
+            hasHamburger = true
+        }
+    }
+
+    private func updateStatusBarFail(text: String) {
+        statusBarContainer.backgroundColor = .red.withAlphaComponent(CGFloat(Constant.opacity))
+        statusBar.text = text
+        if hasHamburger {
+            arView.scene.anchors.removeAll()
+            hasHamburger = false
+        }
+    }
 }
 
 extension ARGameView {
     func updateStatusBar(locationStatus: LocationStatus) {
         switch locationStatus {
         case .notDetermined:
-            statusBarContainer.backgroundColor = .blue.withAlphaComponent(CGFloat(Constant.opacity))
-            statusBar.text = locationStatus.message
+            updateStatusBarNotDetermined(text: locationStatus.message)
         case .success:
-            statusBarContainer.backgroundColor = .green.withAlphaComponent(CGFloat(Constant.opacity))
-            statusBar.text = locationStatus.message
+            updateStatusBarSuccess(text: locationStatus.message)
         case .fail:
-            statusBarContainer.backgroundColor = .red.withAlphaComponent(CGFloat(Constant.opacity))
-            statusBar.text = locationStatus.message
+            updateStatusBarFail(text: locationStatus.message)
         }
     }
 }
