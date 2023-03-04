@@ -125,6 +125,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func moveToTargetView() {
         let targetViewController = ARGameViewController()
+        targetViewController.modalPresentationStyle = .fullScreen
         present(targetViewController, animated: true)
 //        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
 //        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
