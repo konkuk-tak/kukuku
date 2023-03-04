@@ -31,7 +31,6 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-        print("설정")
         configureTableView()
     }
 

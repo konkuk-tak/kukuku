@@ -46,6 +46,9 @@
 		145C67A729B2E4960044544C /* KonkukInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67A629B2E4960044544C /* KonkukInfoUseCase.swift */; };
 		145C67A929B2E49F0044544C /* DefaultKonkukInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67A829B2E49F0044544C /* DefaultKonkukInfoUseCase.swift */; };
 		145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67AE29B2E70F0044544C /* UserKonkukInfoList.swift */; };
+		145C67B529B2F54E0044544C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67B429B2F54E0044544C /* SettingViewModel.swift */; };
+		145C67B829B2F5D30044544C /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67B729B2F5D30044544C /* UserDefaultManager.swift */; };
+		145C67BE29B2F85C0044544C /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67BD29B2F85C0044544C /* DarkModeManager.swift */; };
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
@@ -125,6 +128,9 @@
 		145C67A629B2E4960044544C /* KonkukInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUseCase.swift; sourceTree = "<group>"; };
 		145C67A829B2E49F0044544C /* DefaultKonkukInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKonkukInfoUseCase.swift; sourceTree = "<group>"; };
 		145C67AE29B2E70F0044544C /* UserKonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKonkukInfoList.swift; sourceTree = "<group>"; };
+		145C67B429B2F54E0044544C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		145C67B729B2F5D30044544C /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		145C67BD29B2F85C0044544C /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				142F017F29B084DE001D5DCD /* Enum */,
+				145C67B429B2F54E0044544C /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -731,6 +738,8 @@
 			children = (
 				14F9D52729B1C7030005B74F /* KeyChainManager.swift */,
 				14F9D53429B1DA450005B74F /* LocationManager.swift */,
+				145C67B729B2F5D30044544C /* UserDefaultManager.swift */,
+				145C67BD29B2F85C0044544C /* DarkModeManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -941,6 +950,7 @@
 				142F017E29B08026001D5DCD /* SettingView.swift in Sources */,
 				142A2F3E29AF34C900ACFFDD /* AppDelegate.swift in Sources */,
 				14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */,
+				145C67BE29B2F85C0044544C /* DarkModeManager.swift in Sources */,
 				1482F5E329B1EFB6000B5320 /* GameCoordinate.swift in Sources */,
 				1482F5DD29B1EE48000B5320 /* DefaultLocationUseCase.swift in Sources */,
 				1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */,
@@ -962,6 +972,7 @@
 				14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
 				14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */,
+				145C67B829B2F5D30044544C /* UserDefaultManager.swift in Sources */,
 				14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */,
 				14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,
@@ -989,6 +1000,7 @@
 				14F9D52129B1C6160005B74F /* User.swift in Sources */,
 				142F019229B09525001D5DCD /* SettingSectionHeader.swift in Sources */,
 				1482F5D329B1EC48000B5320 /* AuthorizationStatus.swift in Sources */,
+				145C67B529B2F54E0044544C /* SettingViewModel.swift in Sources */,
 				145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
 				14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */,
