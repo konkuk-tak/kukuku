@@ -19,7 +19,9 @@ final class ARGameView: UIView {
     private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
 
     private enum Constant {
-        static let opacity: Float = 0.7
+        static let opacity: Float = 0.5
+        static let textOpacity: Float = 0.7
+        static let paddingHorizontal: CGFloat = 16
         static let statusContainerHeight = 32 + UIApplication.shared.keyWindow.safeAreaInsets.top
         static let statusBarHeight: CGFloat = 32
         static let bottomMargin: CGFloat = 24
@@ -65,8 +67,7 @@ final class ARGameView: UIView {
     // MARK: - Configure
 
     private func configureStatusBarContainer() {
-        statusBarContainer.backgroundColor = .blue
-        statusBarContainer.layer.opacity = Constant.opacity
+        statusBarContainer.backgroundColor = .blue?.withAlphaComponent(CGFloat(Constant.opacity))
     }
 
     private func configureStatusBar() {
@@ -75,7 +76,7 @@ final class ARGameView: UIView {
         statusBar.textAlignment = .center
         statusBar.textColor = .white
         statusBar.text = "위치 검색 중"
-        statusBar.layer.opacity = Constant.opacity
+        statusBar.layer.opacity = Constant.textOpacity
     }
 
     private func configureExitButton() {
@@ -124,8 +125,8 @@ final class ARGameView: UIView {
 
         NSLayoutConstraint.activate([
             exitButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Constant.bottomMargin),
-            exitButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            exitButton.trailingAnchor.constraint(equalTo: trailingAnchor)
+            exitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constant.paddingHorizontal),
+            exitButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constant.paddingHorizontal)
         ])
     }
 }
