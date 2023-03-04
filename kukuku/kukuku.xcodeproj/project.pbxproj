@@ -51,6 +51,8 @@
 		145C67BE29B2F85C0044544C /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67BD29B2F85C0044544C /* DarkModeManager.swift */; };
 		145C67C129B301470044544C /* DefaultDarkModeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C029B301470044544C /* DefaultDarkModeRepository.swift */; };
 		145C67C429B302E60044544C /* DarkModeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C329B302E60044544C /* DarkModeRepository.swift */; };
+		145C67C729B303140044544C /* DarkModeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C629B303140044544C /* DarkModeUseCase.swift */; };
+		145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */; };
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
@@ -135,6 +137,8 @@
 		145C67BD29B2F85C0044544C /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
 		145C67C029B301470044544C /* DefaultDarkModeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDarkModeRepository.swift; sourceTree = "<group>"; };
 		145C67C329B302E60044544C /* DarkModeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeRepository.swift; sourceTree = "<group>"; };
+		145C67C629B303140044544C /* DarkModeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeUseCase.swift; sourceTree = "<group>"; };
+		145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDarkModeUseCase.swift; sourceTree = "<group>"; };
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
@@ -573,6 +577,15 @@
 			path = DarkModeRepository;
 			sourceTree = "<group>";
 		};
+		145C67C529B3030C0044544C /* DarkModeUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				145C67C629B303140044544C /* DarkModeUseCase.swift */,
+				145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */,
+			);
+			path = DarkModeUseCase;
+			sourceTree = "<group>";
+		};
 		14644E8029B176A500176342 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +818,7 @@
 		14FE77D629B0362700900EEC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				145C67C529B3030C0044544C /* DarkModeUseCase */,
 				1482F5EC29B20A48000B5320 /* GuideUseCase */,
 				1482F5D829B1EDE1000B5320 /* LocationUseCase */,
 				145C67A529B2E4840044544C /* KonkukInfoUseCase */,
@@ -967,6 +981,7 @@
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
+				145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */,
 				142F018929B089F6001D5DCD /* UITableView+.swift in Sources */,
 				14644E9029B1839700176342 /* DarkModeKind.swift in Sources */,
 				142F017E29B08026001D5DCD /* SettingView.swift in Sources */,
@@ -1013,6 +1028,7 @@
 				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
 				142F018329B084FF001D5DCD /* SettingCellKind.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
+				145C67C729B303140044544C /* DarkModeUseCase.swift in Sources */,
 				145C67A929B2E49F0044544C /* DefaultKonkukInfoUseCase.swift in Sources */,
 				14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */,
 				142F01A629B0B029001D5DCD /* ARGameViewModel.swift in Sources */,
