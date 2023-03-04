@@ -113,6 +113,12 @@ class HomeViewController: UIViewController {
             .sink { [weak self] _ in
                 let arGameViewController = ARGameViewController()
                 arGameViewController.modalPresentationStyle = .fullScreen
+                arGameViewController.didDismiss = { [weak self] in
+                    let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+                    let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+                    konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+                    self?.present(konkukInfoDetailViewController, animated: true)
+                }
                 self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
@@ -124,9 +130,9 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-        let targetViewController = ARGameViewController()
-        targetViewController.modalPresentationStyle = .fullScreen
-        present(targetViewController, animated: true)
+//        let targetViewController = ARGameViewController()
+//        targetViewController.modalPresentationStyle = .fullScreen
+//        present(targetViewController, animated: true)
 //        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
 //        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
 //        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen

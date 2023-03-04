@@ -21,6 +21,8 @@ final class ARGameViewController: UIViewController {
 
     private var cancellable = Set<AnyCancellable>()
 
+    var didDismiss: (() -> Void)?
+
     // MARK: - Life Cycle
 
     override func loadView() {
@@ -51,9 +53,8 @@ final class ARGameViewController: UIViewController {
     }
 
     private func moveToKonkukInfoDetailView() {
-        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
-        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
-        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-        present(konkukInfoDetailViewController, animated: true)
+        dismiss(animated: false) {
+            self.didDismiss?()
+        }
     }
 }
