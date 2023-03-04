@@ -14,6 +14,8 @@ final class KonkukInfoListViewModel {
     private (set)var maxCount: Int = 0
     private var konkukInfoUseCase: KonkukInfoUseCase
 
+    var currentCount: Int { return konkukInfoList.count }
+
     init(konkukInfoUseCase: KonkukInfoUseCase) {
         self.konkukInfoUseCase = konkukInfoUseCase
     }

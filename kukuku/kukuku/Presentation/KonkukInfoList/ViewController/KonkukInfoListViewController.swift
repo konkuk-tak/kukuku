@@ -76,6 +76,15 @@ final class KonkukInfoListViewController: UIViewController {
             }
             .store(in: &cancellable)
     }
+
+    // MARK: - Touch List
+
+    private func moveToDetail(index: Int) {
+        let konkukInfo = konkukInfoListViewModel.konkukInfo(index: index)
+        let detailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+        detailViewController.modalPresentationStyle = .fullScreen
+        present(detailViewController, animated: true)
+    }
 }
 
 extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -106,10 +115,10 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-//        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
-//        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-//        present(konkukInfoDetailViewController, animated: true)
+        let index = indexPath.row
+        if index < konkukInfoListViewModel.currentCount {
+            moveToDetail(index: index)
+        }
 
         konkukInfoListView.deSelectTableViewCell()
     }
