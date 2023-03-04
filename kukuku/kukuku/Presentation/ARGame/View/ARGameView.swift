@@ -17,6 +17,7 @@ final class ARGameView: UIView {
     private let statusBarContainer = UIView()
     private let statusBar = UILabel()
     private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
+    private var hamburgerAnchor: AnchorEntity?
 
     private enum Constant {
         static let opacity: Float = 0.5
@@ -46,6 +47,7 @@ final class ARGameView: UIView {
 
     private func configureSubView() {
         addSubview(arView)
+        configureARView()
 
         addSubview(statusBarContainer)
         configureStatusBarContainer()
@@ -65,6 +67,16 @@ final class ARGameView: UIView {
     }
 
     // MARK: - Configure
+
+    private func configureARView() {
+        guard let realitySceneURL = RealityComposerManager.hamburgerSceneURL() else {
+            return
+        }
+        hamburgerAnchor = try? Entity.loadAnchor(contentsOf: realitySceneURL)
+        if let hamburgerAnchor = hamburgerAnchor {
+            arView.scene.anchors.append(hamburgerAnchor)
+        }
+    }
 
     private func configureStatusBarContainer() {
         statusBarContainer.backgroundColor = .blue?.withAlphaComponent(CGFloat(Constant.opacity))

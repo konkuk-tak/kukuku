@@ -56,6 +56,8 @@
 		145C67CC29B307410044544C /* SettingDarkModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67CB29B307410044544C /* SettingDarkModeViewModel.swift */; };
 		145C67CF29B3140B0044544C /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67CE29B3140B0044544C /* DependencyFactory.swift */; };
 		145C67D129B32B340044544C /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67D029B32B340044544C /* UIApplication.swift */; };
+		145C67D429B331B80044544C /* HamburgerScene.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 145C67D329B331B80044544C /* HamburgerScene.rcproject */; };
+		145C67D629B333EB0044544C /* RealityComposerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67D529B333EB0044544C /* RealityComposerManager.swift */; };
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
@@ -145,6 +147,8 @@
 		145C67CB29B307410044544C /* SettingDarkModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDarkModeViewModel.swift; sourceTree = "<group>"; };
 		145C67CE29B3140B0044544C /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
 		145C67D029B32B340044544C /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		145C67D329B331B80044544C /* HamburgerScene.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = HamburgerScene.rcproject; sourceTree = "<group>"; };
+		145C67D529B333EB0044544C /* RealityComposerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityComposerManager.swift; sourceTree = "<group>"; };
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		1429327729AF8974009B9B7F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
 				14644E8729B17DC800176342 /* View */,
 				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 			);
@@ -610,6 +615,14 @@
 			path = DependencyFactory;
 			sourceTree = "<group>";
 		};
+		145C67D229B331A30044544C /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				145C67D329B331B80044544C /* HamburgerScene.rcproject */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		14644E8029B176A500176342 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,6 +844,7 @@
 		14FE77D529B0362400900EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				145C67D229B331A30044544C /* AR */,
 				1482F5D129B1EC3E000B5320 /* Location */,
 				14F9D51F29B1C6130005B74F /* User */,
 				14644EA129B1A47C00176342 /* KonkukInfoList */,
@@ -1001,6 +1015,8 @@
 				145C67D129B32B340044544C /* UIApplication.swift in Sources */,
 				1482F5EB29B209B3000B5320 /* DefaultGuideRepository.swift in Sources */,
 				142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */,
+				145C67D429B331B80044544C /* HamburgerScene.rcproject in Sources */,
+				145C67D629B333EB0044544C /* RealityComposerManager.swift in Sources */,
 				145A28BB29AF60A1008CCBC7 /* HomeView.swift in Sources */,
 				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
 				142F018129B084EB001D5DCD /* SettingSection.swift in Sources */,
