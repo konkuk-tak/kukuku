@@ -51,7 +51,11 @@ final class SettingViewController: UIViewController {
     }
 
     private func moveToSettingDarkMode() {
-        let settingDarkModeViewController = SettingDarkModeViewController()
+        let userDefaultManager = UserDefaultManager()
+        let darkModeRepository = DefaultDarkModeRepository(userDefaultManger: userDefaultManager)
+        let darkModeUseCase = DefaultDarkModeUseCase(darkModeRepository: darkModeRepository)
+        let settingDarkModeViewModel = SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
+        let settingDarkModeViewController = SettingDarkModeViewController(settingDarkModeViewModel: settingDarkModeViewModel)
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
 

@@ -53,6 +53,7 @@
 		145C67C429B302E60044544C /* DarkModeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C329B302E60044544C /* DarkModeRepository.swift */; };
 		145C67C729B303140044544C /* DarkModeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C629B303140044544C /* DarkModeUseCase.swift */; };
 		145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */; };
+		145C67CC29B307410044544C /* SettingDarkModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67CB29B307410044544C /* SettingDarkModeViewModel.swift */; };
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
@@ -139,6 +140,7 @@
 		145C67C329B302E60044544C /* DarkModeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeRepository.swift; sourceTree = "<group>"; };
 		145C67C629B303140044544C /* DarkModeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeUseCase.swift; sourceTree = "<group>"; };
 		145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDarkModeUseCase.swift; sourceTree = "<group>"; };
+		145C67CB29B307410044544C /* SettingDarkModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDarkModeViewModel.swift; sourceTree = "<group>"; };
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				14644E8E29B1838300176342 /* Enum */,
+				145C67CA29B3072F0044544C /* ViewModel */,
 				14644E8B29B1818000176342 /* ViewController */,
 				14644E8A29B1817D00176342 /* View */,
 			);
@@ -584,6 +587,14 @@
 				145C67C829B303200044544C /* DefaultDarkModeUseCase.swift */,
 			);
 			path = DarkModeUseCase;
+			sourceTree = "<group>";
+		};
+		145C67CA29B3072F0044544C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				145C67CB29B307410044544C /* SettingDarkModeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		14644E8029B176A500176342 /* View */ = {
@@ -1015,6 +1026,7 @@
 				14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,
 				1482F5DA29B1EDEC000B5320 /* LocationUseCase.swift in Sources */,
+				145C67CC29B307410044544C /* SettingDarkModeViewModel.swift in Sources */,
 				14644E9229B1860A00176342 /* UIViewController+Alert.swift in Sources */,
 				1482F5D729B1ECDE000B5320 /* DefaultLocationRepository.swift in Sources */,
 				142F01A129B0AB25001D5DCD /* KonkukInfoListCell.swift in Sources */,

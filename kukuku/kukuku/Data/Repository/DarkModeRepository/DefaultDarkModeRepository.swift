@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefaultDarkModeRepository {
+struct DefaultDarkModeRepository: DarkModeRepository {
 
     private var userDefaultManger: UserDefaultManagerProtocol
     private let darkModeKey = "DarkModeKey"

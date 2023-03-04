@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import UIKit
 
 final class SettingDarkModeViewController: UIViewController {
@@ -21,7 +22,21 @@ final class SettingDarkModeViewController: UIViewController {
         static let cellHeight: CGFloat = 44
     }
 
+    private var settingDarkModeViewModel: SettingDarkModeViewModel
+
+    private var darkModeSubject = PassthroughSubject<DarkModeKind, Never>()
+    private var cancellable = Set<AnyCancellable>()
+
     // MARK: - Life Cycle
+
+    init(settingDarkModeViewModel: SettingDarkModeViewModel) {
+        self.settingDarkModeViewModel = settingDarkModeViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = SettingDarkModeView()
@@ -30,6 +45,7 @@ final class SettingDarkModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        bind()
     }
 
     // MARK: - Configure
@@ -37,6 +53,33 @@ final class SettingDarkModeViewController: UIViewController {
     private func configureTableView() {
         settingDarkModeView.tableViewDelegate(self)
         settingDarkModeView.tableViewDataSource(self)
+    }
+
+    // MARK: - Bind
+
+    private func bind() {
+        let input = SettingDarkModeViewModel.Input(darkMode: darkModeSubject.eraseToAnyPublisher())
+        let output = settingDarkModeViewModel.transform(input: input)
+        output.updateDarkMode
+            .sink { [weak self] darkModeKind in
+                self?.handleDarkMode(darkModeKind: darkModeKind)
+            }
+            .store(in: &cancellable)
+    }
+
+    // MARK: - Method
+
+    private func handleDarkMode(darkModeKind: DarkModeKind?) {
+        guard let darkModeKind = darkModeKind else {
+            showOkayAlert(title: "다크코드 설정 에러", message: "다크모드 설정 중 에러가 발생했어요. 에러 코드 [nil]")
+            return
+        }
+
+        DarkModeManager.mode(darkModeKind: darkModeKind)
+
+        DispatchQueue.main.async {
+            self.settingDarkModeView.tableView.reloadData()
+        }
     }
 }
 
@@ -57,7 +100,11 @@ extension SettingDarkModeViewController: UITableViewDelegate, UITableViewDataSou
             return UITableViewCell()
         }
 
-        cell.update(title: darkModeKind.title, isChecked: true)
+        if darkModeKind == settingDarkModeViewModel.currentMode {
+            cell.update(title: darkModeKind.title, isChecked: true)
+        } else {
+            cell.update(title: darkModeKind.title)
+        }
         return cell
     }
 
@@ -66,6 +113,13 @@ extension SettingDarkModeViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let darkModeKind = DarkModeKind(index: indexPath.row) else {
+            return
+        }
+        if darkModeKind != settingDarkModeViewModel.currentMode {
+            darkModeSubject.send(darkModeKind)
+        }
+
         settingDarkModeView.deSelectTableViewCell()
     }
 }

@@ -8,4 +8,6 @@
 import Foundation
 
 protocol DarkModeUseCase {
+    func save(_ darkModeKind: DarkModeKind)
+    func read() -> DarkModeKind
 }
