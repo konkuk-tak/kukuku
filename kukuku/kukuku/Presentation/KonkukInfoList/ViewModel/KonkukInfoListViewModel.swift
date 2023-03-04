@@ -10,6 +10,8 @@ import Foundation
 
 final class KonkukInfoListViewModel {
 
+    private (set)var konkukInfoList: [KonkukInfo] = []
+    private (set)var maxCount: Int = 0
     private var konkukInfoUseCase: KonkukInfoUseCase
 
     init(konkukInfoUseCase: KonkukInfoUseCase) {
@@ -21,17 +23,27 @@ final class KonkukInfoListViewModel {
     }
 
     struct Output {
-        let infoList: AnyPublisher<UserKonkukInfoList?, Never>
+        let infoList: AnyPublisher<Void?, Never>
     }
 
     func transform(input: Input) -> Output {
 
         let konkukInfoList = input.viewDidLoad
             .map { [weak self] count in
-                self?.konkukInfoUseCase.infoList(count: count)
+                self?.fetchKonkukInfoList(count: count)
             }
             .eraseToAnyPublisher()
 
         return Output(infoList: konkukInfoList)
+    }
+
+    func konkukInfo(index: Int) -> KonkukInfo {
+        return konkukInfoList[index]
+    }
+
+    private func fetchKonkukInfoList(count: Int) {
+        let userKonkukInfoList = konkukInfoUseCase.infoList(count: count)
+        konkukInfoList = userKonkukInfoList.list
+        maxCount = userKonkukInfoList.maxCount
     }
 }

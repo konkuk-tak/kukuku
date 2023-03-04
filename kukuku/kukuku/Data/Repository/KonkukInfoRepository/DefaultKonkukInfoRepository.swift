@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefaultKonkukInfoRepository {
+struct DefaultKonkukInfoRepository: KonkukInfoRepository {
 
     func konkukInfoList() -> [KonkukInfo]? {
 

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol KonkukInfoRepository {
-    func konkukInfoList() -> [KonkukInfo]
+    func konkukInfoList() -> [KonkukInfo]?
 }
