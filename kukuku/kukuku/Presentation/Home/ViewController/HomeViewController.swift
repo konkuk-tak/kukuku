@@ -23,10 +23,20 @@ class HomeViewController: UIViewController {
         return view
     }
 
-//    private var locationManager = LocationManger()
+    private var homeViewModel: HomeViewModel
+
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
+
+    init(homeViewModel: HomeViewModel) {
+        self.homeViewModel = homeViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = HomeView()
@@ -36,6 +46,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         subscribeButtonPublisher()
+        bind()
         moveToTargetView()
         testLocation()
     }
@@ -47,6 +58,28 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
         navigationController?.navigationBar.tintColor = .green
         navigationItem.backButtonTitle = ""
+    }
+
+    // MARK: - Input & Output Bind
+
+    private func bind() {
+        let input = HomeViewModel.Input(viewDidLoad: Just(Void()).eraseToAnyPublisher())
+        let output = homeViewModel.transform(input: input)
+
+        output.darkMode
+            .sink { [weak self] darkModeKind in
+                self?.handleDarkMode(darkModeKind: darkModeKind)
+            }
+            .store(in: &cancellable)
+    }
+
+    // MARK: - Method
+    private func handleDarkMode(darkModeKind: DarkModeKind?) {
+        guard let darkModeKind = darkModeKind else {
+            return
+        }
+
+        DarkModeManager.mode(darkModeKind: darkModeKind)
     }
 
     // MARK: - Navigation
@@ -94,7 +127,7 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-//        let targetViewController = ARGameViewController()
+//        let targetViewController = SettingViewController()
 //        navigationController?.pushViewController(targetViewController, animated: true)
 //        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
 //        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)

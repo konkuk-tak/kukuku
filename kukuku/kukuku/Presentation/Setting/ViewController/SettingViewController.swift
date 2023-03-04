@@ -31,7 +31,6 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-        print("설정")
         configureTableView()
     }
 
@@ -52,7 +51,11 @@ final class SettingViewController: UIViewController {
     }
 
     private func moveToSettingDarkMode() {
-        let settingDarkModeViewController = SettingDarkModeViewController()
+        let userDefaultManager = UserDefaultManager()
+        let darkModeRepository = DefaultDarkModeRepository(userDefaultManger: userDefaultManager)
+        let darkModeUseCase = DefaultDarkModeUseCase(darkModeRepository: darkModeRepository)
+        let settingDarkModeViewModel = SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
+        let settingDarkModeViewController = SettingDarkModeViewController(settingDarkModeViewModel: settingDarkModeViewModel)
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
 
@@ -66,6 +69,10 @@ final class SettingViewController: UIViewController {
         showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { text in
             print(text)
         }
+    }
+
+    private func appVersion() -> String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
 }
 
@@ -112,7 +119,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             if cellKind == .appVersion {
-                cell.update(title: cellKind.title, value: "1.0.0")
+                cell.update(title: cellKind.title, value: appVersion())
             } else {
                 cell.update(title: cellKind.title)
             }
