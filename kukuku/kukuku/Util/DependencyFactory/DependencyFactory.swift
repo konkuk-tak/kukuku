@@ -32,4 +32,31 @@ struct DependencyFactory {
     static func userRepository() -> UserRepository {
         return DefaultUserRepository()
     }
+
+    // MARK: - UseCase
+
+    static func darkModeUseCase() -> DarkModeUseCase {
+        let darkModeRepository = darkModeRepository()
+        return DefaultDarkModeUseCase(darkModeRepository: darkModeRepository)
+    }
+
+    static func guideUseCase() -> GuideUseCase {
+        let guideRepository = guideRepository()
+        return DefaultGuideUseCase(guideRepository: guideRepository)
+    }
+
+    static func locationUseCase() -> LocationUseCase {
+        let locationRepository = locationRepository()
+        return DefaultLocationUseCase(locationRepository: locationRepository)
+    }
+
+    static func konkukInfoUseCase() -> KonkukInfoUseCase {
+        let konkukInfoRepository = konkukInfoRepository()
+        return DefaultKonkukInfoUseCase(konkukInfoRepository: konkukInfoRepository)
+    }
+
+    static func userUseCase() -> UserUseCase {
+        let userRepository = userRepository()
+        return DefaultUserUseCase(userRepository: userRepository)
+    }
 }
