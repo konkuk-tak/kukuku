@@ -11,9 +11,9 @@ struct DefaultKonkukInfoUseCase: KonkukInfoUseCase {
 
     private var konkukInfoRepository: KonkukInfoRepository
 
-    func infoList(count: Int) -> [KonkukInfo] {
+    func infoList(count: Int) -> UserKonkukInfoList {
         let infoList = konkukInfoRepository.konkukInfoList()
-        let index = count - 1
-        return Array(infoList[0...index])
+        let userKonkukInfoList = UserKonkukInfoList(list: Array(infoList[0..<count]), maxCount: infoList.count)
+        return userKonkukInfoList
     }
 }

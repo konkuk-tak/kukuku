@@ -21,7 +21,7 @@ final class KonkukInfoListViewModel {
     }
 
     struct Output {
-        let infoList: AnyPublisher<[KonkukInfo]?, Never>
+        let infoList: AnyPublisher<UserKonkukInfoList?, Never>
     }
 
     func transform(input: Input) -> Output {

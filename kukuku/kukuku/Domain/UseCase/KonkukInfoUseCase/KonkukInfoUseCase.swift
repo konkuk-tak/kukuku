@@ -8,5 +8,5 @@
 import Foundation
 
 protocol KonkukInfoUseCase {
-    func infoList(count: Int) -> [KonkukInfo]
+    func infoList(count: Int) -> UserKonkukInfoList
 }
