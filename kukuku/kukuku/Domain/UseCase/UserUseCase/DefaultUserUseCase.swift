@@ -11,6 +11,10 @@ struct DefaultUserUseCase: UserUseCase {
 
     private var userRepository: UserRepository
 
+    init(userRepository: UserRepository) {
+        self.userRepository = userRepository
+    }
+
     func readUser() throws -> User {
         do {
             let user = try userRepository.readUser()

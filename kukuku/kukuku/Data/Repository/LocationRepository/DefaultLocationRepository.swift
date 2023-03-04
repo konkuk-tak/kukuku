@@ -13,6 +13,10 @@ struct DefaultLocationRepository: LocationRepository {
 
     private let locationManager: LocationManger
 
+    init(locationManager: LocationManger) {
+        self.locationManager = locationManager
+    }
+
     func requestAuthorization() -> AnyPublisher<AuthorizationStatus, Never> {
         locationManager.authorizationPublisher()
             .map { status in

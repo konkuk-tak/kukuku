@@ -13,7 +13,7 @@ final class DefaultLocationUseCase: LocationUseCase {
 
     private var locationRepository: LocationRepository
     private let gameCoordinates: [GameCoordinate] = []
-    private var authorizationStatus: AuthorizationStatus
+    private var authorizationStatus: AuthorizationStatus = .notDetermined
     private var cancellable = Set<AnyCancellable>()
 
     private enum Constant {
@@ -23,7 +23,7 @@ final class DefaultLocationUseCase: LocationUseCase {
     init(
         locationRepository: LocationRepository,
         cancellable: Set<AnyCancellable> = Set<AnyCancellable>(),
-        authorizationStatus: AuthorizationStatus
+        authorizationStatus: AuthorizationStatus = .notDetermined
     ) {
         self.locationRepository = locationRepository
         self.cancellable = cancellable
