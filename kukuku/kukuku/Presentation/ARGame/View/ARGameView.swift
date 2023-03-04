@@ -14,11 +14,13 @@ final class ARGameView: UIView {
     // MARK: - Property
 
     private var arView: ARView! = ARView()
+    private let statusBarContainer = UIView()
     private let statusBar = UILabel()
     private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
 
     private enum Constant {
         static let opacity: Float = 0.7
+        static let statusContainerHeight = 32 + UIApplication.shared.keyWindow.safeAreaInsets.top
         static let statusBarHeight: CGFloat = 32
         static let bottomMargin: CGFloat = 24
     }
@@ -43,7 +45,10 @@ final class ARGameView: UIView {
     private func configureSubView() {
         addSubview(arView)
 
-        addSubview(statusBar)
+        addSubview(statusBarContainer)
+        configureStatusBarContainer()
+
+        statusBarContainer.addSubview(statusBar)
         configureStatusBar()
 
         addSubview(exitButton)
@@ -52,14 +57,20 @@ final class ARGameView: UIView {
 
     private func configureConstraints() {
         arViewConstraints()
+        statusBarContainerConstraints()
         statusBarConstraints()
         exitButtonConstraints()
     }
 
     // MARK: - Configure
 
+    private func configureStatusBarContainer() {
+        statusBarContainer.backgroundColor = .blue
+        statusBarContainer.layer.opacity = Constant.opacity
+    }
+
     private func configureStatusBar() {
-        statusBar.backgroundColor = .blue
+        statusBar.backgroundColor = .clear
         statusBar.font = .body
         statusBar.textAlignment = .center
         statusBar.textColor = .white
@@ -86,13 +97,24 @@ final class ARGameView: UIView {
         ])
     }
 
+    private func statusBarContainerConstraints() {
+        statusBarContainer.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            statusBarContainer.topAnchor.constraint(equalTo: topAnchor),
+            statusBarContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            statusBarContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            statusBarContainer.heightAnchor.constraint(equalToConstant: Constant.statusContainerHeight)
+        ])
+    }
+
     private func statusBarConstraints() {
         statusBar.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            statusBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            statusBar.leadingAnchor.constraint(equalTo: leadingAnchor),
-            statusBar.trailingAnchor.constraint(equalTo: trailingAnchor),
+            statusBar.bottomAnchor.constraint(equalTo: statusBarContainer.bottomAnchor),
+            statusBar.leadingAnchor.constraint(equalTo: statusBarContainer.leadingAnchor),
+            statusBar.trailingAnchor.constraint(equalTo: statusBarContainer.trailingAnchor),
             statusBar.heightAnchor.constraint(equalToConstant: Constant.statusBarHeight)
         ])
     }

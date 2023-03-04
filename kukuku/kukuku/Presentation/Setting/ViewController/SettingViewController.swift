@@ -126,7 +126,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    // MARK: -Header
+    // MARK: - Header
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let title = SettingSection(index: section)?.title else {
