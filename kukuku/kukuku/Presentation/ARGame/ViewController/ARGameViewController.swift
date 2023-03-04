@@ -33,6 +33,12 @@ final class ARGameViewController: UIViewController {
     }
 
     private func subscribePublisher() {
+        arGameView.touchTargetPublisher()
+            .sink { [weak self] _ in
+                self?.moveToKonkukInfoDetailView()
+            }
+            .store(in: &cancellable)
+
         arGameView.exitButtonPublisher()
             .sink { [weak self] _ in
                 self?.moveToHomeView()
@@ -42,5 +48,12 @@ final class ARGameViewController: UIViewController {
 
     private func moveToHomeView() {
         dismiss(animated: true)
+    }
+
+    private func moveToKonkukInfoDetailView() {
+        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+        present(konkukInfoDetailViewController, animated: true)
     }
 }

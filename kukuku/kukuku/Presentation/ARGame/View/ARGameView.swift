@@ -18,6 +18,7 @@ final class ARGameView: UIView {
     private let statusBar = UILabel()
     private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
     private var targetScene: RealityComposerManager.TargetScene?
+    private var targetTouchSubject = PassthroughSubject<Void, Never>()
 
     private enum Constant {
         static let opacity: Float = 0.5
@@ -39,10 +40,6 @@ final class ARGameView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    deinit {
-        targetScene?.hamburgerTouched.onAction = nil
     }
 
     // MARK: - Configure
@@ -78,8 +75,9 @@ final class ARGameView: UIView {
         targetScene = try? RealityComposerManager.loadTargetScene()
 
         if let targetScene = targetScene {
-            targetScene.hamburgerTouched.onAction = { entity in
+            targetScene.hamburgerTouched.onAction = { [weak self] entity in
                 guard entity != nil else { return }
+                self?.targetTouchSubject.send(Void())
                 print("터치")
             }
             arView.scene.anchors.append(targetScene)
@@ -152,6 +150,10 @@ final class ARGameView: UIView {
 }
 
 extension ARGameView {
+    func touchTargetPublisher() -> AnyPublisher<Void, Never> {
+        return targetTouchSubject.eraseToAnyPublisher()
+    }
+
     func exitButtonPublisher() -> AnyPublisher<Void, Never> {
         return exitButton.tapPublisher
             .eraseToAnyPublisher()
