@@ -87,9 +87,7 @@ class HomeViewController: UIViewController {
     private func subscribeButtonPublisher() {
         homeView.konkukInfoListButtonPublisher()
             .sink { [weak self] _ in
-                let konkukInfoRepository = DefaultKonkukInfoRepository()
-                let konkukInfoUseCase = DefaultKonkukInfoUseCase(konkukInfoRepository: konkukInfoRepository)
-                let konkukInfoListViewModel = KonkukInfoListViewModel(konkukInfoUseCase: konkukInfoUseCase)
+                let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel()
                 let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
                 self?.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
             }
@@ -97,9 +95,7 @@ class HomeViewController: UIViewController {
 
         homeView.guideButtonPublisher()
             .sink { [weak self] _ in
-                let guideRepository = DefaultGuideRepository()
-                let guideUseCase = DefaultGuideUseCase(guideRepository: guideRepository)
-                let guideViewModel = GuideViewModel(guideUseCase: guideUseCase)
+                let guideViewModel = DependencyFactory.guideViewModel()
                 let guideViewController = GuideViewController(viewModel: guideViewModel)
                 self?.navigationController?.pushViewController(guideViewController, animated: true)
             }
@@ -107,6 +103,7 @@ class HomeViewController: UIViewController {
 
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
+                let settingViewModel = DependencyFactory.settingViewModel()
                 let settingViewController = SettingViewController()
                 self?.navigationController?.pushViewController(settingViewController, animated: true)
             }

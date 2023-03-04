@@ -51,10 +51,7 @@ final class SettingViewController: UIViewController {
     }
 
     private func moveToSettingDarkMode() {
-        let userDefaultManager = UserDefaultManager()
-        let darkModeRepository = DefaultDarkModeRepository(userDefaultManger: userDefaultManager)
-        let darkModeUseCase = DefaultDarkModeUseCase(darkModeRepository: darkModeRepository)
-        let settingDarkModeViewModel = SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
+        let settingDarkModeViewModel = DependencyFactory.settingDarkModeViewModel()
         let settingDarkModeViewController = SettingDarkModeViewController(settingDarkModeViewModel: settingDarkModeViewModel)
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
@@ -129,7 +126,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    // Header
+    // MARK: -Header
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let title = SettingSection(index: section)?.title else {
@@ -144,7 +141,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         return Constant.cellHeight
     }
 
-    // Cell
+    // MARK: - Cell
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight

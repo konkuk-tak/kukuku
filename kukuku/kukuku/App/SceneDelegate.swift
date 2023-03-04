@@ -19,10 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func configureNavigationController() -> UINavigationController {
-        let userDefaultManager = UserDefaultManager()
-        let darkModeRepository = DefaultDarkModeRepository(userDefaultManger: userDefaultManager)
-        let darkModeUseCase = DefaultDarkModeUseCase(darkModeRepository: darkModeRepository)
-        let homeViewModel = HomeViewModel(darkModeUse: darkModeUseCase)
+        let homeViewModel = DependencyFactory.homeViewModel()
         let homeViewController = HomeViewController(homeViewModel: homeViewModel)
         return UINavigationController(rootViewController: homeViewController)
     }
