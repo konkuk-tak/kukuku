@@ -59,4 +59,30 @@ struct DependencyFactory {
         let userRepository = userRepository()
         return DefaultUserUseCase(userRepository: userRepository)
     }
+
+    // MARK: - ViewModel
+
+    static func homeViewModel() -> HomeViewModel {
+        let darkModeUseCase = darkModeUseCase()
+        return HomeViewModel(darkModeUse: darkModeUseCase)
+    }
+
+    static func konkukInfoListViewModel() -> KonkukInfoListViewModel {
+        let konkukInfoUseCase = konkukInfoUseCase()
+        return KonkukInfoListViewModel(konkukInfoUseCase: konkukInfoUseCase)
+    }
+
+    static func guideViewModel() -> GuideViewModel {
+        let guideUseCase = guideUseCase()
+        return GuideViewModel(guideUseCase: guideUseCase)
+    }
+
+    static func settingViewModel() -> SettingViewModel {
+        return SettingViewModel()
+    }
+
+    static func settingDarkModeViewModel() -> SettingDarkModeViewModel {
+        let darkModeUseCase = darkModeUseCase()
+        return SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
+    }
 }
