@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/01.
 //
 
+import Combine
 import UIKit
 
 final class KonkukInfoListViewController: UIViewController {
@@ -22,7 +23,19 @@ final class KonkukInfoListViewController: UIViewController {
         static let cellHeight: CGFloat = 44
     }
 
+    private let konkukInfoListViewModel: KonkukInfoListViewModel
+    private var cancellable = Set<AnyCancellable>()
+
     // MARK: - Life Cycle
+
+    init(konkukInfoListViewModel: KonkukInfoListViewModel) {
+        self.konkukInfoListViewModel = konkukInfoListViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = KonkukInfoListView()
@@ -32,6 +45,7 @@ final class KonkukInfoListViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         configureTableView()
+        bind()
     }
 
     // MARK: - Configure
@@ -44,11 +58,38 @@ final class KonkukInfoListViewController: UIViewController {
         konkukInfoListView.tableViewDelegate(self)
         konkukInfoListView.tableViewDataSource(self)
     }
+
+    // MARK: - bind
+
+    private func bind() {
+        let viewDidLoad = Just(Void())
+            .map { _ in
+                return 10
+            }
+            .eraseToAnyPublisher()
+
+        let input = KonkukInfoListViewModel.Input(viewDidLoad: viewDidLoad)
+        let output = konkukInfoListViewModel.transform(input: input)
+
+        output.infoList
+            .sink {  _ in
+            }
+            .store(in: &cancellable)
+    }
+
+    // MARK: - Touch List
+
+    private func moveToDetail(index: Int) {
+        let konkukInfo = konkukInfoListViewModel.konkukInfo(index: index)
+        let detailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+        detailViewController.modalPresentationStyle = .fullScreen
+        present(detailViewController, animated: true)
+    }
 }
 
 extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return konkukInfoListViewModel.maxCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,6 +97,16 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
             withIdentifier: KonkukInfoListCell.identifier,
             for: indexPath
         ) as? KonkukInfoListCell else { return UITableViewCell() }
+
+        let index = indexPath.row
+        if index < konkukInfoListViewModel.konkukInfoList.count {
+            let infoTitle = konkukInfoListViewModel.konkukInfo(index: index).title
+            let title = "\(index + 1). \(infoTitle)"
+            cell.updateCheck(title: title)
+        } else {
+            cell.updateLock()
+        }
+
         return cell
     }
 
@@ -64,10 +115,10 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-//        let konkukInfoDetailViewController = KonkukInfoDetailViewController()
-//        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-//        present(konkukInfoDetailViewController, animated: true)
+        let index = indexPath.row
+        if index < konkukInfoListViewModel.currentCount {
+            moveToDetail(index: index)
+        }
 
         konkukInfoListView.deSelectTableViewCell()
     }

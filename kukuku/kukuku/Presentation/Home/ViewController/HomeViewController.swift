@@ -54,7 +54,10 @@ class HomeViewController: UIViewController {
     private func subscribeButtonPublisher() {
         homeView.konkukInfoListButtonPublisher()
             .sink { [weak self] _ in
-                let konkukInfoListViewController = KonkukInfoListViewController()
+                let konkukInfoRepository = DefaultKonkukInfoRepository()
+                let konkukInfoUseCase = DefaultKonkukInfoUseCase(konkukInfoRepository: konkukInfoRepository)
+                let konkukInfoListViewModel = KonkukInfoListViewModel(konkukInfoUseCase: konkukInfoUseCase)
+                let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
                 self?.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
             }
             .store(in: &cancellable)

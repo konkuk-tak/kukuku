@@ -42,6 +42,10 @@
 		145A28B329AF5CA4008CCBC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B229AF5CA4008CCBC7 /* UIFont+.swift */; };
 		145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */; };
 		145A28BB29AF60A1008CCBC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28BA29AF60A1008CCBC7 /* HomeView.swift */; };
+		145C67A429B2E44A0044544C /* KonkukInfoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67A329B2E44A0044544C /* KonkukInfoListViewModel.swift */; };
+		145C67A729B2E4960044544C /* KonkukInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67A629B2E4960044544C /* KonkukInfoUseCase.swift */; };
+		145C67A929B2E49F0044544C /* DefaultKonkukInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67A829B2E49F0044544C /* DefaultKonkukInfoUseCase.swift */; };
+		145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C67AE29B2E70F0044544C /* UserKonkukInfoList.swift */; };
 		14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8229B176B200176342 /* SettingLanguageView.swift */; };
 		14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8529B178BA00176342 /* SettingCheckCell.swift */; };
 		14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E8829B17DFC00176342 /* KUContainTableView.swift */; };
@@ -51,7 +55,7 @@
 		14644E9C29B1A1CE00176342 /* KonkukInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E9B29B1A1CE00176342 /* KonkukInfo.swift */; };
 		14644E9F29B1A25E00176342 /* DefaultKonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E9E29B1A25E00176342 /* DefaultKonkukInfoRepository.swift */; };
 		14644EA029B1A44300176342 /* KonkukInfoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 14644E9729B1A11F00176342 /* KonkukInfoList.json */; };
-		14644EA329B1A48500176342 /* KonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA229B1A48500176342 /* KonkukInfoList.swift */; };
+		14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */; };
 		14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA629B1A91A00176342 /* KonkukInfoRepository.swift */; };
 		14644EAA29B1A9D000176342 /* print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA929B1A9D000176342 /* print.swift */; };
 		1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5CF29B1EC1C000B5320 /* LocationRepository.swift */; };
@@ -117,6 +121,10 @@
 		145A28B229AF5CA4008CCBC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		145A28B429AF5DDF008CCBC7 /* UIImage+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icon.swift"; sourceTree = "<group>"; };
 		145A28BA29AF60A1008CCBC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		145C67A329B2E44A0044544C /* KonkukInfoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoListViewModel.swift; sourceTree = "<group>"; };
+		145C67A629B2E4960044544C /* KonkukInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUseCase.swift; sourceTree = "<group>"; };
+		145C67A829B2E49F0044544C /* DefaultKonkukInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKonkukInfoUseCase.swift; sourceTree = "<group>"; };
+		145C67AE29B2E70F0044544C /* UserKonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKonkukInfoList.swift; sourceTree = "<group>"; };
 		14644E8229B176B200176342 /* SettingLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageView.swift; sourceTree = "<group>"; };
 		14644E8529B178BA00176342 /* SettingCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckCell.swift; sourceTree = "<group>"; };
 		14644E8829B17DFC00176342 /* KUContainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUContainTableView.swift; sourceTree = "<group>"; };
@@ -126,7 +134,7 @@
 		14644E9729B1A11F00176342 /* KonkukInfoList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList.json; sourceTree = "<group>"; };
 		14644E9B29B1A1CE00176342 /* KonkukInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfo.swift; sourceTree = "<group>"; };
 		14644E9E29B1A25E00176342 /* DefaultKonkukInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKonkukInfoRepository.swift; sourceTree = "<group>"; };
-		14644EA229B1A48500176342 /* KonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoList.swift; sourceTree = "<group>"; };
+		14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONKonkukInfoList.swift; sourceTree = "<group>"; };
 		14644EA629B1A91A00176342 /* KonkukInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoRepository.swift; sourceTree = "<group>"; };
 		14644EA929B1A9D000176342 /* print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = print.swift; sourceTree = "<group>"; };
 		1482F5CF29B1EC1C000B5320 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
@@ -367,6 +375,7 @@
 		142F019C29B0A978001D5DCD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				145C67A329B2E44A0044544C /* KonkukInfoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -528,6 +537,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		145C67A529B2E4840044544C /* KonkukInfoUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				145C67A629B2E4960044544C /* KonkukInfoUseCase.swift */,
+				145C67A829B2E49F0044544C /* DefaultKonkukInfoUseCase.swift */,
+			);
+			path = KonkukInfoUseCase;
+			sourceTree = "<group>";
+		};
 		14644E8029B176A500176342 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,7 +613,8 @@
 		14644EA129B1A47C00176342 /* KonkukInfoList */ = {
 			isa = PBXGroup;
 			children = (
-				14644EA229B1A48500176342 /* KonkukInfoList.swift */,
+				14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */,
+				145C67AE29B2E70F0044544C /* UserKonkukInfoList.swift */,
 				14644E9B29B1A1CE00176342 /* KonkukInfo.swift */,
 			);
 			path = KonkukInfoList;
@@ -757,6 +776,7 @@
 			children = (
 				1482F5EC29B20A48000B5320 /* GuideUseCase */,
 				1482F5D829B1EDE1000B5320 /* LocationUseCase */,
+				145C67A529B2E4840044544C /* KonkukInfoUseCase */,
 				14F9D53129B1D4BA0005B74F /* UserUseCase */,
 			);
 			path = UseCase;
@@ -941,7 +961,7 @@
 				1482F5E029B1EF1C000B5320 /* LocationStatus.swift in Sources */,
 				14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
-				14644EA329B1A48500176342 /* KonkukInfoList.swift in Sources */,
+				14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */,
 				14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */,
 				14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,
@@ -951,21 +971,25 @@
 				142F01A129B0AB25001D5DCD /* KonkukInfoListCell.swift in Sources */,
 				14F9D53329B1D4C40005B74F /* DefaultUserUseCase.swift in Sources */,
 				142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */,
+				145C67A429B2E44A0044544C /* KonkukInfoListViewModel.swift in Sources */,
 				14F9D53529B1DA450005B74F /* LocationManager.swift in Sources */,
 				14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */,
 				1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */,
 				145A28B529AF5DDF008CCBC7 /* UIImage+Icon.swift in Sources */,
 				142F018329B084FF001D5DCD /* SettingCellKind.swift in Sources */,
 				142A2F4029AF34C900ACFFDD /* SceneDelegate.swift in Sources */,
+				145C67A929B2E49F0044544C /* DefaultKonkukInfoUseCase.swift in Sources */,
 				14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */,
 				142F01A629B0B029001D5DCD /* ARGameViewModel.swift in Sources */,
 				142F018529B08588001D5DCD /* AppInfoCellKind.swift in Sources */,
 				14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */,
 				1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */,
 				1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */,
+				145C67A729B2E4960044544C /* KonkukInfoUseCase.swift in Sources */,
 				14F9D52129B1C6160005B74F /* User.swift in Sources */,
 				142F019229B09525001D5DCD /* SettingSectionHeader.swift in Sources */,
 				1482F5D329B1EC48000B5320 /* AuthorizationStatus.swift in Sources */,
+				145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
 				14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */,
 				1429328B29AF8C41009B9B7F /* ARGameViewController.swift in Sources */,

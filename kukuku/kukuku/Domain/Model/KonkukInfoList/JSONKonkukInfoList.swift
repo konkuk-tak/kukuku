@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct KonkukInfoList: Decodable {
+struct JSONKonkukInfoList: Decodable {
     let name: String
     let version: String
     let list: [KonkukInfo]

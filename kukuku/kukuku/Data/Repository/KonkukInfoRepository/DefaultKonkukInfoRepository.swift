@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefaultKonkukInfoRepository {
+struct DefaultKonkukInfoRepository: KonkukInfoRepository {
 
     func konkukInfoList() -> [KonkukInfo]? {
 
@@ -26,7 +26,7 @@ struct DefaultKonkukInfoRepository {
             return nil
         }
 
-        guard let decodeKonkukInfoList = try? JSONDecoder().decode(KonkukInfoList.self, from: data) else {
+        guard let decodeKonkukInfoList = try? JSONDecoder().decode(JSONKonkukInfoList.self, from: data) else {
             print("디코딩 실패")
             return nil
         }
