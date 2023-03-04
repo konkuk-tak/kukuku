@@ -81,6 +81,9 @@ class HomeViewController: UIViewController {
 
         DarkModeManager.mode(darkModeKind: darkModeKind)
     }
+}
+
+extension HomeViewController {
 
     // MARK: - Navigation
 
@@ -117,6 +120,9 @@ class HomeViewController: UIViewController {
                     let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
                     let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
                     konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+                    konkukInfoDetailViewController.willDismiss = { [weak self] in
+                        self?.homeView.update(score: 12)
+                    }
                     self?.present(konkukInfoDetailViewController, animated: true)
                 }
                 self?.present(arGameViewController, animated: true)
