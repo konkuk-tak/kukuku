@@ -114,20 +114,25 @@ extension HomeViewController {
 
         homeView.arButtonPublisher()
             .sink { [weak self] _ in
-                let arGameViewController = ARGameViewController()
+                let arGameViewModel = DependencyFactory.arGameViewModel()
+                let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
                 arGameViewController.modalPresentationStyle = .fullScreen
                 arGameViewController.didDismiss = { [weak self] in
-                    let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
-                    let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
-                    konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-                    konkukInfoDetailViewController.willDismiss = { [weak self] in
-                        self?.homeView.update(score: 12)
-                    }
-                    self?.present(konkukInfoDetailViewController, animated: true)
+                    self?.moveToKonkukInfoDetail()
                 }
                 self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+
+    private func moveToKonkukInfoDetail() {
+        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+        konkukInfoDetailViewController.willDismiss = { [weak self] in
+            self?.homeView.update(score: 12)
+        }
+        present(konkukInfoDetailViewController, animated: true)
     }
 }
 

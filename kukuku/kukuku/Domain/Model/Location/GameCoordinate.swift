@@ -20,3 +20,13 @@ extension GameCoordinate {
         ]
     }
 }
+
+#if DEBUG
+extension GameCoordinate {
+    static func createHome() -> [GameCoordinate] {
+        return [
+            GameCoordinate(latitude: 37.55705, longitude: 127.14283)
+        ]
+    }
+}
+#endif

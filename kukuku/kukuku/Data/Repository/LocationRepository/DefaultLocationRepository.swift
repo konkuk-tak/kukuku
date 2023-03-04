@@ -38,4 +38,8 @@ struct DefaultLocationRepository: LocationRepository {
     func requestLocation() -> AnyPublisher<CLLocation, Never> {
         return locationManager.locationPublisher()
     }
+
+    func gameLocation() -> [GameCoordinate] {
+        return GameCoordinate.createHome()
+    }
 }

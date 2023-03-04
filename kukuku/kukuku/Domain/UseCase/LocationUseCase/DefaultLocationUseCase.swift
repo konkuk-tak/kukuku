@@ -12,7 +12,7 @@ import Foundation
 final class DefaultLocationUseCase: LocationUseCase {
 
     private var locationRepository: LocationRepository
-    private let gameCoordinates: [GameCoordinate] = []
+    private var gameCoordinates: [GameCoordinate] = []
     private var authorizationStatus: AuthorizationStatus = .notDetermined
     private var cancellable = Set<AnyCancellable>()
 
@@ -28,6 +28,7 @@ final class DefaultLocationUseCase: LocationUseCase {
         self.locationRepository = locationRepository
         self.cancellable = cancellable
         self.authorizationStatus = authorizationStatus
+        self.gameCoordinates = locationRepository.gameLocation()
     }
 
     func isInRange() -> AnyPublisher<LocationStatus, Never> {
@@ -47,7 +48,6 @@ final class DefaultLocationUseCase: LocationUseCase {
             let gameLocation = CLLocation(latitude: gameCoordinate.latitude, longitude: gameCoordinate.longitude)
 
             let distance = gameLocation.distance(from: location)
-
             if distance <= Constant.targetDistance {
                 return .success
             }

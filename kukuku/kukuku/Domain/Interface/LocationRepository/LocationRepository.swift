@@ -12,4 +12,5 @@ import Foundation
 protocol LocationRepository {
     func requestAuthorization() -> AnyPublisher<AuthorizationStatus, Never>
     func requestLocation() -> AnyPublisher<CLLocation, Never>
+    func gameLocation() -> [GameCoordinate]
 }

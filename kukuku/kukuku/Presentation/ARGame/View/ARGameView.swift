@@ -85,7 +85,7 @@ final class ARGameView: UIView {
     }
 
     private func configureStatusBarContainer() {
-        statusBarContainer.backgroundColor = .blue?.withAlphaComponent(CGFloat(Constant.opacity))
+        statusBarContainer.backgroundColor = .blue.withAlphaComponent(CGFloat(Constant.opacity))
     }
 
     private func configureStatusBar() {
@@ -146,6 +146,22 @@ final class ARGameView: UIView {
             exitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constant.paddingHorizontal),
             exitButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constant.paddingHorizontal)
         ])
+    }
+}
+
+extension ARGameView {
+    func updateStatusBar(locationStatus: LocationStatus) {
+        switch locationStatus {
+        case .notDetermined:
+            statusBarContainer.backgroundColor = .blue.withAlphaComponent(CGFloat(Constant.opacity))
+            statusBar.text = locationStatus.message
+        case .success:
+            statusBarContainer.backgroundColor = .green.withAlphaComponent(CGFloat(Constant.opacity))
+            statusBar.text = locationStatus.message
+        case .fail:
+            statusBarContainer.backgroundColor = .red.withAlphaComponent(CGFloat(Constant.opacity))
+            statusBar.text = locationStatus.message
+        }
     }
 }
 
