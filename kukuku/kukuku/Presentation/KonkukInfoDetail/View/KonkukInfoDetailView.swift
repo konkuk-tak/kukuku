@@ -22,19 +22,21 @@ final class KonkukInfoDetailView: UIView {
     private let descriptionLabel = UILabel()
     private let completeButton = KUDefaultButton(title: "완료", style: .heavy)
 
+    var hasImage: Bool { return infoImageView.image != nil }
+
     // MARK: - Life Cycle
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
-        configureSubView()
+//        configureSubView(konkukInfo: )
         configureFlexLayout()
     }
 
     init(konkukInfo: KonkukInfo) {
         super.init(frame: .zero)
         configureView()
-        configureSubView()
+        configureSubView(konkukInfo: konkukInfo)
         configureFlexLayout()
         titleLabel.text = konkukInfo.title
         descriptionLabel.text = konkukInfo.description
@@ -62,34 +64,36 @@ final class KonkukInfoDetailView: UIView {
         backgroundColor = .background
     }
 
-    private func configureSubView() {
+    private func configureSubView(konkukInfo: KonkukInfo) {
         addSubview(containerView)
         scrollView.addSubview(contentView)
 
-        configureInfoImageView()
-        configureTitleLabel()
-        configureDescriptionLabel()
+        configureInfoImageView(imageName: konkukInfo.imageURL)
+        configureTitleLabel(title: konkukInfo.title)
+        configureDescriptionLabel(description: konkukInfo.description)
         configureCompleteButton()
     }
 
-    private func configureInfoImageView() {
+    private func configureInfoImageView(imageName: String?) {
         infoImageView.clipsToBounds = true
-        infoImageView.image = .lockIcon
-        infoImageView.backgroundColor = .systemPink
+        if let imageName = imageName, let image = UIImage(named: imageName) {
+            infoImageView.image = image
+        }
     }
 
-    private func configureTitleLabel() {
+    private func configureTitleLabel(title: String) {
         titleLabel.font = .title1
         titleLabel.textColor = .dynamicBlack
-        titleLabel.text = String(repeating: "제목", count: 5)
+        titleLabel.text = title
         titleLabel.numberOfLines = 2
     }
 
-    private func configureDescriptionLabel() {
+    private func configureDescriptionLabel(description: String) {
         descriptionLabel.font = .body
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = String(repeating: "ㅋ", count: 400)
+        descriptionLabel.lineBreakMode = .byCharWrapping
+        descriptionLabel.text = description
     }
 
     private func configureCompleteButton() {
@@ -98,8 +102,11 @@ final class KonkukInfoDetailView: UIView {
 
     private func configureFlexLayout() {
         contentView.flex.paddingHorizontal(16).define { flex in
-            flex.addItem().justifyContent(.center).paddingHorizontal(30).define { flex in
-                flex.addItem(infoImageView).aspectRatio(1).marginTop(12)
+
+            if hasImage {
+                flex.addItem().justifyContent(.center).paddingHorizontal(30).define { flex in
+                    flex.addItem(infoImageView).aspectRatio(1).marginTop(12)
+                }
             }
 
             flex.addItem(titleLabel).marginTop(24)
