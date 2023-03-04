@@ -67,6 +67,10 @@ final class SettingViewController: UIViewController {
             print(text)
         }
     }
+
+    private func appVersion() -> String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+    }
 }
 
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
@@ -112,7 +116,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             if cellKind == .appVersion {
-                cell.update(title: cellKind.title, value: "1.0.0")
+                cell.update(title: cellKind.title, value: appVersion())
             } else {
                 cell.update(title: cellKind.title)
             }
