@@ -22,6 +22,8 @@ final class KonkukInfoDetailViewController: UIViewController {
     private var cancellable = Set<AnyCancellable>()
     private let konkukInfo: KonkukInfo
 
+    var willDismiss: (() -> Void)?
+
     // MARK: - Life Cycle
     init(konkukInfo: KonkukInfo) {
         self.konkukInfo = konkukInfo
@@ -50,6 +52,7 @@ final class KonkukInfoDetailViewController: UIViewController {
     }
 
     private func moveToBackScreen() {
+        willDismiss?()
         dismiss(animated: true)
     }
 }

@@ -81,6 +81,9 @@ class HomeViewController: UIViewController {
 
         DarkModeManager.mode(darkModeKind: darkModeKind)
     }
+}
+
+extension HomeViewController {
 
     // MARK: - Navigation
 
@@ -111,11 +114,25 @@ class HomeViewController: UIViewController {
 
         homeView.arButtonPublisher()
             .sink { [weak self] _ in
-                let arGameViewController = ARGameViewController()
+                let arGameViewModel = DependencyFactory.arGameViewModel()
+                let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
                 arGameViewController.modalPresentationStyle = .fullScreen
+                arGameViewController.didDismiss = { [weak self] in
+                    self?.moveToKonkukInfoDetail()
+                }
                 self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+
+    private func moveToKonkukInfoDetail() {
+        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
+        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
+        konkukInfoDetailViewController.willDismiss = { [weak self] in
+            self?.homeView.update(score: 12)
+        }
+        present(konkukInfoDetailViewController, animated: true)
     }
 }
 
@@ -124,8 +141,9 @@ class HomeViewController: UIViewController {
 #if DEBUG
 extension HomeViewController {
     private func moveToTargetView() {
-//        let targetViewController = SettingViewController()
-//        navigationController?.pushViewController(targetViewController, animated: true)
+//        let targetViewController = ARGameViewController()
+//        targetViewController.modalPresentationStyle = .fullScreen
+//        present(targetViewController, animated: true)
 //        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
 //        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
 //        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen

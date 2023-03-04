@@ -85,4 +85,9 @@ struct DependencyFactory {
         let darkModeUseCase = darkModeUseCase()
         return SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
     }
+
+    static func arGameViewModel() -> ARGameViewModel {
+        let locationUseCase = locationUseCase()
+        return ARGameViewModel(locationUseCase: locationUseCase)
+    }
 }

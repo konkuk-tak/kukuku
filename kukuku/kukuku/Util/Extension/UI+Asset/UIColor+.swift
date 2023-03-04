@@ -13,5 +13,5 @@ public extension UIColor {
     static let dynamicBlack = UIColor(named: "dynamicBlack")!
     static let red = UIColor(named: "red")!
     static let green = UIColor(named: "green")!
-    static let blue = UIColor(named: "blue")
+    static let blue = UIColor(named: "blue")!
 }

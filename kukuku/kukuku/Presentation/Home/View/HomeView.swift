@@ -119,3 +119,11 @@ extension HomeView {
         return arButton.tapPublisher
     }
 }
+
+extension HomeView {
+    func update(score: Int) {
+        scoreLabel.text = String(score)
+        scoreLabel.flex.markDirty()
+        containerView.flex.layout()
+    }
+}
