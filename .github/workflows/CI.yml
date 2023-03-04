@@ -13,9 +13,9 @@ jobs:
     strategy:
         matrix:
           include:
-            - xcode: "14.0"
-              ios: "16.0"
-              simulator: "iPhone 13 Pro"
+            - xcode: "14.2"
+              ios: "16.2"
+              simulator: "iPhone 14 Pro"
 
     steps:
     - name: Checkout
@@ -24,9 +24,6 @@ jobs:
     - name: Select Xcode ${{ matrix.xcode }}
       run: sudo xcode-select -switch /Applications/Xcode_${{ matrix.xcode}}.app && /usr/bin/xcodebuild -version
 
-    - name: Build RealityKit code
-      run: xcodebuild -scheme kukuku -configuration Release -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
-
     - name: Cache SwiftPM
       uses: actions/cache@v3
       with:
@@ -34,6 +31,7 @@ jobs:
           key: ${{ runner.os }}-spm-${{ hashFiles('${{ env.PROJECT }}.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-spm-
+
     - name: Cache DerivedData
       uses: actions/cache@v3
       with:
