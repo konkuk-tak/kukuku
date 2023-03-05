@@ -63,9 +63,6 @@ final class KonkukInfoListViewController: UIViewController {
 
     private func bind() {
         let viewDidLoad = Just(Void())
-            .map { _ in
-                return 10
-            }
             .eraseToAnyPublisher()
 
         let input = KonkukInfoListViewModel.Input(viewDidLoad: viewDidLoad)
