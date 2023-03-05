@@ -32,19 +32,26 @@ final class DefaultLocationUseCase: LocationUseCase {
     }
 
     func isInRange(isDeveloperMode: Bool) -> AnyPublisher<LocationStatus, Never> {
-        locationRepository.requestLocation()
-            .map { location in
-                self.isInRange(location: location, isDeveloperMode: isDeveloperMode)
-            }
-            .eraseToAnyPublisher()
+        if isDeveloperMode {
+            return unLimitedRange()
+        } else {
+            return locationRepository.requestLocation()
+                .map { location in
+                    self.isInRange(location: location)
+                }
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func unLimitedRange() -> AnyPublisher<LocationStatus, Never> {
+        return Just(LocationStatus.success).eraseToAnyPublisher()
     }
 
     func requestAuthorization() -> AuthorizationStatus {
         return authorizationStatus
     }
 
-    private func isInRange(location: CLLocation, isDeveloperMode: Bool) -> LocationStatus {
-        if isDeveloperMode { return .success }
+    private func isInRange(location: CLLocation) -> LocationStatus {
         for gameCoordinate in gameCoordinates {
             let gameLocation = CLLocation(latitude: gameCoordinate.latitude, longitude: gameCoordinate.longitude)
 
