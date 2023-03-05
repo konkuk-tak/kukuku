@@ -16,7 +16,6 @@ final class ARGameViewModel {
     init(isDeveloperMode: Bool, locationUseCase: LocationUseCase) {
         self.isDeveloperMode = isDeveloperMode
         self.locationUseCase = locationUseCase
-        print(isDeveloperMode)
     }
 
     struct Input {

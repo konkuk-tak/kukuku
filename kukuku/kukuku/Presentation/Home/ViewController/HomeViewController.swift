@@ -49,8 +49,6 @@ class HomeViewController: UIViewController {
         configureNavigationBar()
         subscribeButtonPublisher()
         bind()
-        moveToTargetView()
-        testLocation()
     }
 
     private func configureNavigationBar() {
@@ -179,7 +177,7 @@ extension HomeViewController {
 
     // MARK: - Navigation
     private func moveToKonukInfoList() {
-        let userListCount = homeViewModel.user.score
+        let userListCount = homeViewModel.user.listCount
         let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(userListCount: userListCount)
         let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
         self.navigationController?.pushViewController(konkukInfoListViewController, animated: true)

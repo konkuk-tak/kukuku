@@ -81,12 +81,14 @@ final class HomeViewModel {
     private func userCountScore() throws -> Int {
         let user = try userUseCase.readUser()
         self.user = user
+        print(user)
         return user.score
     }
 
     private func updateUserScore() throws -> Int {
         let updatedUser = try userUseCase.finishDailyGame(user: user)
         self.user = updatedUser
+        print(user)
         return updatedUser.score
     }
 
@@ -101,7 +103,7 @@ extension HomeViewModel {
     }
 
     func nextKonkukInfo() -> KonkukInfo? {
-        let index = user.log.count - 1
+        let index = user.listCount  
         let konkukInfo = konkukInfoUseCase.info(index: index)
         return konkukInfo
     }
