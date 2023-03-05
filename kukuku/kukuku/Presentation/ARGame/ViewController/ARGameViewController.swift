@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/01.
 //
 
+import AVFoundation
 import Combine
 import UIKit
 
@@ -40,6 +41,7 @@ final class ARGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraPermission()
         subscribePublisher()
         bind()
     }
@@ -65,6 +67,12 @@ final class ARGameViewController: UIViewController {
         let input = ARGameViewModel.Input(viewDidLoad: viewDidLoad)
         let output = arGameViewModel.transform(input: input)
 
+        output.locationAuthorizationStatus
+            .sink { [weak self] authorizationStatus in
+                self?.handleAuthorizationStatus(authorizationStatus)
+            }
+            .store(in: &cancellable)
+
         output.rangeStatus
             .sink { [weak self] locationStatus in
                 self?.handleLocation(locationStatus: locationStatus)
@@ -74,6 +82,40 @@ final class ARGameViewController: UIViewController {
 
     private func handleLocation(locationStatus: LocationStatus) {
         arGameView.updateStatusBar(locationStatus: locationStatus)
+    }
+
+    // MARK: - Permission
+
+    private func cameraPermission() {
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
+            if !isAllowed {
+                self?.showPermissionSettingAlert(title: "카메라 권한이 없어요", message: "콘텐츠 이용을 위해 카메라 권한이 필요합니다.")
+            }
+        }
+    }
+
+    private func handleAuthorizationStatus(_ authorizationStatus: AuthorizationStatus) {
+        print(authorizationStatus)
+        switch authorizationStatus {
+        case .notDetermined, .denied:
+            showPermissionSettingAlert(title: "위치 권한이 없습니다.", message: "콘텐츠 이용을 위해 위치 권한이 필요합니다.")
+        case .allow:
+            return
+        }
+    }
+
+    private func showPermissionSettingAlert(title: String, message: String) {
+        showConfirmAlert(
+            title: title,
+            message: message,
+            confirmTitle: "설정하기",
+            handler: {
+                PermissionManager.moveToiPhoneSetting()
+            },
+            cancelHandeler: {
+                self.dismiss(animated: true)
+            }
+        )
     }
 
     // MARK: - Navigation

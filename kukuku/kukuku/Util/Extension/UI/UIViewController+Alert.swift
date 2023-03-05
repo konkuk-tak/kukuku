@@ -24,10 +24,18 @@ extension UIViewController {
         return sheet
     }
 
-    fileprivate func createConfirmAlert(title: String, message: String, handler: @escaping () -> Void) -> UIAlertController {
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-        let alertAction = UIAlertAction(title: "확인", style: .default) { _ in
-            handler()
+    fileprivate func createConfirmAlert(
+        title: String,
+        message: String,
+        confirmTitle: String,
+        handler: (() -> Void)?,
+        cancelHandler: (() -> Void)?
+    ) -> UIAlertController {
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
+            cancelHandler?()
+        }
+        let alertAction = UIAlertAction(title: confirmTitle, style: .default) { _ in
+            handler?()
         }
 
         return createAlert(title: title, message: message, alertActions: [cancelAction, alertAction])
@@ -42,6 +50,7 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField()
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+
         let alertAction = UIAlertAction(title: "확인", style: .default) { _ in
             handler(alert.textFields?[0].text)
         }
@@ -62,8 +71,20 @@ extension UIViewController {
         showAlert(alertController)
     }
 
-    func showConfirmAlert(title: String, message: String, handler: @escaping () -> Void) {
-        let alertController = createConfirmAlert(title: title, message: message, handler: handler)
+    func showConfirmAlert(
+        title: String,
+        message: String,
+        confirmTitle: String = "확인",
+        handler: (() -> Void)? = nil,
+        cancelHandeler: (() -> Void)? = nil
+    ) {
+        let alertController = createConfirmAlert(
+            title: title,
+            message: message,
+            confirmTitle: confirmTitle,
+            handler: handler,
+            cancelHandler: cancelHandeler
+        )
         showAlert(alertController)
     }
 
