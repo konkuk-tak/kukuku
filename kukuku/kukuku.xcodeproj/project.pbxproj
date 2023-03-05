@@ -82,6 +82,7 @@
 		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
 		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
 		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
+		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
 		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
@@ -173,6 +174,7 @@
 		1482F5ED29B20A51000B5320 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 		145A28AA29AF5B9B008CCBC7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				1499FB9329B43C470072D355 /* Error */,
 				145C67CD29B313F90044544C /* DependencyFactory */,
 				14FE77E629B03B4300900EEC /* Protocol */,
 				145A28AB29AF5BA8008CCBC7 /* Extension */,
@@ -797,6 +800,14 @@
 			path = GuideUseCase;
 			sourceTree = "<group>";
 		};
+		1499FB9329B43C470072D355 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1499FB9429B43C4E0072D355 /* KUError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		14F9D51F29B1C6130005B74F /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1056,7 @@
 				1482F5E929B2098D000B5320 /* GuideRepository.swift in Sources */,
 				145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */,
 				14FE77DE29B0368100900EEC /* GuideViewModel.swift in Sources */,
+				1499FB9529B43C4E0072D355 /* KUError.swift in Sources */,
 				14644E9C29B1A1CE00176342 /* KonkukInfo.swift in Sources */,
 				14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */,
 				145C67C429B302E60044544C /* DarkModeRepository.swift in Sources */,

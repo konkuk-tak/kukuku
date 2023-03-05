@@ -55,7 +55,8 @@ final class ARGameViewController: UIViewController {
 
         arGameView.exitButtonPublisher()
             .sink { [weak self] _ in
-                self?.moveToHomeView()
+//                self?.moveToHomeView()
+                self?.moveToKonkukInfoDetailView()
             }
             .store(in: &cancellable)
     }

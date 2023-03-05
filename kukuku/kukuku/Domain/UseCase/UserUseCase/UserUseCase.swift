@@ -9,6 +9,7 @@ import Foundation
 
 protocol UserUseCase {
     func readUser() throws -> User
-    func updateUser(user: User) throws
+    func canPlay(_ user: User) -> Bool
+    func finishDailyGame(user: User) throws -> User
     func deleteUser() throws
 }

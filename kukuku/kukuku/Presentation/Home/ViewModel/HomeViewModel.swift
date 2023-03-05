@@ -10,21 +10,31 @@ import Foundation
 
 final class HomeViewModel {
 
-    private var darkModeUse: DarkModeUseCase
+    // MARK: - Property
 
-    init(darkModeUse: DarkModeUseCase) {
+    private var user: User!
+
+    private var darkModeUse: DarkModeUseCase
+    private var userUseCase: UserUseCase
+
+    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase) {
         self.darkModeUse = darkModeUse
+        self.userUseCase = userUseCase
     }
 
     // MARK: - Input & Output
 
     struct Input {
         let viewDidLoad: AnyPublisher<Void, Never>
+        let checkCanPlay: AnyPublisher<Void, Never>
+        let userScoreUpdate: AnyPublisher<Void, Never>
     }
 
     struct Output {
         let darkMode: AnyPublisher<DarkModeKind?, Never>
-//        let userInfo: AnyPublisher<User, Never>
+        let userScoreInfo: AnyPublisher<Int?, Error>
+        let userUpdateScoreInfo: AnyPublisher<Int?, Error>
+        let canPlay: AnyPublisher<Bool?, Never>
     }
 
     func transform(input: Input) -> Output {
@@ -34,6 +44,47 @@ final class HomeViewModel {
             }
             .eraseToAnyPublisher()
 
-        return Output(darkMode: darkMode)
+        let userScoreInfo = input.viewDidLoad
+            .tryMap { [weak self] _ in
+                return try self?.userCount()
+            }
+            .eraseToAnyPublisher()
+
+        let userUpdateScoreInfo = input.userScoreUpdate
+            .tryMap { [weak self] _ in
+                return try self?.updateUser()
+            }
+            .eraseToAnyPublisher()
+
+        let canPlay = input.checkCanPlay
+            .map { [weak self] _ in
+                self?.checkCanPlay()
+            }
+            .eraseToAnyPublisher()
+
+        let output = Output(
+            darkMode: darkMode,
+            userScoreInfo: userScoreInfo,
+            userUpdateScoreInfo: userUpdateScoreInfo,
+            canPlay: canPlay
+        )
+
+        return output
+    }
+
+    private func userCount() throws -> Int {
+        let user = try userUseCase.readUser()
+        self.user = user
+        return user.score
+    }
+
+    private func updateUser() throws -> Int {
+        let updatedUser = try userUseCase.finishDailyGame(user: user)
+        self.user = updatedUser
+        return updatedUser.score
+    }
+
+    private func checkCanPlay() -> Bool {
+        return userUseCase.canPlay(user)
     }
 }
