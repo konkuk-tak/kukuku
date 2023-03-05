@@ -37,6 +37,7 @@
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
 		1458B79D29B4767900EB4397 /* KUConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79C29B4767900EB4397 /* KUConstant.swift */; };
 		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
+		1458B7A229B4912400EB4397 /* KUImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B7A129B4912400EB4397 /* KUImageView.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
 		145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */; };
 		145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A829AF59B2008CCBC7 /* UserUseCase.swift */; };
@@ -135,6 +136,7 @@
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
 		1458B79C29B4767900EB4397 /* KUConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUConstant.swift; sourceTree = "<group>"; };
 		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
+		1458B7A129B4912400EB4397 /* KUImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUImageView.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		145A28A829AF59B2008CCBC7 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -216,7 +218,6 @@
 			children = (
 				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
 				14644E8729B17DC800176342 /* View */,
-				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -681,7 +682,9 @@
 		14644E8729B17DC800176342 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 				14644E8829B17DFC00176342 /* KUContainTableView.swift */,
+				1458B7A129B4912400EB4397 /* KUImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				1482F5D329B1EC48000B5320 /* AuthorizationStatus.swift in Sources */,
 				145C67B529B2F54E0044544C /* SettingViewModel.swift in Sources */,
 				145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */,
+				1458B7A229B4912400EB4397 /* KUImageView.swift in Sources */,
 				14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
 				14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */,

@@ -17,12 +17,12 @@ final class KonkukInfoDetailView: UIView {
     private let containerView = UIView()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    private let infoImageView = UIImageView()
+    private let infoImageView = KUImageView()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let completeButton = KUDefaultButton(title: "완료", style: .heavy)
 
-    var hasImage: Bool { return infoImageView.image != nil }
+    var hasImage: Bool { return infoImageView.hasImage }
 
     // MARK: - Life Cycle
 
@@ -68,17 +68,14 @@ final class KonkukInfoDetailView: UIView {
         addSubview(containerView)
         scrollView.addSubview(contentView)
 
-        configureInfoImageView(imageName: konkukInfo.imageURL)
+        configureInfoImageView(imageName: konkukInfo.imageURL, description: konkukInfo.imageReference)
         configureTitleLabel(title: konkukInfo.title)
         configureDescriptionLabel(description: konkukInfo.description)
         configureCompleteButton()
     }
 
-    private func configureInfoImageView(imageName: String?) {
-        infoImageView.clipsToBounds = true
-        if let imageName = imageName, let image = UIImage(named: imageName) {
-            infoImageView.image = image
-        }
+    private func configureInfoImageView(imageName: String, description: String) {
+        infoImageView.update(imageName: imageName, description: description)
     }
 
     private func configureTitleLabel(title: String) {
