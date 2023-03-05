@@ -81,7 +81,7 @@ final class KonkukInfoDetailView: UIView {
         print(imageName)
         if !imageName.isEmpty, let image = UIImage(named: imageName) {
             infoImageView.contentMode = .scaleAspectFit
-            infoImageView.backgroundColor = .dynamicBlack
+            infoImageView.backgroundColor = .black
             infoImageView.image = image
         }
     }
