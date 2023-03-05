@@ -35,6 +35,8 @@
 		142F01A829B0B030001D5DCD /* ARGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01A729B0B030001D5DCD /* ARGameView.swift */; };
 		142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */; };
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
+		1458B79D29B4767900EB4397 /* KUConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79C29B4767900EB4397 /* KUConstant.swift */; };
+		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
 		145A28A729AF59AC008CCBC7 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */; };
 		145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A28A829AF59B2008CCBC7 /* UserUseCase.swift */; };
@@ -131,6 +133,8 @@
 		142F01A729B0B030001D5DCD /* ARGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameView.swift; sourceTree = "<group>"; };
 		142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailViewController.swift; sourceTree = "<group>"; };
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
+		1458B79C29B4767900EB4397 /* KUConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUConstant.swift; sourceTree = "<group>"; };
+		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		145A28A829AF59B2008CCBC7 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		145A28AC29AF5BB8008CCBC7 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -464,6 +468,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1458B79B29B4766200EB4397 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1458B79C29B4767900EB4397 /* KUConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		1458B79E29B4767D00EB4397 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1458B79F29B4768100EB4397 /* GameRule.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		145A28A129AF5912008CCBC7 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +542,7 @@
 		145A28AA29AF5B9B008CCBC7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				1458B79B29B4766200EB4397 /* Constant */,
 				1499FB9329B43C470072D355 /* Error */,
 				145C67CD29B313F90044544C /* DependencyFactory */,
 				14FE77E629B03B4300900EEC /* Protocol */,
@@ -880,6 +901,7 @@
 		14FE77D529B0362400900EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1458B79E29B4767D00EB4397 /* Game */,
 				145C67D229B331A30044544C /* AR */,
 				1482F5D129B1EC3E000B5320 /* Location */,
 				14F9D51F29B1C6130005B74F /* User */,
@@ -1088,6 +1110,7 @@
 				145C67C429B302E60044544C /* DarkModeRepository.swift in Sources */,
 				145C67CF29B3140B0044544C /* DependencyFactory.swift in Sources */,
 				1482F5E029B1EF1C000B5320 /* LocationStatus.swift in Sources */,
+				1458B7A029B4768100EB4397 /* GameRule.swift in Sources */,
 				14644E8D29B1818D00176342 /* SettingDarkModeView.swift in Sources */,
 				1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */,
 				14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */,
@@ -1114,6 +1137,7 @@
 				145C67C729B303140044544C /* DarkModeUseCase.swift in Sources */,
 				145C67A929B2E49F0044544C /* DefaultKonkukInfoUseCase.swift in Sources */,
 				14FE77D829B0364E00900EEC /* GuideInfo.swift in Sources */,
+				1458B79D29B4767900EB4397 /* KUConstant.swift in Sources */,
 				142F01A629B0B029001D5DCD /* ARGameViewModel.swift in Sources */,
 				142F018529B08588001D5DCD /* AppInfoCellKind.swift in Sources */,
 				14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */,

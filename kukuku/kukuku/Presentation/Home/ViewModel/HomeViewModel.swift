@@ -50,13 +50,13 @@ final class HomeViewModel {
         let userScoreInfo = input.viewDidLoad
             .merge(with: input.userUpdate)
             .tryMap { [weak self] _ in
-                return try self?.userCount()
+                return try self?.userCountScore()
             }
             .eraseToAnyPublisher()
 
         let userUpdateScoreInfo = input.userScoreUpdate
             .tryMap { [weak self] _ in
-                return try self?.updateUser()
+                return try self?.updateUserScore()
             }
             .eraseToAnyPublisher()
 
@@ -78,14 +78,13 @@ final class HomeViewModel {
 
     // MARK: - Method
 
-    private func userCount() throws -> Int {
+    private func userCountScore() throws -> Int {
         let user = try userUseCase.readUser()
         self.user = user
-        print(user)
         return user.score
     }
 
-    private func updateUser() throws -> Int {
+    private func updateUserScore() throws -> Int {
         let updatedUser = try userUseCase.finishDailyGame(user: user)
         self.user = updatedUser
         return updatedUser.score

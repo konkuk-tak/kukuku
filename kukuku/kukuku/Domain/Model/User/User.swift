@@ -9,8 +9,14 @@ import Foundation
 
 struct User: Codable {
     let type: UserType
-    let score: Int
+    let listCount: Int
     let log: [Date]
+}
+
+extension User {
+    var score: Int {
+        return log.count
+    }
 }
 
 enum UserType: Codable {

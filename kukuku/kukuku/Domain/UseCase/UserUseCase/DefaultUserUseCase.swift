@@ -46,7 +46,7 @@ struct DefaultUserUseCase: UserUseCase {
 
     func updateToDeveloperType(user: User, code: String) throws -> User? {
         if isDeveloperCode(code) {
-            let developerUser = User(type: .developer, score: user.score, log: user.log)
+            let developerUser = User(type: .developer, listCount: user.listCount, log: user.log)
             try userRepository.updateUser(user: developerUser)
             return developerUser
         }
@@ -54,7 +54,7 @@ struct DefaultUserUseCase: UserUseCase {
     }
 
     private func createNewUser() -> User {
-        return User(type: .normal, score: 0, log: [])
+        return User(type: .normal, listCount: 0, log: [])
     }
 
     private func updateUser(_ user: User) throws {
@@ -63,8 +63,8 @@ struct DefaultUserUseCase: UserUseCase {
 
     private func dailyUpdate(user: User) -> User {
         let newDateLog = user.log + [Date()]
-        let score = user.score + 1
-        return User(type: user.type, score: score, log: newDateLog)
+        let listCount = user.listCount < GameRule.maxListCount ? user.listCount + 1 : user.listCount
+        return User(type: user.type, listCount: listCount, log: newDateLog)
     }
 
     private func isDeveloperCode(_ code: String) -> Bool {
