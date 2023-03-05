@@ -16,10 +16,12 @@ final class HomeViewModel {
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase
+    private var konkukInfoUseCase: KonkukInfoUseCase
 
-    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase) {
+    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase, konkukInfoUseCase: KonkukInfoUseCase) {
         self.darkModeUse = darkModeUse
         self.userUseCase = userUseCase
+        self.konkukInfoUseCase = konkukInfoUseCase
     }
 
     // MARK: - Input & Output
@@ -48,13 +50,13 @@ final class HomeViewModel {
         let userScoreInfo = input.viewDidLoad
             .merge(with: input.userUpdate)
             .tryMap { [weak self] _ in
-                return try self?.userCount()
+                return try self?.userCountScore()
             }
             .eraseToAnyPublisher()
 
         let userUpdateScoreInfo = input.userScoreUpdate
             .tryMap { [weak self] _ in
-                return try self?.updateUser()
+                return try self?.updateUserScore()
             }
             .eraseToAnyPublisher()
 
@@ -76,16 +78,17 @@ final class HomeViewModel {
 
     // MARK: - Method
 
-    private func userCount() throws -> Int {
+    private func userCountScore() throws -> Int {
         let user = try userUseCase.readUser()
         self.user = user
         print(user)
         return user.score
     }
 
-    private func updateUser() throws -> Int {
+    private func updateUserScore() throws -> Int {
         let updatedUser = try userUseCase.finishDailyGame(user: user)
         self.user = updatedUser
+        print(user)
         return updatedUser.score
     }
 
@@ -97,5 +100,11 @@ final class HomeViewModel {
 extension HomeViewModel {
     func isDeveloperMode() -> Bool {
         return user.type == .developer
+    }
+
+    func nextKonkukInfo() -> KonkukInfo? {
+        let index = user.listCount
+        let konkukInfo = konkukInfoUseCase.info(index: index)
+        return konkukInfo
     }
 }

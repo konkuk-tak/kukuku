@@ -63,9 +63,6 @@ final class KonkukInfoListViewController: UIViewController {
 
     private func bind() {
         let viewDidLoad = Just(Void())
-            .map { _ in
-                return 10
-            }
             .eraseToAnyPublisher()
 
         let input = KonkukInfoListViewModel.Input(viewDidLoad: viewDidLoad)
@@ -104,7 +101,7 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
             let title = "\(index + 1). \(infoTitle)"
             cell.updateCheck(title: title)
         } else {
-            cell.updateLock()
+            cell.updateLock(number: index + 1)
         }
 
         return cell

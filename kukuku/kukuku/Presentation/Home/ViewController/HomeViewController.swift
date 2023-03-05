@@ -49,8 +49,6 @@ class HomeViewController: UIViewController {
         configureNavigationBar()
         subscribeButtonPublisher()
         bind()
-        moveToTargetView()
-        testLocation()
     }
 
     private func configureNavigationBar() {
@@ -151,39 +149,51 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Button Publisher
+
 extension HomeViewController {
-
-    // MARK: - Navigation
-
     private func subscribeButtonPublisher() {
         homeView.konkukInfoListButtonPublisher()
             .sink { [weak self] _ in
-                let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel()
-                let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
-                self?.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
+                self?.moveToKonukInfoList()
             }
             .store(in: &cancellable)
 
         homeView.guideButtonPublisher()
             .sink { [weak self] _ in
-                let guideViewModel = DependencyFactory.guideViewModel()
-                let guideViewController = GuideViewController(viewModel: guideViewModel)
-                self?.navigationController?.pushViewController(guideViewController, animated: true)
+                self?.moveToGuide()
             }
             .store(in: &cancellable)
 
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
-                guard let self = self else {
-                    self?.showOkayAlert(title: "에러", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
-                    return
-                }
-                let settingViewModel = DependencyFactory.settingViewModel(user: self.homeViewModel.user)
-                let settingViewController = SettingViewController(settingViewModel: settingViewModel)
-                self.subscribeInitiateUser(settingViewController: settingViewController)
-                self.navigationController?.pushViewController(settingViewController, animated: true)
+                self?.moveToSetting()
             }
             .store(in: &cancellable)
+    }
+}
+
+extension HomeViewController {
+
+    // MARK: - Navigation
+    private func moveToKonukInfoList() {
+        let userListCount = homeViewModel.user.listCount
+        let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(userListCount: userListCount)
+        let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
+        self.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
+    }
+
+    private func moveToGuide() {
+        let guideViewModel = DependencyFactory.guideViewModel()
+        let guideViewController = GuideViewController(viewModel: guideViewModel)
+        self.navigationController?.pushViewController(guideViewController, animated: true)
+    }
+
+    private func moveToSetting() {
+        let settingViewModel = DependencyFactory.settingViewModel(user: self.homeViewModel.user)
+        let settingViewController = SettingViewController(settingViewModel: settingViewModel)
+        self.subscribeInitiateUser(settingViewController: settingViewController)
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
 
     private func moveToARGame() {
@@ -192,18 +202,16 @@ extension HomeViewController {
         let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
         arGameViewController.modalPresentationStyle = .fullScreen
         arGameViewController.didDismiss = { [weak self] in
+            self?.userScoreUpdateSubject.send(Void())
             self?.moveToKonkukInfoDetail()
         }
         present(arGameViewController, animated: true)
     }
 
     private func moveToKonkukInfoDetail() {
-        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+        guard let konkukInfo = homeViewModel.nextKonkukInfo() else { return }
         let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-        konkukInfoDetailViewController.willDismiss = { [weak self] in
-            self?.userScoreUpdateSubject.send(Void())
-        }
         present(konkukInfoDetailViewController, animated: true)
     }
 }

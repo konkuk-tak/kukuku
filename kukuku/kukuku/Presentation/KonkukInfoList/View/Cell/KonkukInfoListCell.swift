@@ -86,7 +86,7 @@ extension KonkukInfoListCell {
         update(image: .checkIcon.withTintColor(.green, renderingMode: .alwaysOriginal), title: title)
     }
 
-    func updateLock() {
-        update(image: .lockIcon.withTintColor(.dynamicBlack, renderingMode: .alwaysOriginal), title: "잠금")
+    func updateLock(number: Int) {
+        update(image: .lockIcon.withTintColor(.dynamicBlack, renderingMode: .alwaysOriginal), title: "\(number). 잠금")
     }
 }

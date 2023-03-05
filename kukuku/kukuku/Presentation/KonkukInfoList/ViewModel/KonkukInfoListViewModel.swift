@@ -12,16 +12,19 @@ final class KonkukInfoListViewModel {
 
     private (set)var konkukInfoList: [KonkukInfo] = []
     private (set)var maxCount: Int = 0
+    let userListCount: Int
+
     private var konkukInfoUseCase: KonkukInfoUseCase
 
     var currentCount: Int { return konkukInfoList.count }
 
-    init(konkukInfoUseCase: KonkukInfoUseCase) {
+    init(userListCount: Int, konkukInfoUseCase: KonkukInfoUseCase) {
+        self.userListCount = userListCount
         self.konkukInfoUseCase = konkukInfoUseCase
     }
 
     struct Input {
-        let viewDidLoad: AnyPublisher<Int, Never>
+        let viewDidLoad: AnyPublisher<Void, Never>
     }
 
     struct Output {
@@ -31,8 +34,8 @@ final class KonkukInfoListViewModel {
     func transform(input: Input) -> Output {
 
         let konkukInfoList = input.viewDidLoad
-            .map { [weak self] count in
-                self?.fetchKonkukInfoList(count: count)
+            .map { [weak self] _ in
+                self?.fetchKonkukInfoList()
             }
             .eraseToAnyPublisher()
 
@@ -43,8 +46,8 @@ final class KonkukInfoListViewModel {
         return konkukInfoList[index]
     }
 
-    private func fetchKonkukInfoList(count: Int) {
-        let userKonkukInfoList = konkukInfoUseCase.infoList(count: count)
+    private func fetchKonkukInfoList() {
+        let userKonkukInfoList = konkukInfoUseCase.infoList(count: userListCount)
         konkukInfoList = userKonkukInfoList.list
         maxCount = userKonkukInfoList.maxCount
     }
