@@ -12,7 +12,7 @@ final class HomeViewModel {
 
     // MARK: - Property
 
-    private var user: User?
+    private var user: User!
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase
@@ -28,13 +28,15 @@ final class HomeViewModel {
 
     struct Input {
         let viewDidLoad: AnyPublisher<Void, Never>
+        let checkCanPlay: AnyPublisher<Void, Never>
         let userScoreUpdate: AnyPublisher<Void, Never>
     }
 
     struct Output {
         let darkMode: AnyPublisher<DarkModeKind?, Never>
-        let userScoreInfo: AnyPublisher<Int, Error>
-        let userUpdateScoreInfo: AnyPublisher<Int, Error>
+        let userScoreInfo: AnyPublisher<Int?, Error>
+        let userUpdateScoreInfo: AnyPublisher<Int?, Error>
+        let canPlay: AnyPublisher<Bool?, Never>
     }
 
     func transform(input: Input) -> Output {
@@ -46,19 +48,28 @@ final class HomeViewModel {
 
         let userScoreInfo = input.viewDidLoad
             .tryMap { [weak self] _ in
-                guard let self = self else { throw KUError.unWrap }
-                return try self.userCount()
+                return try self?.userCount()
             }
             .eraseToAnyPublisher()
 
         let userUpdateScoreInfo = input.userScoreUpdate
             .tryMap { [weak self] _ in
-                guard let self = self else { throw KUError.unWrap }
-                return try self.updateUser()
+                return try self?.updateUser()
             }
             .eraseToAnyPublisher()
 
-        let output = Output(darkMode: darkMode, userScoreInfo: userScoreInfo, userUpdateScoreInfo: userUpdateScoreInfo)
+        let canPlay = input.checkCanPlay
+            .map { [weak self] _ in
+                self?.checkCanPlay()
+            }
+            .eraseToAnyPublisher()
+
+        let output = Output(
+            darkMode: darkMode,
+            userScoreInfo: userScoreInfo,
+            userUpdateScoreInfo: userUpdateScoreInfo,
+            canPlay: canPlay
+        )
 
         return output
     }
@@ -70,9 +81,12 @@ final class HomeViewModel {
     }
 
     private func updateUser() throws -> Int {
-        guard let user = self.user else { throw KUError.unWrap }
         let updatedUser = try userUseCase.finishDailyGame(user: user)
         self.user = updatedUser
         return updatedUser.score
+    }
+
+    private func checkCanPlay() -> Bool {
+        return userUseCase.canPlay(user)
     }
 }

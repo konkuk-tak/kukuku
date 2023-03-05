@@ -26,6 +26,13 @@ struct DefaultUserUseCase: UserUseCase {
         }
     }
 
+    func canPlay(_ user: User) -> Bool {
+        guard let lastDate = user.log.last else {
+            return true
+        }
+        return !Calendar.current.isDateInToday(lastDate)
+    }
+
     func finishDailyGame(user: User) throws -> User {
         let updatedUser = dailyUpdate(user: user)
         try updateUser(updatedUser)

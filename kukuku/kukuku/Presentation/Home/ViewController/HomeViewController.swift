@@ -66,7 +66,13 @@ class HomeViewController: UIViewController {
     private func bind() {
         let viewDidLoad = Just(Void()).eraseToAnyPublisher()
         let userScoreUpdate = userScoreSubject.eraseToAnyPublisher()
-        let input = HomeViewModel.Input(viewDidLoad: viewDidLoad, userScoreUpdate: userScoreUpdate)
+        let checkCanPlay = homeView.arButtonPublisher().eraseToAnyPublisher()
+
+        let input = HomeViewModel.Input(
+            viewDidLoad: viewDidLoad,
+            checkCanPlay: checkCanPlay,
+            userScoreUpdate: userScoreUpdate
+        )
         let output = homeViewModel.transform(input: input)
 
         output.darkMode
@@ -80,13 +86,19 @@ class HomeViewController: UIViewController {
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure(let error):
-                    self?.showOkayAlert(title: "에러", message: "유저 정보를 불러오는데 에러가 발생했습니다. \(error)")
+                    self?.handleScoreUpdateError(error)
                 case .finished:
                     return
                 }
             }, receiveValue: { [weak self] score in
                 self?.handleScore(score)
             })
+            .store(in: &cancellable)
+
+        output.canPlay
+            .sink { [weak self] canPlay in
+                self?.handleCanPlay(canPlay)
+            }
             .store(in: &cancellable)
     }
 
@@ -98,8 +110,39 @@ class HomeViewController: UIViewController {
         DarkModeManager.mode(darkModeKind: darkModeKind)
     }
 
-    private func handleScore(_ score: Int) {
+    private func handleScoreUpdateError(_ error: Error) {
+        if let error = error as? KeychainError {
+            showOkayAlert(title: "키체인 에러", message: "키체인 에러가 발생했어요. \(error) 개발자에게 문의해주세요. youtaktak@gmail.com")
+        } else {
+            showOkayAlert(title: "에러", message: "업데이트 중 에러가 발생했어요. \(error)")
+        }
+    }
+
+    private func handleScore(_ score: Int?) {
+        guard let score = score else {
+            showOkayAlert(title: "에러", message: "키체인 저장 중 에러가 발생했습니다.")
+            return
+        }
         homeView.update(score: score)
+    }
+
+    private func handleCanPlay(_ canPlay: Bool?) {
+        guard let canPlay = canPlay else {
+            showOkayAlert(title: "에러", message: "정보를 불러올 수 없어요.")
+            return
+        }
+
+        if canPlay {
+            let arGameViewModel = DependencyFactory.arGameViewModel()
+            let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
+            arGameViewController.modalPresentationStyle = .fullScreen
+            arGameViewController.didDismiss = { [weak self] in
+                self?.moveToKonkukInfoDetail()
+            }
+            present(arGameViewController, animated: true)
+        } else {
+            showOkayAlert(title: "오늘의 햄버거를 먹었어요", message: "하루에 한 번만 햄버거를 먹을 수 있어요")
+        }
     }
 }
 
@@ -129,18 +172,6 @@ extension HomeViewController {
                 let settingViewModel = DependencyFactory.settingViewModel()
                 let settingViewController = SettingViewController()
                 self?.navigationController?.pushViewController(settingViewController, animated: true)
-            }
-            .store(in: &cancellable)
-
-        homeView.arButtonPublisher()
-            .sink { [weak self] _ in
-                let arGameViewModel = DependencyFactory.arGameViewModel()
-                let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
-                arGameViewController.modalPresentationStyle = .fullScreen
-                arGameViewController.didDismiss = { [weak self] in
-                    self?.moveToKonkukInfoDetail()
-                }
-                self?.present(arGameViewController, animated: true)
             }
             .store(in: &cancellable)
     }
