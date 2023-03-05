@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/01.
 //
 
+import AVFoundation
 import Combine
 import UIKit
 
@@ -40,6 +41,7 @@ final class ARGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkCamera()
         subscribePublisher()
         bind()
     }
@@ -74,6 +76,18 @@ final class ARGameViewController: UIViewController {
 
     private func handleLocation(locationStatus: LocationStatus) {
         arGameView.updateStatusBar(locationStatus: locationStatus)
+    }
+
+    // MARK: - Permission
+
+    private func checkCamera() {
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
+            if !isAllowed {
+                self?.showConfirmAlert(title: "카메라 권한이 없어요", message: "콘텐츠 이용을 위해 카메라 권한이 필요합니다.", handler: {
+                    PermissionManager.moveToiPhoneSetting()
+                })
+            }
+        }
     }
 
     // MARK: - Navigation
