@@ -41,7 +41,7 @@ final class ARGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkCamera()
+        cameraPermission()
         subscribePublisher()
         bind()
     }
@@ -67,6 +67,12 @@ final class ARGameViewController: UIViewController {
         let input = ARGameViewModel.Input(viewDidLoad: viewDidLoad)
         let output = arGameViewModel.transform(input: input)
 
+        output.locationAuthorizationStatus
+            .sink { [weak self] authorizationStatus in
+                self?.handleAuthorizationStatus(authorizationStatus)
+            }
+            .store(in: &cancellable)
+
         output.rangeStatus
             .sink { [weak self] locationStatus in
                 self?.handleLocation(locationStatus: locationStatus)
@@ -80,7 +86,7 @@ final class ARGameViewController: UIViewController {
 
     // MARK: - Permission
 
-    private func checkCamera() {
+    private func cameraPermission() {
         AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
             if !isAllowed {
                 self?.showConfirmAlert(
@@ -91,6 +97,22 @@ final class ARGameViewController: UIViewController {
                     PermissionManager.moveToiPhoneSetting()
                 })
             }
+        }
+    }
+
+    private func handleAuthorizationStatus(_ authorizationStatus: AuthorizationStatus) {
+        print(authorizationStatus)
+        switch authorizationStatus {
+        case .notDetermined, .denied:
+            showConfirmAlert(
+                title: "위치 권한이 없어요",
+                message: "콘텐츠 이용을 위해 위치 권한이 필요합니다.",
+                confirmTitle: "설정하기",
+                handler: {
+                PermissionManager.moveToiPhoneSetting()
+            })
+        case .allow:
+            return
         }
     }
 

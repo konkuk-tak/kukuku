@@ -23,11 +23,17 @@ final class ARGameViewModel {
     }
 
     struct Output {
+        let locationAuthorizationStatus: AnyPublisher<AuthorizationStatus, Never>
         let rangeStatus: AnyPublisher<LocationStatus, Never>
     }
 
     func transform(input: Input) -> Output {
+        let locationAuthorizationStatus = locationAuthorizationStatus()
         let rangeStatus = locationUseCase.isInRange(isDeveloperMode: isDeveloperMode).eraseToAnyPublisher()
-        return Output(rangeStatus: rangeStatus)
+        return Output(locationAuthorizationStatus: locationAuthorizationStatus ,rangeStatus: rangeStatus)
+    }
+
+    func locationAuthorizationStatus() -> AnyPublisher<AuthorizationStatus, Never> {
+        return locationUseCase.authorizationPublisher()
     }
 }

@@ -13,21 +13,15 @@ final class DefaultLocationUseCase: LocationUseCase {
 
     private var locationRepository: LocationRepository
     private var gameCoordinates: [GameCoordinate] = []
-    private var authorizationStatus: AuthorizationStatus = .notDetermined
-    private var cancellable = Set<AnyCancellable>()
 
     private enum Constant {
         static let targetDistance: Double = 30
     }
 
     init(
-        locationRepository: LocationRepository,
-        cancellable: Set<AnyCancellable> = Set<AnyCancellable>(),
-        authorizationStatus: AuthorizationStatus = .notDetermined
+        locationRepository: LocationRepository
     ) {
         self.locationRepository = locationRepository
-        self.cancellable = cancellable
-        self.authorizationStatus = authorizationStatus
         self.gameCoordinates = locationRepository.gameLocation()
     }
 
@@ -47,8 +41,8 @@ final class DefaultLocationUseCase: LocationUseCase {
         return Just(LocationStatus.success).eraseToAnyPublisher()
     }
 
-    func requestAuthorization() -> AuthorizationStatus {
-        return authorizationStatus
+    func authorizationPublisher() -> AnyPublisher<AuthorizationStatus, Never> {
+        return locationRepository.requestAuthorization()
     }
 
     private func isInRange(location: CLLocation) -> LocationStatus {
@@ -61,13 +55,5 @@ final class DefaultLocationUseCase: LocationUseCase {
             }
         }
         return .fail
-    }
-
-    private func subscribeStatus() {
-        locationRepository.requestAuthorization()
-            .sink { [weak self] status in
-                self?.authorizationStatus = status
-            }
-            .store(in: &cancellable)
     }
 }
