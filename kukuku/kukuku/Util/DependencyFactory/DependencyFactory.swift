@@ -83,9 +83,9 @@ struct DependencyFactory {
         return GuideViewModel(guideUseCase: guideUseCase)
     }
 
-    static func settingViewModel() -> SettingViewModel {
+    static func settingViewModel(user: User) -> SettingViewModel {
         let userUseCase = userUseCase()
-        return SettingViewModel(userUseCase: userUseCase)
+        return SettingViewModel(user: user, userUseCase: userUseCase)
     }
 
     static func settingDarkModeViewModel() -> SettingDarkModeViewModel {

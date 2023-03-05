@@ -12,7 +12,7 @@ final class HomeViewModel {
 
     // MARK: - Property
 
-    private var user: User!
+    private (set)var user: User!
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase

@@ -25,6 +25,7 @@ final class SettingViewController: UIViewController {
 
     private var settingViewModel: SettingViewModel
 
+    private var developerCodeSubject = PassthroughSubject<String, Never>()
     private var userDeleteSubject = PassthroughSubject<Void, Never>()
     private var initUserData = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
@@ -66,8 +67,9 @@ final class SettingViewController: UIViewController {
 
     private func bind() {
         let deleteUser = userDeleteSubject.eraseToAnyPublisher()
+        let developerCode = developerCodeSubject.eraseToAnyPublisher()
 
-        let input = SettingViewModel.Input(deleteUser: deleteUser)
+        let input = SettingViewModel.Input(deleteUser: deleteUser, developerCode: developerCode)
         let output = settingViewModel.transform(input: input)
 
         output.deleteUserResult
@@ -80,7 +82,20 @@ final class SettingViewController: UIViewController {
                 self?.handleUserDeleteResult()
             })
             .store(in: &cancellable)
+
+        output.developerModeUpdate
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished: return
+                case .failure(let error): self?.handleDeveloperModeError(error)
+                }
+            } receiveValue: { [weak self] isUpdated in
+                self?.handleDeveloperModeResult(isUpdated: isUpdated)
+            }
+            .store(in: &cancellable)
     }
+
+    // MARK: 데이터 삭제
 
     private func handleUserDeleteResult() {
         showOkayAlert(title: "삭제 완료", message: "데이터를 삭제했어요")
@@ -89,6 +104,24 @@ final class SettingViewController: UIViewController {
 
     private func handleUserDeleteError(_ error: Error) {
         showOkayAlert(title: "유저 삭제 에러", message: "유저 삭제 중 에러가 발생했어요. 개발자에게 문의해주세요. \(error)")
+    }
+
+    // MARK: 개발자 모드
+
+    private func handleDeveloperModeResult(isUpdated: Bool?) {
+        guard let isUpdated = isUpdated else {
+            showOkayAlert(title: "에러", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
+            return
+        }
+        if isUpdated {
+            showOkayAlert(title: "개발자 모드 변경 완료", message: "개발자 모드로 변경 완료했어요. 이제 거리 제한과 하루 횟수 제한이 사라졌어요.")
+        } else {
+            showOkayAlert(title: "코드 불일치", message: "코드가 일치하지 않아요. 다시 확인해주세요.")
+        }
+    }
+
+    private func handleDeveloperModeError(_ error: Error) {
+        showOkayAlert(title: "키체인 에러", message: "개발자 모드를 키체인에 저장하다가 에러가 발생했어요. 개발자에게 문의해주세요. \(error)")
     }
 
     // MARK: - Cell Alert
@@ -100,9 +133,12 @@ final class SettingViewController: UIViewController {
     }
 
     private func showDeveloperCodeAlert() {
-        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { text in
-            guard let text = text else { return }
-            print(text)
+        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { [weak self] text in
+            guard let text = text else {
+                self?.showOkayAlert(title: "에러", message: "코드를 입력해주세요")
+                return
+            }
+            self?.developerCodeSubject.send(text)
         }
     }
 

@@ -180,10 +180,14 @@ extension HomeViewController {
 
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
-                let settingViewModel = DependencyFactory.settingViewModel()
+                guard let self = self else {
+                    self?.showOkayAlert(title: "에러", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
+                    return
+                }
+                let settingViewModel = DependencyFactory.settingViewModel(user: self.homeViewModel.user)
                 let settingViewController = SettingViewController(settingViewModel: settingViewModel)
-                self?.subscribeInitiateUser(settingViewController: settingViewController)
-                self?.navigationController?.pushViewController(settingViewController, animated: true)
+                self.subscribeInitiateUser(settingViewController: settingViewController)
+                self.navigationController?.pushViewController(settingViewController, animated: true)
             }
             .store(in: &cancellable)
     }
