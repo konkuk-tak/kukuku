@@ -84,6 +84,8 @@
 		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
 		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14F4C45B29B45F1200A9ADBE /* DeveloperCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */; };
+		14F4C45E29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */; };
+		14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
 		14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52729B1C7030005B74F /* KeyChainManager.swift */; };
 		14F9D53029B1D08C0005B74F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52F29B1D08C0005B74F /* UserRepository.swift */; };
@@ -177,6 +179,8 @@
 		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeveloperCode.plist; sourceTree = "<group>"; };
+		14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDeveloperCodeRepository.swift; sourceTree = "<group>"; };
+		14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14F9D52729B1C7030005B74F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		14F9D52F29B1D08C0005B74F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -706,6 +710,7 @@
 		14644EA429B1A8EA00176342 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				14F4C45F29B4607400A9ADBE /* DeveloperCodeRepository */,
 				145C67C229B302DE0044544C /* DarkModeRepository */,
 				1482F5E729B20984000B5320 /* GuideRepository */,
 				1482F5CE29B1EC10000B5320 /* LocationRepository */,
@@ -760,6 +765,7 @@
 		1482F5D529B1ECCD000B5320 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				14F4C45C29B45F7100A9ADBE /* DeveloperCodeRepository */,
 				145C67BF29B301390044544C /* DarkModeRepository */,
 				1482F5E629B2097D000B5320 /* GuideRepository */,
 				1482F5D429B1ECBC000B5320 /* LocationRepository */,
@@ -809,6 +815,22 @@
 				1499FB9429B43C4E0072D355 /* KUError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		14F4C45C29B45F7100A9ADBE /* DeveloperCodeRepository */ = {
+			isa = PBXGroup;
+			children = (
+				14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */,
+			);
+			path = DeveloperCodeRepository;
+			sourceTree = "<group>";
+		};
+		14F4C45F29B4607400A9ADBE /* DeveloperCodeRepository */ = {
+			isa = PBXGroup;
+			children = (
+				14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */,
+			);
+			path = DeveloperCodeRepository;
 			sourceTree = "<group>";
 		};
 		14F9D51F29B1C6130005B74F /* User */ = {
@@ -1082,6 +1104,7 @@
 				142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */,
 				145C67A429B2E44A0044544C /* KonkukInfoListViewModel.swift in Sources */,
 				145C67C129B301470044544C /* DefaultDarkModeRepository.swift in Sources */,
+				14F4C45E29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift in Sources */,
 				14F9D53529B1DA450005B74F /* LocationManager.swift in Sources */,
 				14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */,
 				1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */,
@@ -1102,6 +1125,7 @@
 				1482F5D329B1EC48000B5320 /* AuthorizationStatus.swift in Sources */,
 				145C67B529B2F54E0044544C /* SettingViewModel.swift in Sources */,
 				145C67AF29B2E70F0044544C /* UserKonkukInfoList.swift in Sources */,
+				14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */,
 				145A28AD29AF5BB8008CCBC7 /* UIColor+.swift in Sources */,
 				14FE77E529B03ADF00900EEC /* GuideCollectionCell.swift in Sources */,
 				1429328B29AF8C41009B9B7F /* ARGameViewController.swift in Sources */,
