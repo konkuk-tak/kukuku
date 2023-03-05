@@ -29,9 +29,8 @@ struct DefaultUserUseCase: UserUseCase {
     }
 
     func canPlay(_ user: User) -> Bool {
-        guard let lastDate = user.log.last else {
-            return true
-        }
+        if user.type == .developer { return true}
+        guard let lastDate = user.log.last else { return true }
         return !Calendar.current.isDateInToday(lastDate)
     }
 

@@ -93,3 +93,9 @@ final class HomeViewModel {
         return userUseCase.canPlay(user)
     }
 }
+
+extension HomeViewModel {
+    func isDeveloperMode() -> Bool {
+        return user.type == .developer
+    }
+}

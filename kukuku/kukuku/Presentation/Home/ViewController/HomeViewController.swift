@@ -136,13 +136,7 @@ class HomeViewController: UIViewController {
         }
 
         if canPlay {
-            let arGameViewModel = DependencyFactory.arGameViewModel()
-            let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
-            arGameViewController.modalPresentationStyle = .fullScreen
-            arGameViewController.didDismiss = { [weak self] in
-                self?.moveToKonkukInfoDetail()
-            }
-            present(arGameViewController, animated: true)
+            moveToARGame()
         } else {
             showOkayAlert(title: "오늘의 햄버거를 먹었어요", message: "하루에 한 번만 햄버거를 먹을 수 있어요")
         }
@@ -190,6 +184,17 @@ extension HomeViewController {
                 self.navigationController?.pushViewController(settingViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+
+    private func moveToARGame() {
+        let isDeveloperMode = homeViewModel.isDeveloperMode()
+        let arGameViewModel = DependencyFactory.arGameViewModel(isDeveloperMode: isDeveloperMode)
+        let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
+        arGameViewController.modalPresentationStyle = .fullScreen
+        arGameViewController.didDismiss = { [weak self] in
+            self?.moveToKonkukInfoDetail()
+        }
+        present(arGameViewController, animated: true)
     }
 
     private func moveToKonkukInfoDetail() {

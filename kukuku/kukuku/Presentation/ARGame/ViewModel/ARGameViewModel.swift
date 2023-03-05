@@ -10,10 +10,13 @@ import Foundation
 
 final class ARGameViewModel {
 
+    private var isDeveloperMode: Bool
     private var locationUseCase: LocationUseCase
 
-    init(locationUseCase: LocationUseCase) {
+    init(isDeveloperMode: Bool, locationUseCase: LocationUseCase) {
+        self.isDeveloperMode = isDeveloperMode
         self.locationUseCase = locationUseCase
+        print(isDeveloperMode)
     }
 
     struct Input {
@@ -25,7 +28,7 @@ final class ARGameViewModel {
     }
 
     func transform(input: Input) -> Output {
-        let rangeStatus = locationUseCase.isInRange()
+        let rangeStatus = locationUseCase.isInRange(isDeveloperMode: isDeveloperMode).eraseToAnyPublisher()
         return Output(rangeStatus: rangeStatus)
     }
 }
