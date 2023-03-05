@@ -16,12 +16,10 @@ final class HomeViewModel {
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase
-    private var locationUseCase: LocationUseCase
 
-    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase, locationUseCase: LocationUseCase) {
+    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase) {
         self.darkModeUse = darkModeUse
         self.userUseCase = userUseCase
-        self.locationUseCase = locationUseCase
     }
 
     // MARK: - Input & Output
