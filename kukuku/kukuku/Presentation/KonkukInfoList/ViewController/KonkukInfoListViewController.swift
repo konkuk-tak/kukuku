@@ -101,7 +101,7 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
             let title = "\(index + 1). \(infoTitle)"
             cell.updateCheck(title: title)
         } else {
-            cell.updateLock()
+            cell.updateLock(number: index + 1)
         }
 
         return cell
