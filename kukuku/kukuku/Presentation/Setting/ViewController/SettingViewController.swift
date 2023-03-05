@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/01.
 //
 
+import Combine
 import UIKit
 
 final class SettingViewController: UIViewController {
@@ -22,7 +23,22 @@ final class SettingViewController: UIViewController {
         static let cellHeight: CGFloat = 44
     }
 
+    private var settingViewModel: SettingViewModel
+
+    private var userDeleteSubject = PassthroughSubject<Void, Never>()
+    private var initUserData = PassthroughSubject<Void, Never>()
+    private var cancellable = Set<AnyCancellable>()
+
     // MARK: - Life Cycle
+
+    init(settingViewModel: SettingViewModel) {
+        self.settingViewModel = settingViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = SettingView()
@@ -32,6 +48,7 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .background
         configureTableView()
+        bind()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +62,58 @@ final class SettingViewController: UIViewController {
         settingView.tableViewDelegate(self)
     }
 
+    // MARK: - Input & Output
+
+    private func bind() {
+        let deleteUser = userDeleteSubject.eraseToAnyPublisher()
+
+        let input = SettingViewModel.Input(deleteUser: deleteUser)
+        let output = settingViewModel.transform(input: input)
+
+        output.deleteUserResult
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished: return
+                case .failure(let error): self?.handleUserDeleteError(error)
+                }
+            }, receiveValue: { [weak self] _ in
+                self?.handleUserDeleteResult()
+            })
+            .store(in: &cancellable)
+    }
+
+    private func handleUserDeleteResult() {
+        showOkayAlert(title: "삭제 완료", message: "데이터를 삭제했어요")
+        initUserData.send(Void())
+    }
+
+    private func handleUserDeleteError(_ error: Error) {
+        showOkayAlert(title: "유저 삭제 에러", message: "유저 삭제 중 에러가 발생했어요. 개발자에게 문의해주세요. \(error)")
+    }
+
+    // MARK: - Cell Alert
+
+    private func deleteData() {
+        showConfirmAlert(title: "데이터 삭제", message: "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") { [weak self] in
+            self?.userDeleteSubject.send(Void())
+        }
+    }
+
+    private func showDeveloperCodeAlert() {
+        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { text in
+            guard let text = text else { return }
+            print(text)
+        }
+    }
+
+    private func appVersion() -> String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+    }
+}
+
+// MARK: - Navigation
+
+extension SettingViewController {
     private func moveToSettingLanguage() {
         let settingLanguageViewController = SettingLanguageViewController()
         navigationController?.pushViewController(settingLanguageViewController, animated: true)
@@ -55,23 +124,17 @@ final class SettingViewController: UIViewController {
         let settingDarkModeViewController = SettingDarkModeViewController(settingDarkModeViewModel: settingDarkModeViewModel)
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
+}
 
-    private func deleteData() {
-        showConfirmAlert(title: "데이터 삭제", message: "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") {
-            print("hello")
-        }
-    }
+// MARK: - Publisher
 
-    private func showDeveloperCodeAlert() {
-        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { text in
-            print(text)
-        }
-    }
-
-    private func appVersion() -> String {
-        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+extension SettingViewController {
+    func initDataPublisher() -> AnyPublisher<Void, Never> {
+        return initUserData.eraseToAnyPublisher()
     }
 }
+
+// MARK: - TableView
 
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
 

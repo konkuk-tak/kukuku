@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     private var homeViewModel: HomeViewModel
 
     private var userScoreSubject = PassthroughSubject<Void, Never>()
+    private var userScoreUpdateSubject = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
@@ -65,13 +66,15 @@ class HomeViewController: UIViewController {
 
     private func bind() {
         let viewDidLoad = Just(Void()).eraseToAnyPublisher()
-        let userScoreUpdate = userScoreSubject.eraseToAnyPublisher()
+        let userScore = userScoreSubject.eraseToAnyPublisher()
+        let userScoreUpdate = userScoreUpdateSubject.eraseToAnyPublisher()
         let checkCanPlay = homeView.arButtonPublisher().eraseToAnyPublisher()
 
         let input = HomeViewModel.Input(
             viewDidLoad: viewDidLoad,
-            checkCanPlay: checkCanPlay,
-            userScoreUpdate: userScoreUpdate
+            userScore: userScore,
+            userScoreUpdate: userScoreUpdate,
+            checkCanPlay: checkCanPlay
         )
         let output = homeViewModel.transform(input: input)
 
@@ -144,6 +147,14 @@ class HomeViewController: UIViewController {
             showOkayAlert(title: "오늘의 햄버거를 먹었어요", message: "하루에 한 번만 햄버거를 먹을 수 있어요")
         }
     }
+
+    private func subscribeInitiateUser(settingViewController: SettingViewController) {
+        settingViewController.initDataPublisher()
+            .sink { [weak self] _ in
+                self?.userScoreSubject.send(Void())
+            }
+            .store(in: &cancellable)
+    }
 }
 
 extension HomeViewController {
@@ -170,7 +181,8 @@ extension HomeViewController {
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
                 let settingViewModel = DependencyFactory.settingViewModel()
-                let settingViewController = SettingViewController()
+                let settingViewController = SettingViewController(settingViewModel: settingViewModel)
+                self?.subscribeInitiateUser(settingViewController: settingViewController)
                 self?.navigationController?.pushViewController(settingViewController, animated: true)
             }
             .store(in: &cancellable)
@@ -181,7 +193,7 @@ extension HomeViewController {
         let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
         konkukInfoDetailViewController.willDismiss = { [weak self] in
-            self?.userScoreSubject.send(Void())
+            self?.userScoreUpdateSubject.send(Void())
         }
         present(konkukInfoDetailViewController, animated: true)
     }
