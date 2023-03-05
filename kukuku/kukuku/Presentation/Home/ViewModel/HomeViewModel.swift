@@ -12,7 +12,7 @@ final class HomeViewModel {
 
     // MARK: - Property
 
-    private var user: User!
+    private (set)var user: User!
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase
@@ -26,7 +26,7 @@ final class HomeViewModel {
 
     struct Input {
         let viewDidLoad: AnyPublisher<Void, Never>
-        let userScore: AnyPublisher<Void, Never>
+        let userUpdate: AnyPublisher<Void, Never>
         let userScoreUpdate: AnyPublisher<Void, Never>
         let checkCanPlay: AnyPublisher<Void, Never>
     }
@@ -46,7 +46,7 @@ final class HomeViewModel {
             .eraseToAnyPublisher()
 
         let userScoreInfo = input.viewDidLoad
-            .merge(with: input.userScore)
+            .merge(with: input.userUpdate)
             .tryMap { [weak self] _ in
                 return try self?.userCount()
             }
@@ -79,6 +79,7 @@ final class HomeViewModel {
     private func userCount() throws -> Int {
         let user = try userUseCase.readUser()
         self.user = user
+        print(user)
         return user.score
     }
 
@@ -90,5 +91,11 @@ final class HomeViewModel {
 
     private func checkCanPlay() -> Bool {
         return userUseCase.canPlay(user)
+    }
+}
+
+extension HomeViewModel {
+    func isDeveloperMode() -> Bool {
+        return user.type == .developer
     }
 }

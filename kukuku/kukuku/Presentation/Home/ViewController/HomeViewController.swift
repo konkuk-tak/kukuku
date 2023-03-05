@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
 
     private var homeViewModel: HomeViewModel
 
-    private var userScoreSubject = PassthroughSubject<Void, Never>()
+    private var userUpdateSubject = PassthroughSubject<Void, Never>()
     private var userScoreUpdateSubject = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
@@ -66,13 +66,13 @@ class HomeViewController: UIViewController {
 
     private func bind() {
         let viewDidLoad = Just(Void()).eraseToAnyPublisher()
-        let userScore = userScoreSubject.eraseToAnyPublisher()
+        let userScore = userUpdateSubject.eraseToAnyPublisher()
         let userScoreUpdate = userScoreUpdateSubject.eraseToAnyPublisher()
         let checkCanPlay = homeView.arButtonPublisher().eraseToAnyPublisher()
 
         let input = HomeViewModel.Input(
             viewDidLoad: viewDidLoad,
-            userScore: userScore,
+            userUpdate: userScore,
             userScoreUpdate: userScoreUpdate,
             checkCanPlay: checkCanPlay
         )
@@ -136,13 +136,7 @@ class HomeViewController: UIViewController {
         }
 
         if canPlay {
-            let arGameViewModel = DependencyFactory.arGameViewModel()
-            let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
-            arGameViewController.modalPresentationStyle = .fullScreen
-            arGameViewController.didDismiss = { [weak self] in
-                self?.moveToKonkukInfoDetail()
-            }
-            present(arGameViewController, animated: true)
+            moveToARGame()
         } else {
             showOkayAlert(title: "오늘의 햄버거를 먹었어요", message: "하루에 한 번만 햄버거를 먹을 수 있어요")
         }
@@ -151,7 +145,7 @@ class HomeViewController: UIViewController {
     private func subscribeInitiateUser(settingViewController: SettingViewController) {
         settingViewController.initDataPublisher()
             .sink { [weak self] _ in
-                self?.userScoreSubject.send(Void())
+                self?.userUpdateSubject.send(Void())
             }
             .store(in: &cancellable)
     }
@@ -180,12 +174,27 @@ extension HomeViewController {
 
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
-                let settingViewModel = DependencyFactory.settingViewModel()
+                guard let self = self else {
+                    self?.showOkayAlert(title: "에러", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
+                    return
+                }
+                let settingViewModel = DependencyFactory.settingViewModel(user: self.homeViewModel.user)
                 let settingViewController = SettingViewController(settingViewModel: settingViewModel)
-                self?.subscribeInitiateUser(settingViewController: settingViewController)
-                self?.navigationController?.pushViewController(settingViewController, animated: true)
+                self.subscribeInitiateUser(settingViewController: settingViewController)
+                self.navigationController?.pushViewController(settingViewController, animated: true)
             }
             .store(in: &cancellable)
+    }
+
+    private func moveToARGame() {
+        let isDeveloperMode = homeViewModel.isDeveloperMode()
+        let arGameViewModel = DependencyFactory.arGameViewModel(isDeveloperMode: isDeveloperMode)
+        let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
+        arGameViewController.modalPresentationStyle = .fullScreen
+        arGameViewController.didDismiss = { [weak self] in
+            self?.moveToKonkukInfoDetail()
+        }
+        present(arGameViewController, animated: true)
     }
 
     private func moveToKonkukInfoDetail() {

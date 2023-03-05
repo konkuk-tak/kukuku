@@ -9,6 +9,6 @@ import Combine
 import Foundation
 
 protocol LocationUseCase {
-    func isInRange() -> AnyPublisher<LocationStatus, Never>
+    func isInRange(isDeveloperMode: Bool) -> AnyPublisher<LocationStatus, Never>
     func requestAuthorization() -> AuthorizationStatus
 }

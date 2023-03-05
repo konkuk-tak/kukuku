@@ -10,18 +10,23 @@ import Foundation
 
 final class SettingViewModel {
 
+    private (set)var user: User
+
     private var userUseCase: UserUseCase
 
-    init(userUseCase: UserUseCase) {
+    init(user: User, userUseCase: UserUseCase) {
+        self.user = user
         self.userUseCase = userUseCase
     }
 
     struct Input {
         let deleteUser: AnyPublisher<Void, Never>
+        let developerCode: AnyPublisher<String, Never>
     }
 
     struct Output {
         let deleteUserResult: AnyPublisher<Void?, Error>
+        let developerModeUpdate: AnyPublisher<Bool?, Error>
     }
 
     func transform(input: Input) -> Output {
@@ -32,11 +37,26 @@ final class SettingViewModel {
             }
             .eraseToAnyPublisher()
 
-        let output = Output(deleteUserResult: deleteUserResult)
+        let developerModeUpdate = input.developerCode
+            .tryMap { [weak self] code in
+                try self?.updateToDeveloperMode(code: code)
+            }
+            .eraseToAnyPublisher()
+
+        let output = Output(deleteUserResult: deleteUserResult, developerModeUpdate: developerModeUpdate)
         return output
     }
 
     private func deleteUser() throws {
         try userUseCase.deleteUser()
+    }
+
+    private func updateToDeveloperMode(code: String) throws -> Bool {
+        let updatedUser = try userUseCase.updateToDeveloperType(user: user, code: code)
+        if let updatedUser = updatedUser {
+            self.user = updatedUser
+            return true
+        }
+        return false
     }
 }

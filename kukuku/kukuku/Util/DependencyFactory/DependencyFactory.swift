@@ -33,6 +33,10 @@ struct DependencyFactory {
         return DefaultUserRepository()
     }
 
+    static func developerCodeRepository() -> DeveloperCodeRepository {
+        return DefaultDeveloperCodeRepository()
+    }
+
     // MARK: - UseCase
 
     static func darkModeUseCase() -> DarkModeUseCase {
@@ -57,7 +61,8 @@ struct DependencyFactory {
 
     static func userUseCase() -> UserUseCase {
         let userRepository = userRepository()
-        return DefaultUserUseCase(userRepository: userRepository)
+        let developerCodeRepository = developerCodeRepository()
+        return DefaultUserUseCase(userRepository: userRepository, developerCodeRepository: developerCodeRepository)
     }
 
     // MARK: - ViewModel
@@ -78,9 +83,9 @@ struct DependencyFactory {
         return GuideViewModel(guideUseCase: guideUseCase)
     }
 
-    static func settingViewModel() -> SettingViewModel {
+    static func settingViewModel(user: User) -> SettingViewModel {
         let userUseCase = userUseCase()
-        return SettingViewModel(userUseCase: userUseCase)
+        return SettingViewModel(user: user, userUseCase: userUseCase)
     }
 
     static func settingDarkModeViewModel() -> SettingDarkModeViewModel {
@@ -88,8 +93,8 @@ struct DependencyFactory {
         return SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
     }
 
-    static func arGameViewModel() -> ARGameViewModel {
+    static func arGameViewModel(isDeveloperMode: Bool) -> ARGameViewModel {
         let locationUseCase = locationUseCase()
-        return ARGameViewModel(locationUseCase: locationUseCase)
+        return ARGameViewModel(isDeveloperMode: isDeveloperMode, locationUseCase: locationUseCase)
     }
 }

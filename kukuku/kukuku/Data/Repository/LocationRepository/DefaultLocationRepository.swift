@@ -40,6 +40,6 @@ struct DefaultLocationRepository: LocationRepository {
     }
 
     func gameLocation() -> [GameCoordinate] {
-        return GameCoordinate.createHome()
+        return GameCoordinate.create()
     }
 }

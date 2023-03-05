@@ -17,7 +17,7 @@ final class DefaultLocationUseCase: LocationUseCase {
     private var cancellable = Set<AnyCancellable>()
 
     private enum Constant {
-        static let targetDistance: Double = 200
+        static let targetDistance: Double = 30
     }
 
     init(
@@ -31,12 +31,20 @@ final class DefaultLocationUseCase: LocationUseCase {
         self.gameCoordinates = locationRepository.gameLocation()
     }
 
-    func isInRange() -> AnyPublisher<LocationStatus, Never> {
-        locationRepository.requestLocation()
-            .map { location in
-                self.isInRange(location: location)
-            }
-            .eraseToAnyPublisher()
+    func isInRange(isDeveloperMode: Bool) -> AnyPublisher<LocationStatus, Never> {
+        if isDeveloperMode {
+            return unLimitedRange()
+        } else {
+            return locationRepository.requestLocation()
+                .map { location in
+                    self.isInRange(location: location)
+                }
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func unLimitedRange() -> AnyPublisher<LocationStatus, Never> {
+        return Just(LocationStatus.success).eraseToAnyPublisher()
     }
 
     func requestAuthorization() -> AuthorizationStatus {

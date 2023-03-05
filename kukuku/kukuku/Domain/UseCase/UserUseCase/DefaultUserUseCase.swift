@@ -10,9 +10,11 @@ import Foundation
 struct DefaultUserUseCase: UserUseCase {
 
     private var userRepository: UserRepository
+    private var developerCodeRepository: DeveloperCodeRepository
 
-    init(userRepository: UserRepository) {
+    init(userRepository: UserRepository, developerCodeRepository: DeveloperCodeRepository) {
         self.userRepository = userRepository
+        self.developerCodeRepository = developerCodeRepository
     }
 
     func readUser() throws -> User {
@@ -27,9 +29,8 @@ struct DefaultUserUseCase: UserUseCase {
     }
 
     func canPlay(_ user: User) -> Bool {
-        guard let lastDate = user.log.last else {
-            return true
-        }
+        if user.type == .developer { return true}
+        guard let lastDate = user.log.last else { return true }
         return !Calendar.current.isDateInToday(lastDate)
     }
 
@@ -41,6 +42,15 @@ struct DefaultUserUseCase: UserUseCase {
 
     func deleteUser() throws {
         try userRepository.deleteUser()
+    }
+
+    func updateToDeveloperType(user: User, code: String) throws -> User? {
+        if isDeveloperCode(code) {
+            let developerUser = User(type: .developer, score: user.score, log: user.log)
+            try userRepository.updateUser(user: developerUser)
+            return developerUser
+        }
+        return nil
     }
 
     private func createNewUser() -> User {
@@ -55,5 +65,10 @@ struct DefaultUserUseCase: UserUseCase {
         let newDateLog = user.log + [Date()]
         let score = user.score + 1
         return User(type: user.type, score: score, log: newDateLog)
+    }
+
+    private func isDeveloperCode(_ code: String) -> Bool {
+        guard let developerCode = developerCodeRepository.code() else { return false }
+        return developerCode == code
     }
 }
