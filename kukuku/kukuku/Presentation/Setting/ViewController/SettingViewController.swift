@@ -134,6 +134,11 @@ final class SettingViewController: UIViewController {
     }
 
     private func showDeveloperCodeAlert() {
+        if settingViewModel.user.type == .developer {
+            showOkayAlert(title: "개발자 모드", message: "현재 개발자 모드 입니다.")
+            return
+        }
+
         showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { [weak self] text in
             guard let text = text else {
                 self?.showOkayAlert(title: "에러", message: "코드를 입력해주세요")
