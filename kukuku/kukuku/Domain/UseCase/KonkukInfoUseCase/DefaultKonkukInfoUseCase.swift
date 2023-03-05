@@ -20,4 +20,10 @@ struct DefaultKonkukInfoUseCase: KonkukInfoUseCase {
         let userKonkukInfoList = UserKonkukInfoList(list: Array(infoList[0..<count]), maxCount: infoList.count)
         return userKonkukInfoList
     }
+
+    func info(index: Int) -> KonkukInfo? {
+        guard let infoList = konkukInfoRepository.konkukInfoList() else { return nil }
+        if index >= infoList.count { return nil }
+        return infoList[index]
+    }
 }

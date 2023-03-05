@@ -16,10 +16,12 @@ final class HomeViewModel {
 
     private var darkModeUse: DarkModeUseCase
     private var userUseCase: UserUseCase
+    private var konkukInfoUseCase: KonkukInfoUseCase
 
-    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase) {
+    init(darkModeUse: DarkModeUseCase, userUseCase: UserUseCase, konkukInfoUseCase: KonkukInfoUseCase) {
         self.darkModeUse = darkModeUse
         self.userUseCase = userUseCase
+        self.konkukInfoUseCase = konkukInfoUseCase
     }
 
     // MARK: - Input & Output
@@ -97,5 +99,11 @@ final class HomeViewModel {
 extension HomeViewModel {
     func isDeveloperMode() -> Bool {
         return user.type == .developer
+    }
+
+    func nextKonkukInfo() -> KonkukInfo? {
+        let index = user.log.count - 1
+        let konkukInfo = konkukInfoUseCase.info(index: index)
+        return konkukInfo
     }
 }

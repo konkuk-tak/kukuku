@@ -192,18 +192,16 @@ extension HomeViewController {
         let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
         arGameViewController.modalPresentationStyle = .fullScreen
         arGameViewController.didDismiss = { [weak self] in
+            self?.userScoreUpdateSubject.send(Void())
             self?.moveToKonkukInfoDetail()
         }
         present(arGameViewController, animated: true)
     }
 
     private func moveToKonkukInfoDetail() {
-        let konkukInfo = KonkukInfo(id: "k31", imageURL: nil, title: "시험용", description: String(repeating: "ㅋ", count: 200))
+        guard let konkukInfo = homeViewModel.nextKonkukInfo() else { return }
         let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-        konkukInfoDetailViewController.willDismiss = { [weak self] in
-            self?.userScoreUpdateSubject.send(Void())
-        }
         present(konkukInfoDetailViewController, animated: true)
     }
 }
