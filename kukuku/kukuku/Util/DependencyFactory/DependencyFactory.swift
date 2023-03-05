@@ -33,6 +33,10 @@ struct DependencyFactory {
         return DefaultUserRepository()
     }
 
+    static func developerCodeRepository() -> DeveloperCodeRepository {
+        return DefaultDeveloperCodeRepository()
+    }
+
     // MARK: - UseCase
 
     static func darkModeUseCase() -> DarkModeUseCase {
@@ -57,7 +61,8 @@ struct DependencyFactory {
 
     static func userUseCase() -> UserUseCase {
         let userRepository = userRepository()
-        return DefaultUserUseCase(userRepository: userRepository)
+        let developerCodeRepository = developerCodeRepository()
+        return DefaultUserUseCase(userRepository: userRepository, developerCodeRepository: developerCodeRepository)
     }
 
     // MARK: - ViewModel

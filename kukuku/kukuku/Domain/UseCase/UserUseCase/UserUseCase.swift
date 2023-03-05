@@ -12,4 +12,5 @@ protocol UserUseCase {
     func canPlay(_ user: User) -> Bool
     func finishDailyGame(user: User) throws -> User
     func deleteUser() throws
+    func updateToDeveloperType(user: User, code: String) throws -> User?
 }
