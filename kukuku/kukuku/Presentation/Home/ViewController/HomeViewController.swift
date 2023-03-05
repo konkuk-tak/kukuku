@@ -178,7 +178,7 @@ extension HomeViewController {
     // MARK: - Navigation
     private func moveToKonukInfoList() {
         let userListCount = homeViewModel.user.listCount
-        let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(userListCount: 30) // TODO: - 수정
+        let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(userListCount: userListCount)
         let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
         self.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
     }
