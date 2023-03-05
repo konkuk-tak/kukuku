@@ -83,7 +83,11 @@ final class ARGameViewController: UIViewController {
     private func checkCamera() {
         AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
             if !isAllowed {
-                self?.showConfirmAlert(title: "카메라 권한이 없어요", message: "콘텐츠 이용을 위해 카메라 권한이 필요합니다.", handler: {
+                self?.showConfirmAlert(
+                    title: "카메라 권한이 없어요",
+                    message: "콘텐츠 이용을 위해 카메라 권한이 필요합니다.",
+                    confirmTitle: "설정하기",
+                    handler: {
                     PermissionManager.moveToiPhoneSetting()
                 })
             }

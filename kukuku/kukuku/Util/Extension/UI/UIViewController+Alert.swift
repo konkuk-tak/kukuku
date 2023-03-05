@@ -24,9 +24,14 @@ extension UIViewController {
         return sheet
     }
 
-    fileprivate func createConfirmAlert(title: String, message: String, handler: @escaping () -> Void) -> UIAlertController {
+    fileprivate func createConfirmAlert(
+        title: String,
+        message: String,
+        confirmTitle: String,
+        handler: @escaping () -> Void
+    ) -> UIAlertController {
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-        let alertAction = UIAlertAction(title: "확인", style: .default) { _ in
+        let alertAction = UIAlertAction(title: confirmTitle, style: .default) { _ in
             handler()
         }
 
@@ -62,8 +67,8 @@ extension UIViewController {
         showAlert(alertController)
     }
 
-    func showConfirmAlert(title: String, message: String, handler: @escaping () -> Void) {
-        let alertController = createConfirmAlert(title: title, message: message, handler: handler)
+    func showConfirmAlert(title: String, message: String, confirmTitle: String = "확인", handler: @escaping () -> Void) {
+        let alertController = createConfirmAlert(title: title, message: message, confirmTitle: confirmTitle, handler: handler)
         showAlert(alertController)
     }
 
