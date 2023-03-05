@@ -26,8 +26,9 @@ final class HomeViewModel {
 
     struct Input {
         let viewDidLoad: AnyPublisher<Void, Never>
-        let checkCanPlay: AnyPublisher<Void, Never>
+        let userScore: AnyPublisher<Void, Never>
         let userScoreUpdate: AnyPublisher<Void, Never>
+        let checkCanPlay: AnyPublisher<Void, Never>
     }
 
     struct Output {
@@ -45,6 +46,7 @@ final class HomeViewModel {
             .eraseToAnyPublisher()
 
         let userScoreInfo = input.viewDidLoad
+            .merge(with: input.userScore)
             .tryMap { [weak self] _ in
                 return try self?.userCount()
             }
@@ -71,6 +73,8 @@ final class HomeViewModel {
 
         return output
     }
+
+    // MARK: - Method
 
     private func userCount() throws -> Int {
         let user = try userUseCase.readUser()

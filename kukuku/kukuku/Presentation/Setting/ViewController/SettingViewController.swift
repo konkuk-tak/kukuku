@@ -24,7 +24,9 @@ final class SettingViewController: UIViewController {
     }
 
     private var settingViewModel: SettingViewModel
+
     private var userDeleteSubject = PassthroughSubject<Void, Never>()
+    private var initUserData = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
@@ -82,6 +84,7 @@ final class SettingViewController: UIViewController {
 
     private func handleUserDeleteResult() {
         showOkayAlert(title: "삭제 완료", message: "데이터를 삭제했어요")
+        initUserData.send(Void())
     }
 
     private func handleUserDeleteError(_ error: Error) {
@@ -122,6 +125,16 @@ extension SettingViewController {
         navigationController?.pushViewController(settingDarkModeViewController, animated: true)
     }
 }
+
+// MARK: - Publisher
+
+extension SettingViewController {
+    func initDataPublisher() -> AnyPublisher<Void, Never> {
+        return initUserData.eraseToAnyPublisher()
+    }
+}
+
+// MARK: - TableView
 
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
 
