@@ -17,12 +17,13 @@ final class KonkukInfoDetailView: UIView {
     private let containerView = UIView()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    private let infoImageView = KUImageView()
+    private let infoImageView = UIImageView()
+    private let imageReferenceLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let completeButton = KUDefaultButton(title: "완료", style: .heavy)
 
-    var hasImage: Bool { return infoImageView.hasImage }
+    var hasImage: Bool { return infoImageView.image != nil }
 
     // MARK: - Life Cycle
 
@@ -68,14 +69,30 @@ final class KonkukInfoDetailView: UIView {
         addSubview(containerView)
         scrollView.addSubview(contentView)
 
-        configureInfoImageView(imageName: konkukInfo.imageURL, description: konkukInfo.imageReference)
+        configureInfoImageView(imageName: konkukInfo.imageURL)
+        configureImageReferenceLabel(imageReference: konkukInfo.imageReference)
+
         configureTitleLabel(title: konkukInfo.title)
         configureDescriptionLabel(description: konkukInfo.description)
         configureCompleteButton()
     }
 
-    private func configureInfoImageView(imageName: String, description: String) {
-        infoImageView.update(imageName: imageName, description: description)
+    private func configureInfoImageView(imageName: String) {
+        if !imageName.isEmpty, let image = UIImage(named: imageName) {
+            infoImageView.contentMode = .scaleAspectFit
+            infoImageView.backgroundColor = .dynamicBlack
+            infoImageView.image = image
+        }
+    }
+
+    private func configureImageReferenceLabel(imageReference: String) {
+        if !imageReference.isEmpty {
+            imageReferenceLabel.text = "출처 : " + imageReference
+            imageReferenceLabel.font = .caption1
+            imageReferenceLabel.textColor = .white
+            imageReferenceLabel.backgroundColor = .systemGray5
+            imageReferenceLabel.layer.opacity = 1.0
+        }
     }
 
     private func configureTitleLabel(title: String) {
@@ -101,9 +118,12 @@ final class KonkukInfoDetailView: UIView {
         contentView.flex.paddingHorizontal(16).define { flex in
 
             if hasImage {
-                flex.addItem().justifyContent(.center).paddingHorizontal(30).define { flex in
-                    flex.addItem(infoImageView).aspectRatio(1).marginTop(12)
+                flex.addItem().marginHorizontal(30).define { flex in
+                    flex.addItem(infoImageView).aspectRatio(1)
+                    flex.addItem(imageReferenceLabel).height(20)
+                    imageReferenceLabel.flex.position(.absolute).bottom(0).left(0).right(0)
                 }
+                .marginTop(12)
             }
 
             flex.addItem(titleLabel).marginTop(24)

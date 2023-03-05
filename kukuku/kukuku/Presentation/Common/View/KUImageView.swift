@@ -22,6 +22,7 @@ final class KUImageView: UIView {
         super.init(frame: frame)
         configureView()
         configureSubView()
+        configureConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +46,7 @@ final class KUImageView: UIView {
     }
 
     private func configureDescriptionLabel() {
+        descriptionLabel.font = .body
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.backgroundColor = .systemGray5
     }
@@ -72,7 +74,7 @@ final class KUImageView: UIView {
 
 extension KUImageView {
     func update(imageName: String, description: String) {
-        if !imageName.isEmpty, let image = UIImage(named: imageName) {
+        if !imageName.isEmpty, let image = UIImage(named: "guide1") {
             infoImageView.image = image
             descriptionLabel.text = description
         }
