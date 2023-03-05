@@ -27,7 +27,7 @@ final class SettingViewController: UIViewController {
 
     private var developerCodeSubject = PassthroughSubject<String, Never>()
     private var userDeleteSubject = PassthroughSubject<Void, Never>()
-    private var initUserData = PassthroughSubject<Void, Never>()
+    private var userUpdate = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
@@ -99,7 +99,7 @@ final class SettingViewController: UIViewController {
 
     private func handleUserDeleteResult() {
         showOkayAlert(title: "삭제 완료", message: "데이터를 삭제했어요")
-        initUserData.send(Void())
+        userUpdate.send(Void())
     }
 
     private func handleUserDeleteError(_ error: Error) {
@@ -115,6 +115,7 @@ final class SettingViewController: UIViewController {
         }
         if isUpdated {
             showOkayAlert(title: "개발자 모드 변경 완료", message: "개발자 모드로 변경 완료했어요. 이제 거리 제한과 하루 횟수 제한이 사라졌어요.")
+            userUpdate.send(Void())
         } else {
             showOkayAlert(title: "코드 불일치", message: "코드가 일치하지 않아요. 다시 확인해주세요.")
         }
@@ -166,7 +167,7 @@ extension SettingViewController {
 
 extension SettingViewController {
     func initDataPublisher() -> AnyPublisher<Void, Never> {
-        return initUserData.eraseToAnyPublisher()
+        return userUpdate.eraseToAnyPublisher()
     }
 }
 

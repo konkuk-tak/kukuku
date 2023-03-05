@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
 
     private var homeViewModel: HomeViewModel
 
-    private var userScoreSubject = PassthroughSubject<Void, Never>()
+    private var userUpdateSubject = PassthroughSubject<Void, Never>()
     private var userScoreUpdateSubject = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
@@ -66,13 +66,13 @@ class HomeViewController: UIViewController {
 
     private func bind() {
         let viewDidLoad = Just(Void()).eraseToAnyPublisher()
-        let userScore = userScoreSubject.eraseToAnyPublisher()
+        let userScore = userUpdateSubject.eraseToAnyPublisher()
         let userScoreUpdate = userScoreUpdateSubject.eraseToAnyPublisher()
         let checkCanPlay = homeView.arButtonPublisher().eraseToAnyPublisher()
 
         let input = HomeViewModel.Input(
             viewDidLoad: viewDidLoad,
-            userScore: userScore,
+            userUpdate: userScore,
             userScoreUpdate: userScoreUpdate,
             checkCanPlay: checkCanPlay
         )
@@ -151,7 +151,7 @@ class HomeViewController: UIViewController {
     private func subscribeInitiateUser(settingViewController: SettingViewController) {
         settingViewController.initDataPublisher()
             .sink { [weak self] _ in
-                self?.userScoreSubject.send(Void())
+                self?.userUpdateSubject.send(Void())
             }
             .store(in: &cancellable)
     }
