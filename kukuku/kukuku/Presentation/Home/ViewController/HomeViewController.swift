@@ -170,7 +170,7 @@ extension HomeViewController {
         homeView.settingButtonPublisher()
             .sink { [weak self] _ in
                 let settingViewModel = DependencyFactory.settingViewModel()
-                let settingViewController = SettingViewController()
+                let settingViewController = SettingViewController(settingViewModel: settingViewModel)
                 self?.navigationController?.pushViewController(settingViewController, animated: true)
             }
             .store(in: &cancellable)
