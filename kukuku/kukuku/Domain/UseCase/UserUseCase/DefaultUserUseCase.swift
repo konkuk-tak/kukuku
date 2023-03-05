@@ -26,8 +26,10 @@ struct DefaultUserUseCase: UserUseCase {
         }
     }
 
-    func updateUser(user: User) throws {
-        try userRepository.updateUser(user: user)
+    func finishDailyGame(user: User) throws -> User {
+        let updatedUser = dailyUpdate(user: user)
+        try updateUser(updatedUser)
+        return updatedUser
     }
 
     func deleteUser() throws {
@@ -36,5 +38,15 @@ struct DefaultUserUseCase: UserUseCase {
 
     private func createNewUser() -> User {
         return User(type: .normal, score: 0, log: [])
+    }
+
+    private func updateUser(_ user: User) throws {
+        try userRepository.updateUser(user: user)
+    }
+
+    private func dailyUpdate(user: User) -> User {
+        let newDateLog = user.log + [Date()]
+        let score = user.score + 1
+        return User(type: user.type, score: score, log: newDateLog)
     }
 }

@@ -64,7 +64,9 @@ struct DependencyFactory {
 
     static func homeViewModel() -> HomeViewModel {
         let darkModeUseCase = darkModeUseCase()
-        return HomeViewModel(darkModeUse: darkModeUseCase)
+        let userUseCase = userUseCase()
+        let locationUseCase = locationUseCase()
+        return HomeViewModel(darkModeUse: darkModeUseCase, userUseCase: userUseCase, locationUseCase: locationUseCase)
     }
 
     static func konkukInfoListViewModel() -> KonkukInfoListViewModel {

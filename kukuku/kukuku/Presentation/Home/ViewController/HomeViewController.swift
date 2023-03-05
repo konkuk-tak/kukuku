@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
 
     private var homeViewModel: HomeViewModel
 
+    private var userScoreSubject = PassthroughSubject<Void, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
@@ -63,13 +64,29 @@ class HomeViewController: UIViewController {
     // MARK: - Input & Output Bind
 
     private func bind() {
-        let input = HomeViewModel.Input(viewDidLoad: Just(Void()).eraseToAnyPublisher())
+        let viewDidLoad = Just(Void()).eraseToAnyPublisher()
+        let userScoreUpdate = userScoreSubject.eraseToAnyPublisher()
+        let input = HomeViewModel.Input(viewDidLoad: viewDidLoad, userScoreUpdate: userScoreUpdate)
         let output = homeViewModel.transform(input: input)
 
         output.darkMode
             .sink { [weak self] darkModeKind in
                 self?.handleDarkMode(darkModeKind: darkModeKind)
             }
+            .store(in: &cancellable)
+
+        output.userScoreInfo
+            .merge(with: output.userUpdateScoreInfo)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.showOkayAlert(title: "에러", message: "유저 정보를 불러오는데 에러가 발생했습니다. \(error)")
+                case .finished:
+                    return
+                }
+            }, receiveValue: { [weak self] score in
+                self?.handleScore(score)
+            })
             .store(in: &cancellable)
     }
 
@@ -78,8 +95,11 @@ class HomeViewController: UIViewController {
         guard let darkModeKind = darkModeKind else {
             return
         }
-
         DarkModeManager.mode(darkModeKind: darkModeKind)
+    }
+
+    private func handleScore(_ score: Int) {
+        homeView.update(score: score)
     }
 }
 
@@ -130,7 +150,7 @@ extension HomeViewController {
         let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
         konkukInfoDetailViewController.willDismiss = { [weak self] in
-            self?.homeView.update(score: 12)
+            self?.userScoreSubject.send(Void())
         }
         present(konkukInfoDetailViewController, animated: true)
     }
