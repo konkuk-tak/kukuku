@@ -18,6 +18,7 @@ final class KonkukInfoDetailView: UIView {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let infoImageView = UIImageView()
+    private let imageReferenceLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let completeButton = KUDefaultButton(title: "완료", style: .heavy)
@@ -67,17 +68,31 @@ final class KonkukInfoDetailView: UIView {
     private func configureSubView(konkukInfo: KonkukInfo) {
         addSubview(containerView)
         scrollView.addSubview(contentView)
-
+        print(konkukInfo)
         configureInfoImageView(imageName: konkukInfo.imageURL)
+        configureImageReferenceLabel(imageReference: konkukInfo.imageReference)
+
         configureTitleLabel(title: konkukInfo.title)
         configureDescriptionLabel(description: konkukInfo.description)
         configureCompleteButton()
     }
 
-    private func configureInfoImageView(imageName: String?) {
-        infoImageView.clipsToBounds = true
-        if let imageName = imageName, let image = UIImage(named: imageName) {
+    private func configureInfoImageView(imageName: String) {
+        print(imageName)
+        if !imageName.isEmpty, let image = UIImage(named: imageName) {
+            infoImageView.contentMode = .scaleAspectFit
+            infoImageView.backgroundColor = .black
             infoImageView.image = image
+        }
+    }
+
+    private func configureImageReferenceLabel(imageReference: String) {
+        if !imageReference.isEmpty {
+            imageReferenceLabel.text = "출처 : " + imageReference
+            imageReferenceLabel.font = .caption1
+            imageReferenceLabel.textColor = .white
+            imageReferenceLabel.backgroundColor = .systemGray5
+            imageReferenceLabel.layer.opacity = 1.0
         }
     }
 
@@ -104,9 +119,12 @@ final class KonkukInfoDetailView: UIView {
         contentView.flex.paddingHorizontal(16).define { flex in
 
             if hasImage {
-                flex.addItem().justifyContent(.center).paddingHorizontal(30).define { flex in
-                    flex.addItem(infoImageView).aspectRatio(1).marginTop(12)
+                flex.addItem().marginHorizontal(30).define { flex in
+                    flex.addItem(infoImageView).aspectRatio(1)
+                    flex.addItem(imageReferenceLabel).height(20)
+                    imageReferenceLabel.flex.position(.absolute).bottom(0).left(0).right(0)
                 }
+                .marginTop(12)
             }
 
             flex.addItem(titleLabel).marginTop(24)

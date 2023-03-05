@@ -216,7 +216,6 @@
 			children = (
 				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
 				14644E8729B17DC800176342 /* View */,
-				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -681,6 +680,7 @@
 		14644E8729B17DC800176342 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1429327829AF8982009B9B7F /* KuDefaultButton.swift */,
 				14644E8829B17DFC00176342 /* KUContainTableView.swift */,
 			);
 			path = View;
