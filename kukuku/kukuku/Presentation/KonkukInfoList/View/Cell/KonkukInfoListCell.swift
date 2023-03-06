@@ -83,13 +83,13 @@ extension KonkukInfoListCell {
     }
 
     func updateCheck(number: Int, title: String) {
-        update(image: .checkIcon.withTintColor(.green, renderingMode: .alwaysOriginal), title: "\(number). " + title.localized)
+        update(image: .checkIcon.withTintColor(.green, renderingMode: .alwaysOriginal), title: "\(number). " + title)
     }
 
     func updateLock(number: Int) {
         update(
             image: .lockIcon.withTintColor(.dynamicBlack, renderingMode: .alwaysOriginal),
-            title: "\(number). " + "잠금".localized
+            title: "\(number). " + "Locked".localized
         )
     }
 }

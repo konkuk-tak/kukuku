@@ -21,7 +21,7 @@ final class KonkukInfoDetailView: UIView {
     private let imageReferenceLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let completeButton = KUDefaultButton(title: "완료", style: .heavy)
+    private let completeButton = KUDefaultButton(title: "done".localized, style: .heavy)
 
     var hasImage: Bool { return infoImageView.image != nil }
 

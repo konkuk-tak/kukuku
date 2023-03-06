@@ -19,10 +19,10 @@ extension SettingCellKind {
 
     var title: String {
         switch self {
-        case .language: return "언어 / language"
-        case .darkMode: return "다크모드"
-        case .deleteData: return "데이터 삭제"
-        case .developerMode: return "개발자 모드"
+        case .language: return "Language Setting"
+        case .darkMode: return "Setting Dark Mode"
+        case .deleteData: return "Delete Data"
+        case .developerMode: return "Developer Mode"
         }
     }
 

@@ -16,7 +16,7 @@ final class ARGameView: UIView {
     private var arView: ARView! = ARView()
     private let statusBarContainer = UIView()
     private let statusBar = UILabel()
-    private let exitButton = KUDefaultButton(title: "종료", style: .heavy)
+    private let exitButton = KUDefaultButton(title: "close", style: .heavy)
     private var targetScene: RealityComposerManager.TargetScene?
     private var targetTouchSubject = PassthroughSubject<Void, Never>()
 

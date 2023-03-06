@@ -110,7 +110,7 @@ final class SettingViewController: UIViewController {
 
     private func handleDeveloperModeResult(isUpdated: Bool?) {
         guard let isUpdated = isUpdated else {
-            showOkayAlert(title: "에러", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
+            showOkayAlert(title: "Error", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
             return
         }
         if isUpdated {
@@ -135,13 +135,13 @@ final class SettingViewController: UIViewController {
 
     private func showDeveloperCodeAlert() {
         if settingViewModel.user.type == .developer {
-            showOkayAlert(title: "개발자 모드", message: "현재 개발자 모드 입니다.")
+            showOkayAlert(title: "Developer Mode", message: "현재 개발자 모드 입니다.")
             return
         }
 
-        showTextFieldAlert(title: "개발자 코드", message: "개발자 코드를 입력해주세요.") { [weak self] text in
+        showTextFieldAlert(title: "Developer Code", message: "개발자 코드를 입력해주세요.") { [weak self] text in
             guard let text = text else {
-                self?.showOkayAlert(title: "에러", message: "코드를 입력해주세요")
+                self?.showOkayAlert(title: "Error", message: "코드를 입력해주세요")
                 return
             }
             self?.developerCodeSubject.send(text)

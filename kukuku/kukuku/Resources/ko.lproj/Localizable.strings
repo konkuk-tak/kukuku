@@ -30,10 +30,13 @@
 
 // MARK: - 이용법
 "Next" = "다음";
+"next" = "다음";
 "Done" = "완료";
+"done" = "완료";
 
 // MARK: - 설정
-"Language" = "언어 / Language";
+"Language" = "언어";
+"Language Setting" = "언어 / Language";
 "English (US)" = "English (US)";
 
 "Setting Dark Mode" = "다크 모드";
@@ -49,7 +52,7 @@
 "Use Developer Code" = "개발자 코드를 입력해주세요";
 
 
-"App Info" = "앱 정보"
+"App Info" = "앱 정보";
 
 "App Version" = "앱 버전";
 
@@ -57,5 +60,5 @@
 
 "Searching For Location" = "위치 탐색 중";
 "Let's look for the hamburger!" = "적당한 위치에요. 햄버거를 찾아봐요!";
-"It's not the right location" = "정해진 위치가 아니에요."
+"It's not the right location" = "정해진 위치가 아니에요.";
 

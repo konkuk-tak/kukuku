@@ -51,7 +51,7 @@ final class KonkukInfoListViewController: UIViewController {
     // MARK: - Configure
 
     private func configureNavigationBar() {
-        navigationItem.title = "알쓸건잡"
+        navigationItem.title = "Konkuk Fun Facts".localized
     }
 
     private func configureTableView() {

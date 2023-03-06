@@ -31,9 +31,11 @@
 // MARK: - 이용법
 "Next" = "Next";
 "Done" = "Done";
+"done" = "done";
 
 // MARK: - 설정
 "Language" = "Language";
+"Language Setting" = "Language";
 "English (US)" = "English (US)";
 
 "Setting Dark Mode" = "Appearance";
@@ -49,11 +51,11 @@
 "Use Developer Code" = "Use Developer Code";
 
 
-"App Info" = "App Info"
+"App Info" = "App Info";
 
 "App Version" = "App Version";
 
 // MARK: - 게임
 "Searching For Location" = "Searching For Location";
 "Let's look for the hamburger!" = "Let's look for the hamburger!";
-"It's not the right location" = "It's not the right location"
+"It's not the right location" = "It's not the right location";
