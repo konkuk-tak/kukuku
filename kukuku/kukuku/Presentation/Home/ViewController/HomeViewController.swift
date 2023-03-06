@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
     private func configureNavigationBar() {
         let label = UILabel()
         label.textColor = .dynamicBlack
-        label.text = "쿠쿠쿠"
+        label.text = "AppName".localized
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
         navigationController?.navigationBar.tintColor = .green
         navigationItem.backButtonTitle = ""

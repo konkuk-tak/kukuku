@@ -7,6 +7,8 @@
 */
 
 // MARK: - 공통 (버튼, Alert 등)
+"AppName" = "쿠쿠쿠";
+
 "Okay" = "확인";
 "Cancel" = "취소";
 "okay" = "확인";
