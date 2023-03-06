@@ -101,7 +101,7 @@ extension HomeViewModel {
     }
 
     func nextKonkukInfo() -> KonkukInfo? {
-        let index = user.listCount
+        let index = user.listCount - 1
         let konkukInfo = konkukInfoUseCase.info(index: index)
         return konkukInfo
     }
