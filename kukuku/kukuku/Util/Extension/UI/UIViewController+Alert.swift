@@ -75,6 +75,22 @@ extension UIViewController {
         title: String,
         message: String,
         confirmTitle: String = "확인",
+        handler: (() -> Void)? = nil
+    ) {
+        let alertController = createConfirmAlert(
+            title: title,
+            message: message,
+            confirmTitle: confirmTitle,
+            handler: handler,
+            cancelHandler: nil
+        )
+        showAlert(alertController)
+    }
+
+    func showConfirmAlert(
+        title: String,
+        message: String,
+        confirmTitle: String = "확인",
         handler: (() -> Void)? = nil,
         cancelHandeler: (() -> Void)? = nil
     ) {
