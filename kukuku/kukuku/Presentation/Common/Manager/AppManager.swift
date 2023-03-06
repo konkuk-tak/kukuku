@@ -10,6 +10,7 @@ import UIKit
 struct AppManager {
 
     static var bundle: Bundle!
+    static var currentLanguage: LanguageKind!
 
     static func restartApp() {
         languageSetting()
@@ -32,6 +33,7 @@ struct AppManager {
     static func languageSetting() {
         let languageUseCase = DependencyFactory.languageUseCase()
         let languageKind = languageUseCase.read()
+        currentLanguage = languageKind
         let path = Bundle.main.path(forResource: languageKind.code, ofType: "lproj") ?? ""
         bundle = Bundle(path: path)
     }

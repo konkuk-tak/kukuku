@@ -157,7 +157,9 @@ final class SettingViewController: UIViewController {
 
 extension SettingViewController {
     private func moveToSettingLanguage() {
-        let settingLanguageViewModel = DependencyFactory.settingLanguageViewModel()
+        let settingLanguageViewModel = DependencyFactory.settingLanguageViewModel(
+            currentLanguage: settingViewModel.currentLanguage
+        )
         let settingLanguageViewController = SettingLanguageViewController(settingLanguageViewModel: settingLanguageViewModel)
         navigationController?.pushViewController(settingLanguageViewController, animated: true)
     }
@@ -213,7 +215,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             if cellKind == .language {
-                cell.update(title: cellKind.title, value: "한국어")
+                cell.update(title: cellKind.title, value: settingViewModel.currentLanguage.title)
             } else {
                 cell.update(title: cellKind.title)
             }

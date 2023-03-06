@@ -13,9 +13,9 @@ final class SettingLanguageViewModel {
     private let languageUseCase: LanguageUseCase
     private(set) var currentLanguage: LanguageKind
 
-    init(languageUseCase: LanguageUseCase) {
+    init(languageUseCase: LanguageUseCase, currentLanguage: LanguageKind) {
         self.languageUseCase = languageUseCase
-        self.currentLanguage = languageUseCase.read()
+        self.currentLanguage = currentLanguage
     }
 
     struct Input {

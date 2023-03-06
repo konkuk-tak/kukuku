@@ -94,9 +94,9 @@ struct DependencyFactory {
         return GuideViewModel(guideUseCase: guideUseCase)
     }
 
-    static func settingViewModel(user: User) -> SettingViewModel {
+    static func settingViewModel(user: User, currentLanguage: LanguageKind) -> SettingViewModel {
         let userUseCase = userUseCase()
-        return SettingViewModel(user: user, userUseCase: userUseCase)
+        return SettingViewModel(user: user, currentLanguage: currentLanguage, userUseCase: userUseCase)
     }
 
     static func settingDarkModeViewModel() -> SettingDarkModeViewModel {
@@ -104,9 +104,9 @@ struct DependencyFactory {
         return SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
     }
 
-    static func settingLanguageViewModel() -> SettingLanguageViewModel {
+    static func settingLanguageViewModel(currentLanguage: LanguageKind) -> SettingLanguageViewModel {
         let languageUseCase = languageUseCase()
-        return SettingLanguageViewModel(languageUseCase: languageUseCase)
+        return SettingLanguageViewModel(languageUseCase: languageUseCase, currentLanguage: currentLanguage)
     }
 
     static func arGameViewModel(isDeveloperMode: Bool) -> ARGameViewModel {
