@@ -74,6 +74,7 @@
 
 // MARK: - Settings
 "Language" = "Language";
+"Languages" = "Languages";
 "Language Setting" = "Language";
 "English (US)" = "English (US)";
 "Korean" = "한국어 (Korean)";

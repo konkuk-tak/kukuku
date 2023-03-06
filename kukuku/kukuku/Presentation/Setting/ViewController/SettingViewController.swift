@@ -48,6 +48,7 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
+        configureNavigationBar()
         configureTableView()
         bind()
     }
@@ -57,6 +58,11 @@ final class SettingViewController: UIViewController {
     }
 
     // MARK: - Configure
+
+    private func configureNavigationBar() {
+        navigationItem.title = "Settings".localized
+        navigationItem.backButtonTitle = ""
+    }
 
     private func configureTableView() {
         settingView.tableViewDataSource(self)

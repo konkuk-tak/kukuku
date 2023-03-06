@@ -41,12 +41,19 @@ final class SettingLanguageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureTableView()
         bind()
     }
 
     override func loadView() {
         view = SettingLanguageView()
+    }
+
+    // MARK: - Configure
+
+    private func configureNavigationBar() {
+        navigationItem.title = "Languages".localized
     }
 
     private func configureTableView() {

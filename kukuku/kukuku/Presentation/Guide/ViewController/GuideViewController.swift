@@ -45,7 +45,7 @@ final class GuideViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        navigationItem.title = "이용법"
+        navigationItem.title = "Guide".localized
     }
 
     private func configureCollectionViewDelegate() {
