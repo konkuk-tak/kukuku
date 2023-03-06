@@ -1,0 +1,7 @@
+name: FlexLayout, nameSpecified: FlexLayout, owner: layoutBox, version: , source: https://github.com/layoutBox/FlexLayout
+
+name: PinLayout, nameSpecified: PinLayout, owner: layoutBox, version: 1.9.4, source: https://github.com/layoutBox/PinLayout
+
+add-version-numbers: false
+
+LicensePlist Version: 3.24.1
