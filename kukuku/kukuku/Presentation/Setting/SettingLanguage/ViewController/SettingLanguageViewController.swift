@@ -70,9 +70,11 @@ final class SettingLanguageViewController: UIViewController {
     }
 
     private func handleLanguage(_ languageKind: LanguageKind?) {
-        guard let languageKind = languageKind else {
+        guard languageKind != nil else {
             return
         }
+
+        AppManager.restartApp()
     }
 }
 
@@ -93,7 +95,11 @@ extension SettingLanguageViewController: UITableViewDataSource, UITableViewDeleg
             return UITableViewCell()
         }
 
-        cell.update(title: languageKind.title, isChecked: true)
+        if languageKind == settingLanguageViewModel.currentLanguage {
+            cell.update(title: languageKind.title, isChecked: true)
+        } else {
+            cell.update(title: languageKind.title)
+        }
 
         return cell
     }
@@ -104,6 +110,11 @@ extension SettingLanguageViewController: UITableViewDataSource, UITableViewDeleg
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         settingLanguageView.deSelectTableViewCell()
-        print(NSLocale.preferredLanguages)
+
+        guard let languageKind = LanguageKind(index: indexPath.row) else {
+            return
+        }
+
+        languageSubject.send(languageKind)
     }
 }
