@@ -92,6 +92,8 @@
 		14D5BC5529B58707007D2A3E /* DefaultLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5429B58707007D2A3E /* DefaultLanguageRepository.swift */; };
 		14D5BC5929B587B6007D2A3E /* LanguageKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5829B587B6007D2A3E /* LanguageKind.swift */; };
 		14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5B29B588C0007D2A3E /* LanguageRepository.swift */; };
+		14D5BC5F29B58907007D2A3E /* LanguageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5E29B58907007D2A3E /* LanguageUseCase.swift */; };
+		14D5BC6129B5890F007D2A3E /* DefaultLanguageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC6029B5890F007D2A3E /* DefaultLanguageUseCase.swift */; };
 		14F4C45B29B45F1200A9ADBE /* DeveloperCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */; };
 		14F4C45E29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */; };
 		14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */; };
@@ -197,6 +199,8 @@
 		14D5BC5429B58707007D2A3E /* DefaultLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguageRepository.swift; sourceTree = "<group>"; };
 		14D5BC5829B587B6007D2A3E /* LanguageKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageKind.swift; sourceTree = "<group>"; };
 		14D5BC5B29B588C0007D2A3E /* LanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRepository.swift; sourceTree = "<group>"; };
+		14D5BC5E29B58907007D2A3E /* LanguageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageUseCase.swift; sourceTree = "<group>"; };
+		14D5BC6029B5890F007D2A3E /* DefaultLanguageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguageUseCase.swift; sourceTree = "<group>"; };
 		14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeveloperCode.plist; sourceTree = "<group>"; };
 		14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperCodeRepository.swift; sourceTree = "<group>"; };
@@ -898,6 +902,15 @@
 			path = LanguageRepository;
 			sourceTree = "<group>";
 		};
+		14D5BC5D29B588FA007D2A3E /* LanguageUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				14D5BC5E29B58907007D2A3E /* LanguageUseCase.swift */,
+				14D5BC6029B5890F007D2A3E /* DefaultLanguageUseCase.swift */,
+			);
+			path = LanguageUseCase;
+			sourceTree = "<group>";
+		};
 		14F4C45C29B45F7100A9ADBE /* DeveloperCodeRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,6 +989,7 @@
 		14FE77D629B0362700900EEC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				14D5BC5D29B588FA007D2A3E /* LanguageUseCase */,
 				145C67C529B3030C0044544C /* DarkModeUseCase */,
 				1482F5EC29B20A48000B5320 /* GuideUseCase */,
 				1482F5D829B1EDE1000B5320 /* LocationUseCase */,
@@ -1192,6 +1206,8 @@
 				145C67CC29B307410044544C /* SettingDarkModeViewModel.swift in Sources */,
 				14644E9229B1860A00176342 /* UIViewController+Alert.swift in Sources */,
 				1482F5D729B1ECDE000B5320 /* DefaultLocationRepository.swift in Sources */,
+				14D5BC5F29B58907007D2A3E /* LanguageUseCase.swift in Sources */,
+				14D5BC6129B5890F007D2A3E /* DefaultLanguageUseCase.swift in Sources */,
 				142F01A129B0AB25001D5DCD /* KonkukInfoListCell.swift in Sources */,
 				14F9D53329B1D4C40005B74F /* DefaultUserUseCase.swift in Sources */,
 				142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */,
