@@ -76,7 +76,7 @@ final class SettingCell: UITableViewCell {
 
 extension SettingCell {
     func update(title: String, value: String = "") {
-        titleLabel.text = title
-        valueLabel.text = value
+        titleLabel.text = title.localized
+        valueLabel.text = value.localized
     }
 }

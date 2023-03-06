@@ -42,6 +42,6 @@ final class SettingSectionHeader: UITableViewHeaderFooterView {
 
 extension SettingSectionHeader {
     func updateTitle(text: String) {
-        titleLabel.text = text
+        titleLabel.text = text.localized
     }
 }

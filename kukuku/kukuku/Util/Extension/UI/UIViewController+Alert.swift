@@ -10,10 +10,10 @@ import UIKit
 extension UIViewController {
 
     fileprivate func createAlert(title: String, message: String, alertActions: [UIAlertAction] = []) -> UIAlertController {
-        let sheet = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let sheet = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
 
         if alertActions.isEmpty {
-            let confirmAction = UIAlertAction(title: "확인", style: .default)
+            let confirmAction = UIAlertAction(title: "okay".localized, style: .default)
             sheet.addAction(confirmAction)
         } else {
             alertActions.forEach { alertAction in
@@ -31,10 +31,10 @@ extension UIViewController {
         handler: (() -> Void)?,
         cancelHandler: (() -> Void)?
     ) -> UIAlertController {
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel) { _ in
             cancelHandler?()
         }
-        let alertAction = UIAlertAction(title: confirmTitle, style: .default) { _ in
+        let alertAction = UIAlertAction(title: confirmTitle.localized, style: .default) { _ in
             handler?()
         }
 
@@ -47,11 +47,11 @@ extension UIViewController {
         handler: @escaping (String?) -> Void
     ) -> UIAlertController {
 
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
         alert.addTextField()
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
 
-        let alertAction = UIAlertAction(title: "확인", style: .default) { _ in
+        let alertAction = UIAlertAction(title: "okay".localized, style: .default) { _ in
             handler(alert.textFields?[0].text)
         }
         alert.addAction(cancelAction)
@@ -74,7 +74,7 @@ extension UIViewController {
     func showConfirmAlert(
         title: String,
         message: String,
-        confirmTitle: String = "확인",
+        confirmTitle: String = "okay",
         handler: (() -> Void)? = nil
     ) {
         let alertController = createConfirmAlert(
@@ -90,7 +90,7 @@ extension UIViewController {
     func showConfirmAlert(
         title: String,
         message: String,
-        confirmTitle: String = "확인",
+        confirmTitle: String = "okay",
         handler: (() -> Void)? = nil,
         cancelHandeler: (() -> Void)? = nil
     ) {

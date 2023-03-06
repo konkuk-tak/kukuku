@@ -85,7 +85,7 @@ final class SettingCheckCell: UITableViewCell {
 
 extension SettingCheckCell {
     func update(title: String, isChecked: Bool = false) {
-        titleLabel.text = title
+        titleLabel.text = title.localized
         updateCheckImage(isChecked: isChecked)
     }
 }

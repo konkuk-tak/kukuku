@@ -11,11 +11,13 @@ import Foundation
 final class SettingViewModel {
 
     private (set)var user: User
+    private (set)var currentLanguage: LanguageKind
 
     private var userUseCase: UserUseCase
 
-    init(user: User, userUseCase: UserUseCase) {
+    init(user: User, currentLanguage: LanguageKind, userUseCase: UserUseCase) {
         self.user = user
+        self.currentLanguage = currentLanguage
         self.userUseCase = userUseCase
     }
 

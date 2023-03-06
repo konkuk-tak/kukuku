@@ -21,8 +21,8 @@ extension SettingSection {
 
     var title: String {
         switch self {
-        case .setting: return "설정"
-        case .appInfo: return "앱 정보"
+        case .setting: return "Settings"
+        case .appInfo: return "App Info"
         }
     }
 

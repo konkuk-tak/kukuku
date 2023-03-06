@@ -13,7 +13,7 @@ final class GuideView: UIView {
     private let containerView = UIView()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     private let pageControl = UIPageControl()
-    private let button = KUDefaultButton(title: "다음", style: .heavy)
+    private let button = KUDefaultButton(title: "Next".localized, style: .heavy)
 
     private enum Constant {
         static let paddingHorizontal: CGFloat = 16

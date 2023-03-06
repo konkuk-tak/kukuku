@@ -16,7 +16,7 @@ extension AppInfoCellKind {
 
     var title: String {
         switch self {
-        case .appVersion: return "앱 버전"
+        case .appVersion: return "App Version"
         }
     }
 

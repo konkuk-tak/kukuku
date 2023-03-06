@@ -44,11 +44,16 @@ final class SettingDarkModeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureTableView()
         bind()
     }
 
     // MARK: - Configure
+
+    private func configureNavigationBar() {
+        navigationItem.title = "Setting Dark Mode".localized
+    }
 
     private func configureTableView() {
         settingDarkModeView.tableViewDelegate(self)
@@ -85,7 +90,7 @@ final class SettingDarkModeViewController: UIViewController {
 
 extension SettingDarkModeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return DarkModeKind.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

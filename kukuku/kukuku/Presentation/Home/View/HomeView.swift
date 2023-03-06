@@ -13,9 +13,9 @@ class HomeView: UIView {
     private let containerView = UIView()
     private let titleLabel = UILabel()
     private let scoreLabel = UILabel()
-    private let konkukInfoListButton = KUDefaultButton(title: "알쓸건잡")
-    private let guideButton = KUDefaultButton(title: "이용법")
-    private let settingButton = KUDefaultButton(title: "설정")
+    private let konkukInfoListButton = KUDefaultButton(title: "Konkuk Fun Facts")
+    private let guideButton = KUDefaultButton(title: "Guide")
+    private let settingButton = KUDefaultButton(title: "Settings")
     private let arButton = UIButton()
 
     override init(frame: CGRect) {
@@ -47,7 +47,7 @@ class HomeView: UIView {
     }
 
     private func configureTitleLabel() {
-        titleLabel.text = "지금까지 먹은 햄버거"
+        titleLabel.text = "Hamburger Score".localized
         titleLabel.textColor = .dynamicBlack
         titleLabel.font = .largeTitle
         titleLabel.numberOfLines = 2

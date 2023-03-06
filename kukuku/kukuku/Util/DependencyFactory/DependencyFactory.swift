@@ -37,6 +37,11 @@ struct DependencyFactory {
         return DefaultDeveloperCodeRepository()
     }
 
+    static func languageRepository() -> LanguageRepository {
+        let userDefaultManger = UserDefaultManager()
+        return DefaultLanguageRepository(userDefaultManager: userDefaultManger)
+    }
+
     // MARK: - UseCase
 
     static func darkModeUseCase() -> DarkModeUseCase {
@@ -65,6 +70,11 @@ struct DependencyFactory {
         return DefaultUserUseCase(userRepository: userRepository, developerCodeRepository: developerCodeRepository)
     }
 
+    static func languageUseCase() -> LanguageUseCase {
+        let languageRepository = languageRepository()
+        return DefaultLanguageUseCase(languageRepository: languageRepository)
+    }
+
     // MARK: - ViewModel
 
     static func homeViewModel() -> HomeViewModel {
@@ -84,14 +94,19 @@ struct DependencyFactory {
         return GuideViewModel(guideUseCase: guideUseCase)
     }
 
-    static func settingViewModel(user: User) -> SettingViewModel {
+    static func settingViewModel(user: User, currentLanguage: LanguageKind) -> SettingViewModel {
         let userUseCase = userUseCase()
-        return SettingViewModel(user: user, userUseCase: userUseCase)
+        return SettingViewModel(user: user, currentLanguage: currentLanguage, userUseCase: userUseCase)
     }
 
     static func settingDarkModeViewModel() -> SettingDarkModeViewModel {
         let darkModeUseCase = darkModeUseCase()
         return SettingDarkModeViewModel(darkModeUseCase: darkModeUseCase)
+    }
+
+    static func settingLanguageViewModel(currentLanguage: LanguageKind) -> SettingLanguageViewModel {
+        let languageUseCase = languageUseCase()
+        return SettingLanguageViewModel(languageUseCase: languageUseCase, currentLanguage: currentLanguage)
     }
 
     static func arGameViewModel(isDeveloperMode: Bool) -> ARGameViewModel {
