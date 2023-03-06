@@ -15,7 +15,7 @@ final class DefaultLocationUseCase: LocationUseCase {
     private var gameCoordinates: [GameCoordinate] = []
 
     private enum Constant {
-        static let targetDistance: Double = 30
+        static let targetDistance: Double = 200
     }
 
     init(

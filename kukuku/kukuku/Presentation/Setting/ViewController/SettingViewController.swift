@@ -98,50 +98,50 @@ final class SettingViewController: UIViewController {
     // MARK: 데이터 삭제
 
     private func handleUserDeleteResult() {
-        showOkayAlert(title: "삭제 완료", message: "데이터를 삭제했어요")
+        showOkayAlert(title: "Alert Title Data Delete Complete", message: "Alert Description Data Delete Complete")
         userUpdate.send(Void())
     }
 
     private func handleUserDeleteError(_ error: Error) {
-        showOkayAlert(title: "유저 삭제 에러", message: "유저 삭제 중 에러가 발생했어요. 개발자에게 문의해주세요. \(error)")
+        showOkayAlert(title: "Alert Title User Data Delete Error", message: "Alert Description User Data Delete Error")
     }
 
     // MARK: 개발자 모드
 
     private func handleDeveloperModeResult(isUpdated: Bool?) {
         guard let isUpdated = isUpdated else {
-            showOkayAlert(title: "Error", message: "개발자에게 문의해주세요. 에러 코드 [언래핑]")
+            showOkayAlert(title: "Error", message: "Alert Description Unwrapping")
             return
         }
         if isUpdated {
-            showOkayAlert(title: "개발자 모드 변경 완료", message: "개발자 모드로 변경 완료했어요. 이제 거리 제한과 하루 횟수 제한이 사라졌어요.")
+            showOkayAlert(title: "Alert Title Developer Mode", message: "Alert Description Developer Mode")
             userUpdate.send(Void())
         } else {
-            showOkayAlert(title: "코드 불일치", message: "코드가 일치하지 않아요. 다시 확인해주세요.")
+            showOkayAlert(title: "Alert Title Developer Code Invalid", message: "Alert Description Developer Code Invalid")
         }
     }
 
     private func handleDeveloperModeError(_ error: Error) {
-        showOkayAlert(title: "키체인 에러", message: "개발자 모드를 키체인에 저장하다가 에러가 발생했어요. 개발자에게 문의해주세요. \(error)")
+        showOkayAlert(title: "Alert Title Key Chain Error", message: "Alert Description Key Chain Error")
     }
 
     // MARK: - Cell Alert
 
     private func deleteData() {
-        showConfirmAlert(title: "데이터 삭제", message: "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") { [weak self] in
+        showConfirmAlert(title: "Alert Title Data Delete", message: "Alert Description Data Delete") { [weak self] in
             self?.userDeleteSubject.send(Void())
         }
     }
 
     private func showDeveloperCodeAlert() {
         if settingViewModel.user.type == .developer {
-            showOkayAlert(title: "Developer Mode", message: "현재 개발자 모드 입니다.")
+            showOkayAlert(title: "Developer Mode", message: "Alert Description Already Developer Mode")
             return
         }
 
-        showTextFieldAlert(title: "Developer Code", message: "개발자 코드를 입력해주세요.") { [weak self] text in
+        showTextFieldAlert(title: "Alert Title Developer Code", message: "Alert Description Developer Code") { [weak self] text in
             guard let text = text else {
-                self?.showOkayAlert(title: "Error", message: "코드를 입력해주세요")
+                self?.showOkayAlert(title: "Error", message: "Alert Description Developer Code Invalid")
                 return
             }
             self?.developerCodeSubject.send(text)

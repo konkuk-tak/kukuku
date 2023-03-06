@@ -6,7 +6,7 @@
   
 */
 
-// MARK: - 공통 (버튼, Alert 등)
+// MARK: - Common (Buttons, Alert...)
 "Okay" = "Okay";
 "Cancel" = "Cancel";
 "okay" = "okay";
@@ -18,22 +18,61 @@
 "Error" = "Error";
 "error" = "error";
 
-// MARK: - 홈 화면
+// MARK: - Alert Message
+"Contact By Email" = "이메일로 문의하기";
+
+// Home
+"Alert Title Key Chain Error" = "Key Chain Error";
+"Alert Description Key Chain Error" = "A keychain error has occurred. Please contact the developer.";
+
+"Alert Title Data Update Error" = "Error";
+"Alert Description Data Update Error" = "An error occurred during the update.";
+
+"Alert Description Invalid Information" = "Invalid Information";
+
+"Alert Title Hamburger" = "Already got today's hamburger.";
+"Alert Description Hamburger" = "You can only eat hamburgers once a day.";
+
+// Settings
+
+"Alert Title Data Delete" = "Data Delete";
+"Alert Description Data Delete" = "If you delete the data, it cannot be recovered. Do you want to delete it?";
+
+"Alert Title Data Delete Complete" = "Delete Complete";
+"Alert Description Data Delete Complete" = "Delete the data completely.";
+
+"Alert Title User Data Delete Error" = "User Data Delete Error";
+"Alert Description User Data Delete Error" = "An error occurred while deleting the user.";
+
+"Alert Description Unwrapping" = "Unwrapping Error";
+
+"Alert Title Developer Mode" = "Developer Mode Change Complete";
+"Alert Description Developer Mode" = "You've changed it to developer mode. Now the distance and the number of play times a day are unlimited.";
+
+"Alert Title Developer Code" = "Developer Code";
+"Alert Description Developer Code" = "Put the Developer Code";
+
+"Alert Title Developer Code Invalid" = "This code is not valid";
+"Alert Description Developer Code Invalid" = "Please Check it again";
+
+"Alert Description Already Developer Mode" = "Already developer Mode";
+
+// MARK: - Home
 
 "Hamburger Score" = "Hamburger Score";
 "Konkuk Fun Facts" = "Konkuk Fun Facts";
 "Guide" = "Guide";
 "Settings" = "Settings";
 
-// MARK: - 알쓸건잡
+// MARK: - Konkuk Fun Facts
 "Locked" = "Locked";
 
-// MARK: - 이용법
+// MARK: - Guide
 "Next" = "Next";
 "Done" = "Done";
 "done" = "done";
 
-// MARK: - 설정
+// MARK: - Settings
 "Language" = "Language";
 "Language Setting" = "Language";
 "English (US)" = "English (US)";
@@ -44,7 +83,6 @@
 "System Mode" = "System";
 
 "Delete Data" = "Delete Data";
-"If you delete the data, it cannot be recovered. Do you want to delete it?" = "If you delete the data, it cannot be recovered. Do you want to delete it?";
 
 "Developer Mode" = "Developer Mode";
 "Developer Code" = "Developer Code";
@@ -55,7 +93,7 @@
 
 "App Version" = "App Version";
 
-// MARK: - 게임
+// MARK: - AR Game
 "Searching For Location" = "Searching For Location";
 "Let's look for the hamburger!" = "Let's look for the hamburger!";
 "It's not the right location" = "It's not the right location";

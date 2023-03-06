@@ -112,16 +112,16 @@ class HomeViewController: UIViewController {
     }
 
     private func handleScoreUpdateError(_ error: Error) {
-        if let error = error as? KeychainError {
-            showOkayAlert(title: "키체인 에러", message: "키체인 에러가 발생했어요. \(error) 개발자에게 문의해주세요. youtaktak@gmail.com")
+        if error is KeychainError {
+            showOkayAlert(title: "Alert Title Key Chain Error", message: "Alert Description Key Chain Error")
         } else {
-            showOkayAlert(title: "에러", message: "업데이트 중 에러가 발생했어요. \(error)")
+            showOkayAlert(title: "Error", message: "An error occurred during the update.")
         }
     }
 
     private func handleScore(_ score: Int?) {
         guard let score = score else {
-            showOkayAlert(title: "에러", message: "키체인 저장 중 에러가 발생했습니다.")
+            showOkayAlert(title: "Error", message: "Alert Description Key Chain Error")
             return
         }
         homeView.update(score: score)
@@ -129,14 +129,14 @@ class HomeViewController: UIViewController {
 
     private func handleCanPlay(_ canPlay: Bool?) {
         guard let canPlay = canPlay else {
-            showOkayAlert(title: "에러", message: "정보를 불러올 수 없어요.")
+            showOkayAlert(title: "Error", message: "Alert Description Invalid Information")
             return
         }
 
         if canPlay {
             moveToARGame()
         } else {
-            showOkayAlert(title: "오늘의 햄버거를 먹었어요", message: "하루에 한 번만 햄버거를 먹을 수 있어요")
+            showOkayAlert(title: "Alert Title Hamburger", message: "Alert Description Hamburger")
         }
     }
 

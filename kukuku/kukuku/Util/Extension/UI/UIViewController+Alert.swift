@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
 
     fileprivate func createAlert(title: String, message: String, alertActions: [UIAlertAction] = []) -> UIAlertController {
-        let sheet = UIAlertController(title: title.localized, message: message, preferredStyle: .alert)
+        let sheet = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
 
         if alertActions.isEmpty {
             let confirmAction = UIAlertAction(title: "okay".localized, style: .default)
@@ -47,7 +47,7 @@ extension UIViewController {
         handler: @escaping (String?) -> Void
     ) -> UIAlertController {
 
-        let alert = UIAlertController(title: title.localized, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
         alert.addTextField()
         let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
 
