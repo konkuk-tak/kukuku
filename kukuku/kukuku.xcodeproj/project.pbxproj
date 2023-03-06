@@ -89,6 +89,9 @@
 		14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4529B567CB007D2A3E /* Settings.bundle */; };
 		14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4B29B56D61007D2A3E /* Localizable.strings */; };
 		14D5BC4F29B56E4D007D2A3E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC4E29B56E4D007D2A3E /* String+.swift */; };
+		14D5BC5529B58707007D2A3E /* DefaultLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5429B58707007D2A3E /* DefaultLanguageRepository.swift */; };
+		14D5BC5929B587B6007D2A3E /* LanguageKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5829B587B6007D2A3E /* LanguageKind.swift */; };
+		14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC5B29B588C0007D2A3E /* LanguageRepository.swift */; };
 		14F4C45B29B45F1200A9ADBE /* DeveloperCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */; };
 		14F4C45E29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */; };
 		14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */; };
@@ -191,6 +194,9 @@
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14D5BC4C29B56D95007D2A3E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14D5BC4E29B56E4D007D2A3E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		14D5BC5429B58707007D2A3E /* DefaultLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguageRepository.swift; sourceTree = "<group>"; };
+		14D5BC5829B587B6007D2A3E /* LanguageKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageKind.swift; sourceTree = "<group>"; };
+		14D5BC5B29B588C0007D2A3E /* LanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRepository.swift; sourceTree = "<group>"; };
 		14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeveloperCode.plist; sourceTree = "<group>"; };
 		14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperCodeRepository.swift; sourceTree = "<group>"; };
@@ -223,9 +229,8 @@
 		1429327729AF8974009B9B7F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
+				14D5BC5229B5865E007D2A3E /* Manager */,
 				14644E8729B17DC800176342 /* View */,
-				1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -404,7 +409,6 @@
 		142F019429B09CED001D5DCD /* SettingDarkMode */ = {
 			isa = PBXGroup;
 			children = (
-				14644E8E29B1838300176342 /* Enum */,
 				145C67CA29B3072F0044544C /* ViewModel */,
 				14644E8B29B1818000176342 /* ViewController */,
 				14644E8A29B1817D00176342 /* View */,
@@ -715,14 +719,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		14644E8E29B1838300176342 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				14644E8F29B1839700176342 /* DarkModeKind.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
 		14644E9D29B1A24500176342 /* KonkukInfoRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +740,7 @@
 		14644EA429B1A8EA00176342 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				14D5BC5A29B588B9007D2A3E /* LanguageRepository */,
 				14F4C45F29B4607400A9ADBE /* DeveloperCodeRepository */,
 				145C67C229B302DE0044544C /* DarkModeRepository */,
 				1482F5E729B20984000B5320 /* GuideRepository */,
@@ -799,6 +796,7 @@
 		1482F5D529B1ECCD000B5320 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				14D5BC5329B586FF007D2A3E /* LanguageRepository */,
 				14F4C45C29B45F7100A9ADBE /* DeveloperCodeRepository */,
 				145C67BF29B301390044544C /* DarkModeRepository */,
 				1482F5E629B2097D000B5320 /* GuideRepository */,
@@ -857,6 +855,47 @@
 				14D5BC4E29B56E4D007D2A3E /* String+.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		14D5BC5229B5865E007D2A3E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
+				1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		14D5BC5329B586FF007D2A3E /* LanguageRepository */ = {
+			isa = PBXGroup;
+			children = (
+				14D5BC5429B58707007D2A3E /* DefaultLanguageRepository.swift */,
+			);
+			path = LanguageRepository;
+			sourceTree = "<group>";
+		};
+		14D5BC5629B58795007D2A3E /* DarkMode */ = {
+			isa = PBXGroup;
+			children = (
+				14644E8F29B1839700176342 /* DarkModeKind.swift */,
+			);
+			path = DarkMode;
+			sourceTree = "<group>";
+		};
+		14D5BC5729B5879D007D2A3E /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				14D5BC5829B587B6007D2A3E /* LanguageKind.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		14D5BC5A29B588B9007D2A3E /* LanguageRepository */ = {
+			isa = PBXGroup;
+			children = (
+				14D5BC5B29B588C0007D2A3E /* LanguageRepository.swift */,
+			);
+			path = LanguageRepository;
 			sourceTree = "<group>";
 		};
 		14F4C45C29B45F7100A9ADBE /* DeveloperCodeRepository */ = {
@@ -922,6 +961,8 @@
 		14FE77D529B0362400900EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14D5BC5729B5879D007D2A3E /* Language */,
+				14D5BC5629B58795007D2A3E /* DarkMode */,
 				1458B79E29B4767D00EB4397 /* Game */,
 				145C67D229B331A30044544C /* AR */,
 				1482F5D129B1EC3E000B5320 /* Location */,
@@ -1104,6 +1145,7 @@
 				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
 				142F018129B084EB001D5DCD /* SettingSection.swift in Sources */,
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
+				14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */,
@@ -1121,6 +1163,7 @@
 				14644E9F29B1A25E00176342 /* DefaultKonkukInfoRepository.swift in Sources */,
 				142F019E29B0A9B9001D5DCD /* KonkukInfoListView.swift in Sources */,
 				14D5BC4F29B56E4D007D2A3E /* String+.swift in Sources */,
+				14D5BC5929B587B6007D2A3E /* LanguageKind.swift in Sources */,
 				14644E8329B176B200176342 /* SettingLanguageView.swift in Sources */,
 				1429328729AF8C2E009B9B7F /* SettingViewController.swift in Sources */,
 				14644E8629B178BA00176342 /* SettingCheckCell.swift in Sources */,
@@ -1142,6 +1185,7 @@
 				14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */,
 				145C67B829B2F5D30044544C /* UserDefaultManager.swift in Sources */,
 				14FE77DC29B0367C00900EEC /* GuideView.swift in Sources */,
+				14D5BC5529B58707007D2A3E /* DefaultLanguageRepository.swift in Sources */,
 				14F9D52829B1C7030005B74F /* KeyChainManager.swift in Sources */,
 				1429329A29AF9222009B9B7F /* UIControl+Combine.swift in Sources */,
 				1482F5DA29B1EDEC000B5320 /* LocationUseCase.swift in Sources */,

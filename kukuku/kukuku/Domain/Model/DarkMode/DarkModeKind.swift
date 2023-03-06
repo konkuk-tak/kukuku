@@ -16,7 +16,7 @@ extension DarkModeKind {
         self.init(rawValue: index)
     }
 
-init?(theme: String?) {
+    init?(theme: String?) {
         switch theme {
         case "light": self.init(rawValue: 0)
         case "dark": self.init(rawValue: 1)
