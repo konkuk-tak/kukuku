@@ -37,7 +37,14 @@ extension LanguageKind {
         case .korean: return "Korean"
         case .englishUS: return "English (US)"
         }
-}
+    }
+
+    var code: String {
+        switch self {
+        case .korean: return "ko"
+        case .englishUS: return "en"
+        }
+    }
 
     static var count: Int {
         return Self.allCases.count

@@ -9,7 +9,11 @@ import UIKit
 
 struct AppManager {
 
+    static var bundle: Bundle!
+
     static func restartApp() {
+        languageSetting()
+
         let homeViewModel = DependencyFactory.homeViewModel()
         let homeViewController = HomeViewController(homeViewModel: homeViewModel)
         let navigationViewController = UINavigationController(rootViewController: homeViewController)
@@ -20,8 +24,15 @@ struct AppManager {
         navigationViewController.view.frame = rootViewController.view.frame
         navigationViewController.view.layoutIfNeeded()
 
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve) {
+        UIView.transition(with: window, duration: 0.2) {
             window.rootViewController = navigationViewController
         }
+    }
+
+    static func languageSetting() {
+        let languageUseCase = DependencyFactory.languageUseCase()
+        let languageKind = languageUseCase.read()
+        let path = Bundle.main.path(forResource: languageKind.code, ofType: "lproj") ?? ""
+        bundle = Bundle(path: path)
     }
 }
