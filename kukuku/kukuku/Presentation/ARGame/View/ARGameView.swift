@@ -93,7 +93,7 @@ final class ARGameView: UIView {
         statusBar.font = .body
         statusBar.textAlignment = .center
         statusBar.textColor = .white
-        statusBar.text = "위치 검색 중"
+        statusBar.text = LocationStatus.notDetermined.message.localized
         statusBar.layer.opacity = Constant.textOpacity
     }
 
@@ -176,11 +176,11 @@ extension ARGameView {
     func updateStatusBar(locationStatus: LocationStatus) {
         switch locationStatus {
         case .notDetermined:
-            updateStatusBarNotDetermined(text: locationStatus.message)
+            updateStatusBarNotDetermined(text: locationStatus.message.localized)
         case .success:
-            updateStatusBarSuccess(text: locationStatus.message)
+            updateStatusBarSuccess(text: locationStatus.message.localized)
         case .fail:
-            updateStatusBarFail(text: locationStatus.message)
+            updateStatusBarFail(text: locationStatus.message.localized)
         }
     }
 }

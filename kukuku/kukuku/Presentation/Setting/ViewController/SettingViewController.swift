@@ -128,7 +128,7 @@ final class SettingViewController: UIViewController {
     // MARK: - Cell Alert
 
     private func deleteData() {
-        showConfirmAlert(title: "데이터 삭제", message: "삭 제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") { [weak self] in
+        showConfirmAlert(title: "데이터 삭제", message: "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?") { [weak self] in
             self?.userDeleteSubject.send(Void())
         }
     }

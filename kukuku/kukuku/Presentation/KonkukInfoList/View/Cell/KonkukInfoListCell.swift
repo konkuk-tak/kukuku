@@ -82,11 +82,14 @@ extension KonkukInfoListCell {
         titleLabel.text = title
     }
 
-    func updateCheck(title: String) {
-        update(image: .checkIcon.withTintColor(.green, renderingMode: .alwaysOriginal), title: title)
+    func updateCheck(number: Int, title: String) {
+        update(image: .checkIcon.withTintColor(.green, renderingMode: .alwaysOriginal), title: "\(number). " + title.localized)
     }
 
     func updateLock(number: Int) {
-        update(image: .lockIcon.withTintColor(.dynamicBlack, renderingMode: .alwaysOriginal), title: "\(number). 잠금")
+        update(
+            image: .lockIcon.withTintColor(.dynamicBlack, renderingMode: .alwaysOriginal),
+            title: "\(number). " + "잠금".localized
+        )
     }
 }

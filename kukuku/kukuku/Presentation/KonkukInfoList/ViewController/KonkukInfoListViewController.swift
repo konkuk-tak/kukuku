@@ -97,9 +97,8 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
 
         let index = indexPath.row
         if index < konkukInfoListViewModel.konkukInfoList.count {
-            let infoTitle = konkukInfoListViewModel.konkukInfo(index: index).title
-            let title = "\(index + 1). \(infoTitle)"
-            cell.updateCheck(title: title)
+            let title = konkukInfoListViewModel.konkukInfo(index: index).title
+            cell.updateCheck(number: index + 1, title: title)
         } else {
             cell.updateLock(number: index + 1)
         }

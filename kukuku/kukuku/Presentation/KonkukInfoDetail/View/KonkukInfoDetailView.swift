@@ -88,7 +88,7 @@ final class KonkukInfoDetailView: UIView {
 
     private func configureImageReferenceLabel(imageReference: String) {
         if !imageReference.isEmpty {
-            imageReferenceLabel.text = "출처 : " + imageReference
+            imageReferenceLabel.text = "출처".localized + " :" + imageReference
             imageReferenceLabel.font = .caption1
             imageReferenceLabel.textColor = .white
             imageReferenceLabel.backgroundColor = .systemGray5

@@ -85,7 +85,7 @@ final class SettingDarkModeViewController: UIViewController {
 
 extension SettingDarkModeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return DarkModeKind.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

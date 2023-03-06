@@ -5,3 +5,57 @@
   Created by youtak on 2023/03/06.
   
 */
+
+// MARK: - 공통 (버튼, Alert 등)
+"Okay" = "확인";
+"Cancel" = "취소";
+"okay" = "확인";
+"cancel" = "취소";
+
+"Close" = "종료";
+"close" = "종료";
+
+"Error" = "에러";
+"error" = "에러";
+
+// MARK: - 홈 화면
+
+"Hamburger Score" = "지금 까지 먹은 햄버거";
+"Konkuk Fun Facts" = "알쓸건잡";
+"Guide" = "이용법";
+"Settings" = "설정";
+
+// MARK: - 알쓸건잡
+"Locked" = "잠금";
+
+// MARK: - 이용법
+"Next" = "다음";
+"Done" = "완료";
+
+// MARK: - 설정
+"Language" = "언어 / Language";
+"English (US)" = "English (US)";
+
+"Setting Dark Mode" = "다크 모드";
+"Dark Mode" = "다크 모드";
+"Light Mode" = "라이트 모드";
+"System Mode" = "시스템 설정";
+
+"Delete Data" = "데이터 삭제";
+"If you delete the data, it cannot be recovered. Do you want to delete it?" = "삭제하면 복구할 수 없어요. 정말로 삭제하시겠어요?";
+
+"Developer Mode" = "개발자 모드";
+"Developer Code" = "개발자 코드";
+"Use Developer Code" = "개발자 코드를 입력해주세요";
+
+
+"App Info" = "앱 정보"
+
+"App Version" = "앱 버전";
+
+// MARK: - 게임
+
+"Searching For Location" = "위치 탐색 중";
+"Let's look for the hamburger!" = "적당한 위치에요. 햄버거를 찾아봐요!";
+"It's not the right location" = "정해진 위치가 아니에요."
+

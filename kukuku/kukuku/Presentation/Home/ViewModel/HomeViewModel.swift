@@ -81,14 +81,12 @@ final class HomeViewModel {
     private func userCountScore() throws -> Int {
         let user = try userUseCase.readUser()
         self.user = user
-        print(user)
         return user.score
     }
 
     private func updateUserScore() throws -> Int {
         let updatedUser = try userUseCase.finishDailyGame(user: user)
         self.user = updatedUser
-        print(user)
         return updatedUser.score
     }
 

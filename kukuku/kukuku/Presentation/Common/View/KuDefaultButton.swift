@@ -38,7 +38,7 @@ final class KUDefaultButton: UIButton {
         var config = UIButton.Configuration.filled()
         config.baseBackgroundColor = .green
         config.baseForegroundColor = .black
-        config.attributedTitle = buttonTitleAttribute(title: title)
+        config.attributedTitle = buttonTitleAttribute(title: title.localized)
 
         let horizontalInsets = CGFloat(defaultButtonStyle.paddingHorizontal)
         config.contentInsets = NSDirectionalEdgeInsets(top: horizontalInsets, leading: 0, bottom: horizontalInsets, trailing: 0)
@@ -56,7 +56,7 @@ final class KUDefaultButton: UIButton {
 extension KUDefaultButton {
     func updateButtonTitle(text: String) {
         if var config = configuration {
-            config.attributedTitle = buttonTitleAttribute(title: text)
+            config.attributedTitle = buttonTitleAttribute(title: text.localized)
             configuration = config
         }
     }

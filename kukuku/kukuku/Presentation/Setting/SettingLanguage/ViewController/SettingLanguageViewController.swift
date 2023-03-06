@@ -52,7 +52,7 @@ extension SettingLanguageViewController: UITableViewDataSource, UITableViewDeleg
         ) as? SettingCheckCell else {
             return UITableViewCell()
         }
-        cell.update(title: "한국어", isChecked: true)
+        cell.update(title: "한국어".localized, isChecked: true)
         return cell
     }
 

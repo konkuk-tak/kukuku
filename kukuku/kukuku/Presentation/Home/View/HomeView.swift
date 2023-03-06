@@ -47,7 +47,7 @@ class HomeView: UIView {
     }
 
     private func configureTitleLabel() {
-        titleLabel.text = "지금까지 먹은 햄버거"
+        titleLabel.text = "Hamburger Score".localized
         titleLabel.textColor = .dynamicBlack
         titleLabel.font = .largeTitle
         titleLabel.numberOfLines = 2
