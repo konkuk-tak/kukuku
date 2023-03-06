@@ -5,6 +5,7 @@
 //  Created by youtak on 2023/03/02.
 //
 
+import Combine
 import UIKit
 
 final class SettingLanguageViewController: UIViewController {
@@ -22,12 +23,26 @@ final class SettingLanguageViewController: UIViewController {
         static let cellHeight: CGFloat = 44
     }
 
+    private let settingLanguageViewModel: SettingLanguageViewModel
+
+    private var languageSubject = PassthroughSubject<LanguageKind, Never>()
+    private var cancellable = Set<AnyCancellable>()
+
     // MARK: - Life Cycle
+
+    init(settingLanguageViewModel: SettingLanguageViewModel) {
+        self.settingLanguageViewModel = settingLanguageViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        print("언어 설정")
+        bind()
     }
 
     override func loadView() {
@@ -38,11 +53,32 @@ final class SettingLanguageViewController: UIViewController {
         settingLanguageView.tableViewDelegate(self)
         settingLanguageView.tableViewDataSource(self)
     }
+
+    // MARK: Input & Output
+
+    private func bind() {
+        let inputLanguage = languageSubject.eraseToAnyPublisher()
+
+        let input = SettingLanguageViewModel.Input(language: inputLanguage)
+        let output = settingLanguageViewModel.transform(input: input)
+
+        output.updateLanguage
+            .sink { [weak self] languageKind in
+                self?.handleLanguage(languageKind)
+            }
+            .store(in: &cancellable)
+    }
+
+    private func handleLanguage(_ languageKind: LanguageKind?) {
+        guard let languageKind = languageKind else {
+            return
+        }
+    }
 }
 
 extension SettingLanguageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return LanguageKind.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +88,13 @@ extension SettingLanguageViewController: UITableViewDataSource, UITableViewDeleg
         ) as? SettingCheckCell else {
             return UITableViewCell()
         }
-        cell.update(title: "한국어".localized, isChecked: true)
+
+        guard let languageKind = LanguageKind(index: indexPath.row) else {
+            return UITableViewCell()
+        }
+
+        cell.update(title: languageKind.title, isChecked: true)
+
         return cell
     }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefaultLanguageRepository {
+struct DefaultLanguageRepository: LanguageRepository {
 
     private var userDefaultManager: UserDefaultManagerProtocol
     private let languageKey = "LanguageKey"

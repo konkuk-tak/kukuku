@@ -157,7 +157,8 @@ final class SettingViewController: UIViewController {
 
 extension SettingViewController {
     private func moveToSettingLanguage() {
-        let settingLanguageViewController = SettingLanguageViewController()
+        let settingLanguageViewModel = DependencyFactory.settingLanguageViewModel()
+        let settingLanguageViewController = SettingLanguageViewController(settingLanguageViewModel: settingLanguageViewModel)
         navigationController?.pushViewController(settingLanguageViewController, animated: true)
     }
 
