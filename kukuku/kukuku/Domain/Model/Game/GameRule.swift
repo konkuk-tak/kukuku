@@ -9,4 +9,5 @@ import Foundation
 
 enum GameRule {
     static let maxListCount = 30
+    static let maxDistance: Double = 30
 }
