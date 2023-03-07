@@ -489,13 +489,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1458B79B29B4766200EB4397 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
 		1458B79E29B4767D00EB4397 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,7 +556,6 @@
 		145A28AA29AF5B9B008CCBC7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				1458B79B29B4766200EB4397 /* Constant */,
 				1499FB9329B43C470072D355 /* Error */,
 				145C67CD29B313F90044544C /* DependencyFactory */,
 				14FE77E629B03B4300900EEC /* Protocol */,
