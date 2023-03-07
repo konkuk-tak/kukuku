@@ -179,7 +179,7 @@ extension HomeViewController {
     private func moveToKonukInfoList() {
         let userListCount = homeViewModel.user.listCount
         let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(
-            userListCount: 30,
+            userListCount: userListCount,
             currentLanguage: AppManager.currentLanguage
         )
         let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
