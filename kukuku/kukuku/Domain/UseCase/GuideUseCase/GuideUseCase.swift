@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GuideUseCase {
-    func guideInfo() -> [GuideInfo]
+    func guideInfo(languageKind: LanguageKind) -> [GuideInfo]
 }

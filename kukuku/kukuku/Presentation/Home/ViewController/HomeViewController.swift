@@ -178,19 +178,25 @@ extension HomeViewController {
     // MARK: - Navigation
     private func moveToKonukInfoList() {
         let userListCount = homeViewModel.user.listCount
-        let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(userListCount: userListCount)
+        let konkukInfoListViewModel = DependencyFactory.konkukInfoListViewModel(
+            userListCount: userListCount,
+            currentLanguage: AppManager.currentLanguage
+        )
         let konkukInfoListViewController = KonkukInfoListViewController(konkukInfoListViewModel: konkukInfoListViewModel)
         self.navigationController?.pushViewController(konkukInfoListViewController, animated: true)
     }
 
     private func moveToGuide() {
-        let guideViewModel = DependencyFactory.guideViewModel()
+        let guideViewModel = DependencyFactory.guideViewModel(currentLanguage: AppManager.currentLanguage)
         let guideViewController = GuideViewController(viewModel: guideViewModel)
         self.navigationController?.pushViewController(guideViewController, animated: true)
     }
 
     private func moveToSetting() {
-        let settingViewModel = DependencyFactory.settingViewModel(user: self.homeViewModel.user, currentLanguage: AppManager.currentLanguage)
+        let settingViewModel = DependencyFactory.settingViewModel(
+            user: self.homeViewModel.user,
+            currentLanguage: AppManager.currentLanguage
+        )
         let settingViewController = SettingViewController(settingViewModel: settingViewModel)
         self.subscribeInitiateUser(settingViewController: settingViewController)
         self.navigationController?.pushViewController(settingViewController, animated: true)

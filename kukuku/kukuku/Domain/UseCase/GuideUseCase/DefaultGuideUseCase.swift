@@ -15,7 +15,7 @@ struct DefaultGuideUseCase: GuideUseCase {
         self.guideRepository = guideRepository
     }
 
-    func guideInfo() -> [GuideInfo] {
-        return guideRepository.guideInfo()
+    func guideInfo(languageKind: LanguageKind) -> [GuideInfo] {
+        return guideRepository.guideInfo(languageKind: languageKind)
     }
 }

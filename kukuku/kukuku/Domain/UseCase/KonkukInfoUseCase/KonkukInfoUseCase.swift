@@ -8,6 +8,6 @@
 import Foundation
 
 protocol KonkukInfoUseCase {
-    func infoList(count: Int) -> UserKonkukInfoList
-    func info(index: Int) -> KonkukInfo?
+    func infoList(language: LanguageKind, count: Int) -> UserKonkukInfoList
+    func info(language: LanguageKind, index: Int) -> KonkukInfo?
 }

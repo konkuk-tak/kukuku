@@ -21,7 +21,7 @@ final class KonkukInfoDetailView: UIView {
     private let imageReferenceLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let completeButton = KUDefaultButton(title: "done".localized, style: .heavy)
+    private let completeButton = KUDefaultButton(title: "Done".localized, style: .heavy)
 
     var hasImage: Bool { return infoImageView.image != nil }
 
@@ -107,7 +107,8 @@ final class KonkukInfoDetailView: UIView {
         descriptionLabel.font = .body
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.lineBreakMode = .byCharWrapping
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.lineBreakStrategy = .hangulWordPriority
         descriptionLabel.text = description
     }
 

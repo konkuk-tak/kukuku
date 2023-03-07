@@ -12,10 +12,12 @@ final class GuideViewModel {
     private var guideUseCase: GuideUseCase
     private var guideInfoList: [GuideInfo] = []
     private (set)var currentIndex = 0
+    let currentLanguage: LanguageKind
 
-    init(guideUseCase: GuideUseCase) {
+    init(guideUseCase: GuideUseCase, currentLanguage: LanguageKind) {
         self.guideUseCase = guideUseCase
-        guideInfoList = guideUseCase.guideInfo()
+        self.currentLanguage = currentLanguage
+        guideInfoList = guideUseCase.guideInfo(languageKind: currentLanguage)
     }
 
     var nextIndex: Int {

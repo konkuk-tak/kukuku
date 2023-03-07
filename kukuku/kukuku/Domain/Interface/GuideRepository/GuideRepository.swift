@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GuideRepository {
-    func guideInfo() -> [GuideInfo]
+    func guideInfo(languageKind: LanguageKind) -> [GuideInfo]
 }

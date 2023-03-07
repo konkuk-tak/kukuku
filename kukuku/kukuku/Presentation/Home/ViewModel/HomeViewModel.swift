@@ -102,7 +102,7 @@ extension HomeViewModel {
 
     func nextKonkukInfo() -> KonkukInfo? {
         let index = user.listCount - 1
-        let konkukInfo = konkukInfoUseCase.info(index: index)
+        let konkukInfo = konkukInfoUseCase.info(language: AppManager.currentLanguage, index: index)
         return konkukInfo
     }
 }

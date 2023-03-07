@@ -84,14 +84,14 @@ struct DependencyFactory {
         return HomeViewModel(darkModeUse: darkModeUseCase, userUseCase: userUseCase, konkukInfoUseCase: konkukInfoUseCase)
     }
 
-    static func konkukInfoListViewModel(userListCount: Int) -> KonkukInfoListViewModel {
+    static func konkukInfoListViewModel(userListCount: Int, currentLanguage: LanguageKind) -> KonkukInfoListViewModel {
         let konkukInfoUseCase = konkukInfoUseCase()
-        return KonkukInfoListViewModel(userListCount: userListCount, konkukInfoUseCase: konkukInfoUseCase)
+        return KonkukInfoListViewModel(userListCount: userListCount, currentLanguage: currentLanguage, konkukInfoUseCase: konkukInfoUseCase)
     }
 
-    static func guideViewModel() -> GuideViewModel {
+    static func guideViewModel(currentLanguage: LanguageKind) -> GuideViewModel {
         let guideUseCase = guideUseCase()
-        return GuideViewModel(guideUseCase: guideUseCase)
+        return GuideViewModel(guideUseCase: guideUseCase, currentLanguage: currentLanguage)
     }
 
     static func settingViewModel(user: User, currentLanguage: LanguageKind) -> SettingViewModel {
