@@ -80,6 +80,7 @@ final class KonkukInfoListViewController: UIViewController {
         let konkukInfo = konkukInfoListViewModel.konkukInfo(index: index)
         let detailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         detailViewController.modalPresentationStyle = .fullScreen
+        detailViewController.transitioningDelegate = self
         present(detailViewController, animated: true)
     }
 }
@@ -117,5 +118,19 @@ extension KonkukInfoListViewController: UITableViewDataSource, UITableViewDelega
         }
 
         konkukInfoListView.deSelectTableViewCell()
+    }
+}
+
+extension KonkukInfoListViewController: UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController,
+        source: UIViewController
+    ) -> UIViewControllerAnimatedTransitioning? {
+        return PresentTransition(originFrame: CGRect(x: 156, y: 718, width: 80, height: 80))
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissTransition(originFrame: CGRect(x: 156, y: 718, width: 80, height: 80))
     }
 }
