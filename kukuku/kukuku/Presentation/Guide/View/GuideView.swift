@@ -114,7 +114,7 @@ extension GuideView {
     }
 
     func updateButtonTitle() {
-        button.updateButtonTitle(text: "완료")
+        button.updateButtonTitle(text: "Done")
     }
 
     func moveToNextPage(index: Int) {
