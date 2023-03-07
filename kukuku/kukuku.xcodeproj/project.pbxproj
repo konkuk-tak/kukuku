@@ -36,6 +36,7 @@
 		142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */; };
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
 		143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */; };
+		143DEA1E29B7271B00EB3E38 /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA1D29B7271B00EB3E38 /* AnimationTransition.swift */; };
 		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
 		1458B7A429B4B9BF00EB4397 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
@@ -145,6 +146,7 @@
 		142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailViewController.swift; sourceTree = "<group>"; };
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
 		143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList_en.json; sourceTree = "<group>"; };
+		143DEA1D29B7271B00EB3E38 /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
 		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		1429327729AF8974009B9B7F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				143DEA1C29B726F000EB3E38 /* Animation */,
 				14D5BC5229B5865E007D2A3E /* Manager */,
 				14644E8729B17DC800176342 /* View */,
 			);
@@ -489,6 +492,14 @@
 				142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		143DEA1C29B726F000EB3E38 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				143DEA1D29B7271B00EB3E38 /* AnimationTransition.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		1458B79E29B4767D00EB4397 /* Game */ = {
@@ -1178,6 +1189,7 @@
 				14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */,
 				145C67BE29B2F85C0044544C /* DarkModeManager.swift in Sources */,
 				1482F5E329B1EFB6000B5320 /* GameCoordinate.swift in Sources */,
+				143DEA1E29B7271B00EB3E38 /* AnimationTransition.swift in Sources */,
 				1482F5DD29B1EE48000B5320 /* DefaultLocationUseCase.swift in Sources */,
 				1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */,
 				1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */,

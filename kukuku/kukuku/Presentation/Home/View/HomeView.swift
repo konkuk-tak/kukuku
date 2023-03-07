@@ -118,6 +118,10 @@ extension HomeView {
     func arButtonPublisher() -> AnyPublisher<Void, Never> {
         return arButton.tapPublisher
     }
+
+    func arButtonFrame() -> CGRect? {
+        return arButton.superview?.convert(arButton.frame, to: nil)
+    }
 }
 
 extension HomeView {

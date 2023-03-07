@@ -207,6 +207,7 @@ extension HomeViewController {
         let arGameViewModel = DependencyFactory.arGameViewModel(isDeveloperMode: isDeveloperMode)
         let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
         arGameViewController.modalPresentationStyle = .fullScreen
+        arGameViewController.transitioningDelegate = self
         arGameViewController.didDismiss = { [weak self] in
             self?.userScoreUpdateSubject.send(Void())
             self?.moveToKonkukInfoDetail()
@@ -219,6 +220,19 @@ extension HomeViewController {
         let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
         konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
         present(konkukInfoDetailViewController, animated: true)
+    }
+}
+
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController,
+        source: UIViewController
+    ) -> UIViewControllerAnimatedTransitioning? {
+        guard let arButtonFrame = homeView.arButtonFrame() else {
+            return AnimationTransition(originFrame: .zero)
+        }
+        return AnimationTransition(originFrame: arButtonFrame)
     }
 }
 
