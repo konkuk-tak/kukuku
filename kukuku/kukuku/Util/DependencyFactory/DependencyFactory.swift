@@ -89,9 +89,9 @@ struct DependencyFactory {
         return KonkukInfoListViewModel(userListCount: userListCount, currentLanguage: currentLanguage, konkukInfoUseCase: konkukInfoUseCase)
     }
 
-    static func guideViewModel() -> GuideViewModel {
+    static func guideViewModel(currentLanguage: LanguageKind) -> GuideViewModel {
         let guideUseCase = guideUseCase()
-        return GuideViewModel(guideUseCase: guideUseCase)
+        return GuideViewModel(guideUseCase: guideUseCase, currentLanguage: currentLanguage)
     }
 
     static func settingViewModel(user: User, currentLanguage: LanguageKind) -> SettingViewModel {

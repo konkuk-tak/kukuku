@@ -187,7 +187,7 @@ extension HomeViewController {
     }
 
     private func moveToGuide() {
-        let guideViewModel = DependencyFactory.guideViewModel()
+        let guideViewModel = DependencyFactory.guideViewModel(currentLanguage: AppManager.currentLanguage)
         let guideViewController = GuideViewController(viewModel: guideViewModel)
         self.navigationController?.pushViewController(guideViewController, animated: true)
     }
