@@ -68,7 +68,6 @@ final class KonkukInfoDetailView: UIView {
     private func configureSubView(konkukInfo: KonkukInfo) {
         addSubview(containerView)
         scrollView.addSubview(contentView)
-        print(konkukInfo)
         configureInfoImageView(imageName: konkukInfo.imageURL)
         configureImageReferenceLabel(imageReference: konkukInfo.imageReference)
 
@@ -78,7 +77,6 @@ final class KonkukInfoDetailView: UIView {
     }
 
     private func configureInfoImageView(imageName: String) {
-        print(imageName)
         if !imageName.isEmpty, let image = UIImage(named: imageName) {
             infoImageView.contentMode = .scaleAspectFit
             infoImageView.backgroundColor = .black
