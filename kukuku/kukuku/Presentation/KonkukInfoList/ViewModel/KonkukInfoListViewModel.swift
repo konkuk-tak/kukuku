@@ -13,13 +13,15 @@ final class KonkukInfoListViewModel {
     private (set)var konkukInfoList: [KonkukInfo] = []
     private (set)var maxCount: Int = 0
     let userListCount: Int
+    let currentLanguage: LanguageKind
 
     private var konkukInfoUseCase: KonkukInfoUseCase
 
     var currentCount: Int { return konkukInfoList.count }
 
-    init(userListCount: Int, konkukInfoUseCase: KonkukInfoUseCase) {
+    init(userListCount: Int, currentLanguage: LanguageKind, konkukInfoUseCase: KonkukInfoUseCase) {
         self.userListCount = userListCount
+        self.currentLanguage = currentLanguage
         self.konkukInfoUseCase = konkukInfoUseCase
     }
 
@@ -47,7 +49,7 @@ final class KonkukInfoListViewModel {
     }
 
     private func fetchKonkukInfoList() {
-        let userKonkukInfoList = konkukInfoUseCase.infoList(count: userListCount)
+        let userKonkukInfoList = konkukInfoUseCase.infoList(language: currentLanguage, count: userListCount)
         konkukInfoList = userKonkukInfoList.list
         maxCount = userKonkukInfoList.maxCount
     }

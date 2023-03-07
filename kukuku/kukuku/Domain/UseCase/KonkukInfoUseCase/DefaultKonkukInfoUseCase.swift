@@ -15,14 +15,14 @@ struct DefaultKonkukInfoUseCase: KonkukInfoUseCase {
         self.konkukInfoRepository = konkukInfoRepository
     }
 
-    func infoList(count: Int) -> UserKonkukInfoList {
-        let infoList = konkukInfoRepository.konkukInfoList() ?? []
+    func infoList(language: LanguageKind, count: Int) -> UserKonkukInfoList {
+        let infoList = konkukInfoRepository.konkukInfoList(languageKind: language) ?? []
         let userKonkukInfoList = UserKonkukInfoList(list: Array(infoList[0..<count]), maxCount: infoList.count)
         return userKonkukInfoList
     }
 
-    func info(index: Int) -> KonkukInfo? {
-        guard let infoList = konkukInfoRepository.konkukInfoList() else { return nil }
+    func info(language: LanguageKind, index: Int) -> KonkukInfo? {
+        guard let infoList = konkukInfoRepository.konkukInfoList(languageKind: language) else { return nil }
         if index >= infoList.count { return nil }
         return infoList[index]
     }

@@ -9,9 +9,16 @@ import Foundation
 
 struct DefaultKonkukInfoRepository: KonkukInfoRepository {
 
-    func konkukInfoList() -> [KonkukInfo]? {
+    func konkukInfoList(languageKind: LanguageKind) -> [KonkukInfo]? {
+        switch languageKind {
+        case .korean: return konkukInfoList(resoruce: "KonkukInfoList_ko")
+        case .englishUS: return konkukInfoList(resoruce: "KonkukInfoList_en")
+        }
+    }
 
-        guard let path = Bundle.main.path(forResource: "KonkukInfoList_ko", ofType: "json") else {
+    private func konkukInfoList(resoruce: String) -> [KonkukInfo]? {
+
+        guard let path = Bundle.main.path(forResource: resoruce, ofType: "json") else {
             print("알쓸건잡 데이터 없음1")
             return nil
         }
