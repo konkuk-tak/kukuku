@@ -207,6 +207,7 @@ extension HomeViewController {
         let arGameViewModel = DependencyFactory.arGameViewModel(isDeveloperMode: isDeveloperMode)
         let arGameViewController = ARGameViewController(arGameViewModel: arGameViewModel)
         arGameViewController.modalPresentationStyle = .fullScreen
+        arGameViewController.transitioningDelegate = self
         arGameViewController.didDismiss = { [weak self] in
             self?.userScoreUpdateSubject.send(Void())
             self?.moveToKonkukInfoDetail()
@@ -222,22 +223,22 @@ extension HomeViewController {
     }
 }
 
-// For fast
-
-#if DEBUG
-extension HomeViewController {
-    private func moveToTargetView() {
-//        let targetViewController = ARGameViewController()
-//        targetViewController.modalPresentationStyle = .fullScreen
-//        present(targetViewController, animated: true)
-//        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
-//        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
-//        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-//        present(konkukInfoDetailViewController, animated: true)
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController,
+        source: UIViewController
+    ) -> UIViewControllerAnimatedTransitioning? {
+        guard let arButtonFrame = homeView.arButtonFrame else {
+            return PresentTransition(originFrame: .appCenterFrame)
+        }
+        return PresentTransition(originFrame: arButtonFrame)
     }
 
-    private func testLocation() {
-//        locationManager.requestAuthorization()
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let arButtonFrame = homeView.arButtonFrame else {
+            return DismissTransition(originFrame: .appCenterFrame)
+        }
+        return DismissTransition(originFrame: arButtonFrame)
     }
 }
-#endif

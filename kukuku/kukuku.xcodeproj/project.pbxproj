@@ -36,6 +36,9 @@
 		142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */; };
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
 		143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */; };
+		143DEA1E29B7271B00EB3E38 /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA1D29B7271B00EB3E38 /* PresentTransition.swift */; };
+		143DEA2029B7544000EB3E38 /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA1F29B7544000EB3E38 /* DismissTransition.swift */; };
+		143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA2429B75D6F00EB3E38 /* CGRect+.swift */; };
 		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
 		1458B7A429B4B9BF00EB4397 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
@@ -145,6 +148,9 @@
 		142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailViewController.swift; sourceTree = "<group>"; };
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
 		143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList_en.json; sourceTree = "<group>"; };
+		143DEA1D29B7271B00EB3E38 /* PresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
+		143DEA1F29B7544000EB3E38 /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
+		143DEA2429B75D6F00EB3E38 /* CGRect+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+.swift"; sourceTree = "<group>"; };
 		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 		1429327729AF8974009B9B7F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				143DEA1C29B726F000EB3E38 /* Animation */,
 				14D5BC5229B5865E007D2A3E /* Manager */,
 				14644E8729B17DC800176342 /* View */,
 			);
@@ -489,6 +496,34 @@
 				142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		143DEA1C29B726F000EB3E38 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				143DEA1D29B7271B00EB3E38 /* PresentTransition.swift */,
+				143DEA1F29B7544000EB3E38 /* DismissTransition.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		143DEA2229B75D6100EB3E38 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */,
+				142F018829B089F6001D5DCD /* UITableView+.swift */,
+				14644E9129B1860A00176342 /* UIViewController+Alert.swift */,
+				145C67D029B32B340044544C /* UIApplication.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		143DEA2329B75D6600EB3E38 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				143DEA2429B75D6F00EB3E38 /* CGRect+.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		1458B79E29B4767D00EB4397 /* Game */ = {
@@ -1041,10 +1076,8 @@
 		14FE77E929B03B5600900EEC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */,
-				142F018829B089F6001D5DCD /* UITableView+.swift */,
-				14644E9129B1860A00176342 /* UIViewController+Alert.swift */,
-				145C67D029B32B340044544C /* UIApplication.swift */,
+				143DEA2329B75D6600EB3E38 /* CoreGraphics */,
+				143DEA2229B75D6100EB3E38 /* VIew */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1168,6 +1201,7 @@
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
 				14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
+				143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */,
 				142F018929B089F6001D5DCD /* UITableView+.swift in Sources */,
@@ -1178,6 +1212,7 @@
 				14644E8929B17DFC00176342 /* KUContainTableView.swift in Sources */,
 				145C67BE29B2F85C0044544C /* DarkModeManager.swift in Sources */,
 				1482F5E329B1EFB6000B5320 /* GameCoordinate.swift in Sources */,
+				143DEA1E29B7271B00EB3E38 /* PresentTransition.swift in Sources */,
 				1482F5DD29B1EE48000B5320 /* DefaultLocationUseCase.swift in Sources */,
 				1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */,
 				1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */,
@@ -1237,6 +1272,7 @@
 				1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */,
 				14D5BC6629B5A40F007D2A3E /* AppManager.swift in Sources */,
 				1429328329AF8C22009B9B7F /* GuideViewController.swift in Sources */,
+				143DEA2029B7544000EB3E38 /* DismissTransition.swift in Sources */,
 				145C67A729B2E4960044544C /* KonkukInfoUseCase.swift in Sources */,
 				14F9D52129B1C6160005B74F /* User.swift in Sources */,
 				142F019229B09525001D5DCD /* SettingSectionHeader.swift in Sources */,

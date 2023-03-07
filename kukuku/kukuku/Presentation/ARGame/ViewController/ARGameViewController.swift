@@ -95,7 +95,6 @@ final class ARGameViewController: UIViewController {
     }
 
     private func handleAuthorizationStatus(_ authorizationStatus: AuthorizationStatus) {
-        print(authorizationStatus)
         switch authorizationStatus {
         case .notDetermined, .denied:
             showPermissionSettingAlert(title: "위치 권한이 없습니다.", message: "콘텐츠 이용을 위해 위치 권한이 필요합니다.")

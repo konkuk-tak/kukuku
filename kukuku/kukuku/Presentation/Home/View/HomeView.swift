@@ -18,6 +18,10 @@ class HomeView: UIView {
     private let settingButton = KUDefaultButton(title: "Settings")
     private let arButton = UIButton()
 
+    var arButtonFrame: CGRect? {
+        return arButton.superview?.convert(arButton.frame, to: UIApplication.shared.keyWindow)
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureHomeView()
