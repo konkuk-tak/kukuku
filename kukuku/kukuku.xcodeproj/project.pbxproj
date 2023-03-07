@@ -35,6 +35,7 @@
 		142F01A829B0B030001D5DCD /* ARGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01A729B0B030001D5DCD /* ARGameView.swift */; };
 		142F01AD29B0B865001D5DCD /* KonkukInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */; };
 		142F01B029B0B889001D5DCD /* KonkukInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */; };
+		143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */; };
 		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
 		1458B7A429B4B9BF00EB4397 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
@@ -68,7 +69,7 @@
 		14644E9229B1860A00176342 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E9129B1860A00176342 /* UIViewController+Alert.swift */; };
 		14644E9C29B1A1CE00176342 /* KonkukInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E9B29B1A1CE00176342 /* KonkukInfo.swift */; };
 		14644E9F29B1A25E00176342 /* DefaultKonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644E9E29B1A25E00176342 /* DefaultKonkukInfoRepository.swift */; };
-		14644EA029B1A44300176342 /* KonkukInfoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 14644E9729B1A11F00176342 /* KonkukInfoList.json */; };
+		14644EA029B1A44300176342 /* KonkukInfoList_ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 14644E9729B1A11F00176342 /* KonkukInfoList_ko.json */; };
 		14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */; };
 		14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA629B1A91A00176342 /* KonkukInfoRepository.swift */; };
 		14644EAA29B1A9D000176342 /* print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA929B1A9D000176342 /* print.swift */; };
@@ -143,6 +144,7 @@
 		142F01A729B0B030001D5DCD /* ARGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameView.swift; sourceTree = "<group>"; };
 		142F01AC29B0B865001D5DCD /* KonkukInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailViewController.swift; sourceTree = "<group>"; };
 		142F01AF29B0B889001D5DCD /* KonkukInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoDetailView.swift; sourceTree = "<group>"; };
+		143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList_en.json; sourceTree = "<group>"; };
 		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		14644E8C29B1818D00176342 /* SettingDarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDarkModeView.swift; sourceTree = "<group>"; };
 		14644E8F29B1839700176342 /* DarkModeKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeKind.swift; sourceTree = "<group>"; };
 		14644E9129B1860A00176342 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
-		14644E9729B1A11F00176342 /* KonkukInfoList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList.json; sourceTree = "<group>"; };
+		14644E9729B1A11F00176342 /* KonkukInfoList_ko.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList_ko.json; sourceTree = "<group>"; };
 		14644E9B29B1A1CE00176342 /* KonkukInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfo.swift; sourceTree = "<group>"; };
 		14644E9E29B1A25E00176342 /* DefaultKonkukInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKonkukInfoRepository.swift; sourceTree = "<group>"; };
 		14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONKonkukInfoList.swift; sourceTree = "<group>"; };
@@ -547,7 +549,8 @@
 				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
 				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
 				1482F5F129B20BA5000B5320 /* Images.xcassets */,
-				14644E9729B1A11F00176342 /* KonkukInfoList.json */,
+				143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */,
+				14644E9729B1A11F00176342 /* KonkukInfoList_ko.json */,
 				14D5BC4B29B56D61007D2A3E /* Localizable.strings */,
 			);
 			path = Resources;
@@ -1120,7 +1123,8 @@
 				14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */,
 				142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */,
 				14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */,
-				14644EA029B1A44300176342 /* KonkukInfoList.json in Resources */,
+				143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */,
+				14644EA029B1A44300176342 /* KonkukInfoList_ko.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
