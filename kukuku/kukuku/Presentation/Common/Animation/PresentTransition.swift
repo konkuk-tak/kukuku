@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AnimationTransition: NSObject, UIViewControllerAnimatedTransitioning {
+final class PresentTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
     let originFrame: CGRect
     let duration = 1.0

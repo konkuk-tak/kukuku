@@ -230,28 +230,16 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         source: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
         guard let arButtonFrame = homeView.arButtonFrame() else {
-            return AnimationTransition(originFrame: .zero)
+            return PresentTransition(originFrame: .zero)
         }
-        return AnimationTransition(originFrame: arButtonFrame)
+        return PresentTransition(originFrame: arButtonFrame)
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        guard let arButtonFrame = homeView.arButtonFrame() else {
+//            return AnimationTransition(originFrame: .zero)
+//        }
+//        return AnimationTransition(originFrame: arButtonFrame)
+        return nil
     }
 }
-
-// For fast
-
-#if DEBUG
-extension HomeViewController {
-    private func moveToTargetView() {
-//        let targetViewController = ARGameViewController()
-//        targetViewController.modalPresentationStyle = .fullScreen
-//        present(targetViewController, animated: true)
-//        let konkukInfo = DefaultKonkukInfoRepository().konkukInfoList()![0]
-//        let konkukInfoDetailViewController = KonkukInfoDetailViewController(konkukInfo: konkukInfo)
-//        konkukInfoDetailViewController.modalPresentationStyle = .fullScreen
-//        present(konkukInfoDetailViewController, animated: true)
-    }
-
-    private func testLocation() {
-//        locationManager.requestAuthorization()
-    }
-}
-#endif
