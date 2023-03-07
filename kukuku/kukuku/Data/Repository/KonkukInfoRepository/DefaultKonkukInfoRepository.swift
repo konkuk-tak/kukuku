@@ -11,7 +11,7 @@ struct DefaultKonkukInfoRepository: KonkukInfoRepository {
 
     func konkukInfoList() -> [KonkukInfo]? {
 
-        guard let path = Bundle.main.path(forResource: "KonkukInfoList_en", ofType: "json") else {
+        guard let path = Bundle.main.path(forResource: "KonkukInfoList_ko", ofType: "json") else {
             print("알쓸건잡 데이터 없음1")
             return nil
         }

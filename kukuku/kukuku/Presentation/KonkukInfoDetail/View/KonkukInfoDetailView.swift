@@ -107,7 +107,8 @@ final class KonkukInfoDetailView: UIView {
         descriptionLabel.font = .body
         descriptionLabel.textColor = .dynamicBlack
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.lineBreakMode = .byCharWrapping
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.lineBreakStrategy = .hangulWordPriority
         descriptionLabel.text = description
     }
 
