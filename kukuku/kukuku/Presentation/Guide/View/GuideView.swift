@@ -76,7 +76,7 @@ final class GuideView: UIView {
     private func configureFlexLayout() {
         containerView.flex.direction(.column).define { flex in
             flex.addItem().grow(0.3)
-            flex.addItem(collectionView).grow(5)
+            flex.addItem(collectionView).grow(7)
 
             flex.addItem().grow(1)
 
