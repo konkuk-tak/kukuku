@@ -38,6 +38,7 @@
 		143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */; };
 		143DEA1E29B7271B00EB3E38 /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA1D29B7271B00EB3E38 /* PresentTransition.swift */; };
 		143DEA2029B7544000EB3E38 /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA1F29B7544000EB3E38 /* DismissTransition.swift */; };
+		143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DEA2429B75D6F00EB3E38 /* CGRect+.swift */; };
 		1458B7A029B4768100EB4397 /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B79F29B4768100EB4397 /* GameRule.swift */; };
 		1458B7A429B4B9BF00EB4397 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */; };
 		145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 145A289B29AF4F56008CCBC7 /* FlexLayout */; };
@@ -149,6 +150,7 @@
 		143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KonkukInfoList_en.json; sourceTree = "<group>"; };
 		143DEA1D29B7271B00EB3E38 /* PresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
 		143DEA1F29B7544000EB3E38 /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
+		143DEA2429B75D6F00EB3E38 /* CGRect+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+.swift"; sourceTree = "<group>"; };
 		1458B79F29B4768100EB4397 /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		145A28A629AF59AC008CCBC7 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
@@ -503,6 +505,25 @@
 				143DEA1F29B7544000EB3E38 /* DismissTransition.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		143DEA2229B75D6100EB3E38 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */,
+				142F018829B089F6001D5DCD /* UITableView+.swift */,
+				14644E9129B1860A00176342 /* UIViewController+Alert.swift */,
+				145C67D029B32B340044544C /* UIApplication.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		143DEA2329B75D6600EB3E38 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				143DEA2429B75D6F00EB3E38 /* CGRect+.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		1458B79E29B4767D00EB4397 /* Game */ = {
@@ -1055,10 +1076,8 @@
 		14FE77E929B03B5600900EEC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */,
-				142F018829B089F6001D5DCD /* UITableView+.swift */,
-				14644E9129B1860A00176342 /* UIViewController+Alert.swift */,
-				145C67D029B32B340044544C /* UIApplication.swift */,
+				143DEA2329B75D6600EB3E38 /* CoreGraphics */,
+				143DEA2229B75D6100EB3E38 /* VIew */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1182,6 +1201,7 @@
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
 				14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
+				143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */,
 				145A28A929AF59B2008CCBC7 /* UserUseCase.swift in Sources */,
 				145C67C929B303200044544C /* DefaultDarkModeUseCase.swift in Sources */,
 				142F018929B089F6001D5DCD /* UITableView+.swift in Sources */,

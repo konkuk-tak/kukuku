@@ -229,17 +229,16 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         presenting: UIViewController,
         source: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
-        guard let arButtonFrame = homeView.arButtonFrame() else {
-            return PresentTransition(originFrame: .zero)
+        guard let arButtonFrame = homeView.arButtonFrame else {
+            return PresentTransition(originFrame: .appCenterFrame)
         }
-        print("arButton", arButtonFrame)
         return PresentTransition(originFrame: arButtonFrame)
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let arButtonFrame = homeView.arButtonFrame() else {
-            return DismissTransition(originFrame: .zero)
+        guard let arButtonFrame = homeView.arButtonFrame else {
+            return DismissTransition(originFrame: .appCenterFrame)
         }
-        return DismissTransition(originFrame: CGRect(x: 156, y: 718, width: 80, height: 80))
+        return DismissTransition(originFrame: arButtonFrame)
     }
 }
