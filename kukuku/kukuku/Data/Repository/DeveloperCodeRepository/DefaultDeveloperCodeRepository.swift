@@ -9,20 +9,9 @@ import Foundation
 
 struct DefaultDeveloperCodeRepository: DeveloperCodeRepository {
 
-    private let fileName: String = "DeveloperCode"
-    private let key: String = "code"
+    private let key: String = "Developer Code"
 
     func code() -> String? {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "plist") else {
-            return nil
-        }
-
-        guard let dictionary = NSDictionary(contentsOf: url) else {
-            return nil
-        }
-
-        let code = dictionary[key] as? String
-
-        return code
+        return Bundle.main.object(forInfoDictionaryKey: key) as? String
     }
 }
