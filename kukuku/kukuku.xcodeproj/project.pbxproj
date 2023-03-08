@@ -88,6 +88,9 @@
 		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
 		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
 		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
+		148ACE8829B821F7001C06A7 /* KukukuUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */; };
+		148ACE9029B82610001C06A7 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE8F29B82610001C06A7 /* PinLayout */; };
+		148ACE9229B82613001C06A7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE9129B82613001C06A7 /* FlexLayout */; };
 		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4529B567CB007D2A3E /* Settings.bundle */; };
 		14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4B29B56D61007D2A3E /* Localizable.strings */; };
@@ -114,6 +117,16 @@
 		14FE77E829B03B5000900EEC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77E729B03B5000900EEC /* ReusableView.swift */; };
 		14FE77EB29B03B7400900EEC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77EA29B03B7400900EEC /* UICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		148ACE8929B821F7001C06A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142A2F3229AF34C900ACFFDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 142A2F3929AF34C900ACFFDD;
+			remoteInfo = kukuku;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1429327829AF8982009B9B7F /* KuDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuDefaultButton.swift; sourceTree = "<group>"; };
@@ -199,6 +212,8 @@
 		1482F5ED29B20A51000B5320 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUseCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukukuUseCaseTests.swift; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14D5BC4529B567CB007D2A3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -234,6 +249,15 @@
 			files = (
 				142A2F5329AF4A0400ACFFDD /* PinLayout in Frameworks */,
 				145A289C29AF4F56008CCBC7 /* FlexLayout in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148ACE8229B821F7001C06A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148ACE9029B82610001C06A7 /* PinLayout in Frameworks */,
+				148ACE9229B82613001C06A7 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +374,9 @@
 				1429329229AF8FF0009B9B7F /* .swiftlint.auto.yml */,
 				1429329029AF8F4B009B9B7F /* .swiftlint.yml */,
 				142A2F3C29AF34C900ACFFDD /* kukuku */,
+				148ACE8629B821F7001C06A7 /* KukukuUseCaseTests */,
 				142A2F3B29AF34C900ACFFDD /* Products */,
+				148ACE8E29B82610001C06A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				142A2F3A29AF34C900ACFFDD /* kukuku.app */,
+				148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -877,6 +904,21 @@
 			path = GuideUseCase;
 			sourceTree = "<group>";
 		};
+		148ACE8629B821F7001C06A7 /* KukukuUseCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */,
+			);
+			path = KukukuUseCaseTests;
+			sourceTree = "<group>";
+		};
+		148ACE8E29B82610001C06A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1499FB9329B43C470072D355 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,6 +1149,28 @@
 			productReference = 142A2F3A29AF34C900ACFFDD /* kukuku.app */;
 			productType = "com.apple.product-type.application";
 		};
+		148ACE8429B821F7001C06A7 /* kukukuUseCaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148ACE8D29B821F7001C06A7 /* Build configuration list for PBXNativeTarget "kukukuUseCaseTests" */;
+			buildPhases = (
+				148ACE8129B821F7001C06A7 /* Sources */,
+				148ACE8229B821F7001C06A7 /* Frameworks */,
+				148ACE8329B821F7001C06A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				148ACE8A29B821F7001C06A7 /* PBXTargetDependency */,
+			);
+			name = kukukuUseCaseTests;
+			packageProductDependencies = (
+				148ACE8F29B82610001C06A7 /* PinLayout */,
+				148ACE9129B82613001C06A7 /* FlexLayout */,
+			);
+			productName = kukukuUseCaseTests;
+			productReference = 148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1119,6 +1183,10 @@
 				TargetAttributes = {
 					142A2F3929AF34C900ACFFDD = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					148ACE8429B821F7001C06A7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 142A2F3929AF34C900ACFFDD;
 					};
 				};
 			};
@@ -1141,6 +1209,7 @@
 			projectRoot = "";
 			targets = (
 				142A2F3929AF34C900ACFFDD /* kukuku */,
+				148ACE8429B821F7001C06A7 /* kukukuUseCaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1158,6 +1227,13 @@
 				14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */,
 				143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */,
 				14644EA029B1A44300176342 /* KonkukInfoList_ko.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148ACE8329B821F7001C06A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1289,7 +1365,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		148ACE8129B821F7001C06A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148ACE8829B821F7001C06A7 /* KukukuUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		148ACE8A29B821F7001C06A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 142A2F3929AF34C900ACFFDD /* kukuku */;
+			targetProxy = 148ACE8929B821F7001C06A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */ = {
@@ -1499,6 +1591,52 @@
 			};
 			name = Release;
 		};
+		148ACE8B29B821F7001C06A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukukuUseCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kukuku.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kukuku";
+			};
+			name = Debug;
+		};
+		148ACE8C29B821F7001C06A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukukuUseCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kukuku.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kukuku";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1516,6 +1654,15 @@
 			buildConfigurations = (
 				142A2F4F29AF34CA00ACFFDD /* Debug */,
 				142A2F5029AF34CA00ACFFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148ACE8D29B821F7001C06A7 /* Build configuration list for PBXNativeTarget "kukukuUseCaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148ACE8B29B821F7001C06A7 /* Debug */,
+				148ACE8C29B821F7001C06A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1548,6 +1695,16 @@
 			productName = PinLayout;
 		};
 		145A289B29AF4F56008CCBC7 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		148ACE8F29B82610001C06A7 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+		148ACE9129B82613001C06A7 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */;
 			productName = FlexLayout;
