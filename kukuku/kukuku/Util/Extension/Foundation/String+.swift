@@ -12,7 +12,7 @@ extension String {
         return AppManager.bundle.localizedString(forKey: self, value: nil, table: nil)
     }
 
-    func localized(comment: String) -> String {
-        return NSLocalizedString(self, comment: comment)
+    func localized(argument: CVarArg) -> String {
+        return String(format: self.localized, argument)
     }
 }

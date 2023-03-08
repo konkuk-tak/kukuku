@@ -104,7 +104,9 @@ final class SettingViewController: UIViewController {
     // MARK: 데이터 삭제
 
     private func handleUserDeleteResult() {
-        showOkayAlert(title: "Alert Title Data Delete Complete", message: "Alert Description Data Delete Complete")
+        showOkayAlert(title: "Alert Title Data Delete Complete", message: "Alert Description Data Delete Complete") {
+            self.navigationController?.popViewController(animated: true)
+        }
         userUpdate.send(Void())
     }
 

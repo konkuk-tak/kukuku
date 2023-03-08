@@ -35,6 +35,9 @@
 "Alert Title Hamburger" = "Already got today's hamburger.";
 "Alert Description Hamburger" = "You can only eat hamburgers once a day.";
 
+"Alert Title Language Change" = "Alert";
+"Alert Description Language Change" = "Change Language to %@?";
+
 // Settings
 
 "Alert Title Data Delete" = "Data Delete";
