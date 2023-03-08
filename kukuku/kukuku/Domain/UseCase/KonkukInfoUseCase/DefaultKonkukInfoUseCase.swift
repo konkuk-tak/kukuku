@@ -17,7 +17,9 @@ struct DefaultKonkukInfoUseCase: KonkukInfoUseCase {
 
     func infoList(language: LanguageKind, count: Int) -> UserKonkukInfoList {
         let infoList = konkukInfoRepository.konkukInfoList(languageKind: language) ?? []
-        let userKonkukInfoList = UserKonkukInfoList(list: Array(infoList[0..<count]), maxCount: infoList.count)
+        let maxCount = infoList.count
+        let listCount = count > maxCount ? maxCount : count
+        let userKonkukInfoList = UserKonkukInfoList(list: Array(infoList[0..<listCount]), maxCount: maxCount)
         return userKonkukInfoList
     }
 

@@ -37,12 +37,12 @@ final class DefaultLocationUseCase: LocationUseCase {
         }
     }
 
-    func unLimitedRange() -> AnyPublisher<LocationStatus, Never> {
-        return Just(LocationStatus.success).eraseToAnyPublisher()
-    }
-
     func authorizationPublisher() -> AnyPublisher<AuthorizationStatus, Never> {
         return locationRepository.requestAuthorization()
+    }
+
+    private func unLimitedRange() -> AnyPublisher<LocationStatus, Never> {
+        return Just(LocationStatus.success).eraseToAnyPublisher()
     }
 
     private func isInRange(location: CLLocation) -> LocationStatus {

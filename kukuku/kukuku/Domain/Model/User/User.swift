@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Equatable {
     let type: UserType
     let listCount: Int
     let log: [Date]
