@@ -43,4 +43,9 @@ final class LanguageUseCaseTests: XCTestCase {
         languageUseCase.save(.englishUS)
         XCTAssertEqual(languageUseCase.read(), .englishUS)
     }
+
+    func test_device_language() throws {
+        let deviceLanguage = languageUseCase.read()
+        XCTAssertEqual(mockLanguageRepository.storedLanguageKind, deviceLanguage)
+    }
 }
