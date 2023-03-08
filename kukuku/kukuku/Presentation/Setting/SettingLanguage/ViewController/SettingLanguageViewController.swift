@@ -122,6 +122,14 @@ extension SettingLanguageViewController: UITableViewDataSource, UITableViewDeleg
             return
         }
 
-        languageSubject.send(languageKind)
+        if settingLanguageViewModel.currentLanguage == languageKind { return }
+
+        showConfirmAlert(
+            title: "Alert Title Language Change",
+            message: "Alert Description Language Change".localized(argument: languageKind.title),
+            confirmTitle: "okay"
+        ) {
+            self.languageSubject.send(languageKind)
+        }
     }
 }

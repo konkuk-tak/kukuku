@@ -60,6 +60,8 @@
 
 "Alert Description Already Developer Mode" = "현재 개발자 모드입니다";
 
+"Alert Title Language Change" = "언어 변경";
+"Alert Description Language Change" = "언어를 %@로 변경하시겠어요?";
 
 // MARK: - 홈 화면
 

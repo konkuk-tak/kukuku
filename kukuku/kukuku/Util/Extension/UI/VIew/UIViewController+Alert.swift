@@ -71,6 +71,14 @@ extension UIViewController {
         showAlert(alertController)
     }
 
+    func showOkayAlert(title: String, message: String, handler: @escaping () -> Void) {
+        let alertAction = UIAlertAction(title: "okay".localized, style: .default) { _ in
+            handler()
+        }
+        let alertController = createAlert(title: title, message: message, alertActions: [alertAction])
+        showAlert(alertController)
+    }
+
     func showConfirmAlert(
         title: String,
         message: String,
