@@ -112,7 +112,6 @@
 		14D5BC6129B5890F007D2A3E /* DefaultLanguageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC6029B5890F007D2A3E /* DefaultLanguageUseCase.swift */; };
 		14D5BC6429B58B4D007D2A3E /* SettingLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC6329B58B4D007D2A3E /* SettingLanguageViewModel.swift */; };
 		14D5BC6629B5A40F007D2A3E /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5BC6529B5A40F007D2A3E /* AppManager.swift */; };
-		14F4C45B29B45F1200A9ADBE /* DeveloperCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */; };
 		14F4C45E29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */; };
 		14F4C46129B4607A00A9ADBE /* DeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */; };
 		14F9D52129B1C6160005B74F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9D52029B1C6160005B74F /* User.swift */; };
@@ -234,6 +233,7 @@
 		148ACEB229B85562001C06A7 /* GuideUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACEB529B856BA001C06A7 /* DarkModeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACEB929B8572F001C06A7 /* MockDarkModeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDarkModeRepository.swift; sourceTree = "<group>"; };
+		148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DeveloperCode.xcconfig; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14D5BC4529B567CB007D2A3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -246,7 +246,6 @@
 		14D5BC6029B5890F007D2A3E /* DefaultLanguageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguageUseCase.swift; sourceTree = "<group>"; };
 		14D5BC6329B58B4D007D2A3E /* SettingLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLanguageViewModel.swift; sourceTree = "<group>"; };
 		14D5BC6529B5A40F007D2A3E /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeveloperCode.plist; sourceTree = "<group>"; };
 		14F4C45D29B45F8400A9ADBE /* DefaultDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		14F4C46029B4607A00A9ADBE /* DeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		14F9D52029B1C6160005B74F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -627,7 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				142A2F4B29AF34CA00ACFFDD /* Info.plist */,
-				14F4C45A29B45F1200A9ADBE /* DeveloperCode.plist */,
+				148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */,
 				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
 				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
 				1482F5F129B20BA5000B5320 /* Images.xcassets */,
@@ -1329,7 +1328,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F4C45B29B45F1200A9ADBE /* DeveloperCode.plist in Resources */,
 				142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */,
 				1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */,
 				14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */,
@@ -1643,6 +1641,7 @@
 		};
 		142A2F4F29AF34CA00ACFFDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1678,6 +1677,7 @@
 		};
 		142A2F5029AF34CA00ACFFDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1713,6 +1713,7 @@
 		};
 		148ACE8B29B821F7001C06A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1736,6 +1737,7 @@
 		};
 		148ACE8C29B821F7001C06A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148ACEBB29B86A9E001C06A7 /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
