@@ -33,12 +33,12 @@ final class LanguageUseCaseTests: XCTestCase {
         languageUseCase.save(.korean)
         XCTAssertEqual(languageUseCase.read(), .korean)
     }
-    
+
     func test_language_save_englishUS() throws {
         languageUseCase.save(.englishUS)
         XCTAssertEqual(mockLanguageRepository.storedLanguageKind, .englishUS)
     }
-    
+
     func test_language_save_englishUS_read() throws {
         languageUseCase.save(.englishUS)
         XCTAssertEqual(languageUseCase.read(), .englishUS)

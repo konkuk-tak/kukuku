@@ -88,11 +88,13 @@
 		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
 		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
 		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
-		148ACE8829B821F7001C06A7 /* KukukuUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */; };
 		148ACE9029B82610001C06A7 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE8F29B82610001C06A7 /* PinLayout */; };
 		148ACE9229B82613001C06A7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE9129B82613001C06A7 /* FlexLayout */; };
 		148ACE9529B82753001C06A7 /* LanguageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9429B82753001C06A7 /* LanguageUseCaseTests.swift */; };
 		148ACE9A29B82845001C06A7 /* MockLanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9929B82845001C06A7 /* MockLanguageRepository.swift */; };
+		148ACE9E29B82EEA001C06A7 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */; };
+		148ACEA029B82F74001C06A7 /* UserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */; };
+		148ACEA229B82FE9001C06A7 /* MockDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */; };
 		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4529B567CB007D2A3E /* Settings.bundle */; };
 		14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4B29B56D61007D2A3E /* Localizable.strings */; };
@@ -215,9 +217,11 @@
 		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUseCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukukuUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACE9429B82753001C06A7 /* LanguageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACE9929B82845001C06A7 /* MockLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguageRepository.swift; sourceTree = "<group>"; };
+		148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCaseTests.swift; sourceTree = "<group>"; };
+		148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeveloperCodeRepository.swift; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14D5BC4529B567CB007D2A3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -911,9 +915,8 @@
 		148ACE8629B821F7001C06A7 /* KukukuUseCaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				148ACE9629B827A4001C06A7 /* Mock */,
 				148ACE9329B8273E001C06A7 /* LanguageUseCaseTests */,
-				148ACE8729B821F7001C06A7 /* KukukuUseCaseTests.swift */,
+				148ACE9B29B82EB2001C06A7 /* UserUseCase */,
 			);
 			path = KukukuUseCaseTests;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 		148ACE9329B8273E001C06A7 /* LanguageUseCaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				148ACE9629B827A4001C06A7 /* Mock */,
 				148ACE9429B82753001C06A7 /* LanguageUseCaseTests.swift */,
 			);
 			path = LanguageUseCaseTests;
@@ -937,6 +941,24 @@
 			isa = PBXGroup;
 			children = (
 				148ACE9929B82845001C06A7 /* MockLanguageRepository.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		148ACE9B29B82EB2001C06A7 /* UserUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				148ACE9C29B82ED6001C06A7 /* Mock */,
+				148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */,
+			);
+			path = UserUseCase;
+			sourceTree = "<group>";
+		};
+		148ACE9C29B82ED6001C06A7 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */,
+				148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1391,9 +1413,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				148ACE8829B821F7001C06A7 /* KukukuUseCaseTests.swift in Sources */,
+				148ACE9E29B82EEA001C06A7 /* MockUserRepository.swift in Sources */,
 				148ACE9A29B82845001C06A7 /* MockLanguageRepository.swift in Sources */,
 				148ACE9529B82753001C06A7 /* LanguageUseCaseTests.swift in Sources */,
+				148ACEA029B82F74001C06A7 /* UserUseCaseTests.swift in Sources */,
+				148ACEA229B82FE9001C06A7 /* MockDeveloperCodeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
