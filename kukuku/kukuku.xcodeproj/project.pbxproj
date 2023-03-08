@@ -95,6 +95,8 @@
 		148ACE9E29B82EEA001C06A7 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */; };
 		148ACEA029B82F74001C06A7 /* UserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */; };
 		148ACEA229B82FE9001C06A7 /* MockDeveloperCodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */; };
+		148ACEA529B8477F001C06A7 /* KonkukInfoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEA429B8477F001C06A7 /* KonkukInfoUseCaseTests.swift */; };
+		148ACEA829B847AC001C06A7 /* MockKonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEA729B847AC001C06A7 /* MockKonkukInfoRepository.swift */; };
 		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4529B567CB007D2A3E /* Settings.bundle */; };
 		14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4B29B56D61007D2A3E /* Localizable.strings */; };
@@ -222,6 +224,8 @@
 		148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeveloperCodeRepository.swift; sourceTree = "<group>"; };
+		148ACEA429B8477F001C06A7 /* KonkukInfoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUseCaseTests.swift; sourceTree = "<group>"; };
+		148ACEA729B847AC001C06A7 /* MockKonkukInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKonkukInfoRepository.swift; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14D5BC4529B567CB007D2A3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -916,7 +920,8 @@
 			isa = PBXGroup;
 			children = (
 				148ACE9329B8273E001C06A7 /* LanguageUseCaseTests */,
-				148ACE9B29B82EB2001C06A7 /* UserUseCase */,
+				148ACEA329B8474E001C06A7 /* KonkukInfoUseCaseTests */,
+				148ACE9B29B82EB2001C06A7 /* UserUseCaseTests */,
 			);
 			path = KukukuUseCaseTests;
 			sourceTree = "<group>";
@@ -945,13 +950,13 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		148ACE9B29B82EB2001C06A7 /* UserUseCase */ = {
+		148ACE9B29B82EB2001C06A7 /* UserUseCaseTests */ = {
 			isa = PBXGroup;
 			children = (
 				148ACE9C29B82ED6001C06A7 /* Mock */,
 				148ACE9F29B82F74001C06A7 /* UserUseCaseTests.swift */,
 			);
-			path = UserUseCase;
+			path = UserUseCaseTests;
 			sourceTree = "<group>";
 		};
 		148ACE9C29B82ED6001C06A7 /* Mock */ = {
@@ -959,6 +964,23 @@
 			children = (
 				148ACE9D29B82EEA001C06A7 /* MockUserRepository.swift */,
 				148ACEA129B82FE9001C06A7 /* MockDeveloperCodeRepository.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		148ACEA329B8474E001C06A7 /* KonkukInfoUseCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				148ACEA629B847A7001C06A7 /* Mock */,
+				148ACEA429B8477F001C06A7 /* KonkukInfoUseCaseTests.swift */,
+			);
+			path = KonkukInfoUseCaseTests;
+			sourceTree = "<group>";
+		};
+		148ACEA629B847A7001C06A7 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				148ACEA729B847AC001C06A7 /* MockKonkukInfoRepository.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1415,6 +1437,8 @@
 			files = (
 				148ACE9E29B82EEA001C06A7 /* MockUserRepository.swift in Sources */,
 				148ACE9A29B82845001C06A7 /* MockLanguageRepository.swift in Sources */,
+				148ACEA829B847AC001C06A7 /* MockKonkukInfoRepository.swift in Sources */,
+				148ACEA529B8477F001C06A7 /* KonkukInfoUseCaseTests.swift in Sources */,
 				148ACE9529B82753001C06A7 /* LanguageUseCaseTests.swift in Sources */,
 				148ACEA029B82F74001C06A7 /* UserUseCaseTests.swift in Sources */,
 				148ACEA229B82FE9001C06A7 /* MockDeveloperCodeRepository.swift in Sources */,
