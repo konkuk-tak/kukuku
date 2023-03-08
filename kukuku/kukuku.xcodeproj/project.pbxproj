@@ -98,6 +98,7 @@
 		148ACEA529B8477F001C06A7 /* KonkukInfoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEA429B8477F001C06A7 /* KonkukInfoUseCaseTests.swift */; };
 		148ACEAB29B84D3F001C06A7 /* LocationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEAA29B84D3F001C06A7 /* LocationUseCaseTests.swift */; };
 		148ACEAE29B84D6A001C06A7 /* MockLoactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEAD29B84D6A001C06A7 /* MockLoactionRepository.swift */; };
+		148ACEB329B85562001C06A7 /* GuideUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACEB229B85562001C06A7 /* GuideUseCaseTests.swift */; };
 		1499FB9529B43C4E0072D355 /* KUError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499FB9429B43C4E0072D355 /* KUError.swift */; };
 		14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4529B567CB007D2A3E /* Settings.bundle */; };
 		14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D5BC4B29B56D61007D2A3E /* Localizable.strings */; };
@@ -228,6 +229,7 @@
 		148ACEA429B8477F001C06A7 /* KonkukInfoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACEAA29B84D3F001C06A7 /* LocationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACEAD29B84D6A001C06A7 /* MockLoactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoactionRepository.swift; sourceTree = "<group>"; };
+		148ACEB229B85562001C06A7 /* GuideUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseTests.swift; sourceTree = "<group>"; };
 		1499FB9429B43C4E0072D355 /* KUError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUError.swift; sourceTree = "<group>"; };
 		14D5BC4529B567CB007D2A3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		14D5BC4A29B56D61007D2A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -922,7 +924,8 @@
 			isa = PBXGroup;
 			children = (
 				148ACE9329B8273E001C06A7 /* LanguageUseCaseTests */,
-				148ACEA929B84D26001C06A7 /* LocationUseCase */,
+				148ACEAF29B85537001C06A7 /* GuideUseCaseTests */,
+				148ACEA929B84D26001C06A7 /* LocationUseCaseTests */,
 				148ACEA329B8474E001C06A7 /* KonkukInfoUseCaseTests */,
 				148ACE9B29B82EB2001C06A7 /* UserUseCaseTests */,
 			);
@@ -979,13 +982,13 @@
 			path = KonkukInfoUseCaseTests;
 			sourceTree = "<group>";
 		};
-		148ACEA929B84D26001C06A7 /* LocationUseCase */ = {
+		148ACEA929B84D26001C06A7 /* LocationUseCaseTests */ = {
 			isa = PBXGroup;
 			children = (
 				148ACEAC29B84D61001C06A7 /* Mock */,
 				148ACEAA29B84D3F001C06A7 /* LocationUseCaseTests.swift */,
 			);
-			path = LocationUseCase;
+			path = LocationUseCaseTests;
 			sourceTree = "<group>";
 		};
 		148ACEAC29B84D61001C06A7 /* Mock */ = {
@@ -994,6 +997,14 @@
 				148ACEAD29B84D6A001C06A7 /* MockLoactionRepository.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		148ACEAF29B85537001C06A7 /* GuideUseCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				148ACEB229B85562001C06A7 /* GuideUseCaseTests.swift */,
+			);
+			path = GuideUseCaseTests;
 			sourceTree = "<group>";
 		};
 		1499FB9329B43C470072D355 /* Error */ = {
@@ -1453,6 +1464,7 @@
 				148ACEA529B8477F001C06A7 /* KonkukInfoUseCaseTests.swift in Sources */,
 				148ACE9529B82753001C06A7 /* LanguageUseCaseTests.swift in Sources */,
 				148ACEA029B82F74001C06A7 /* UserUseCaseTests.swift in Sources */,
+				148ACEB329B85562001C06A7 /* GuideUseCaseTests.swift in Sources */,
 				148ACEA229B82FE9001C06A7 /* MockDeveloperCodeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

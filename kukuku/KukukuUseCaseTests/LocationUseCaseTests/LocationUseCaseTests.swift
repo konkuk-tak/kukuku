@@ -56,7 +56,7 @@ final class LocationUseCaseTests: XCTestCase {
     }
 
     // https://www.google.co.kr/maps/place/37%C2%B032'32.6%22N+127%C2%B004'36.2%22E/data=!3m1!4b1!4m4!3m3!8m2!3d37.542393!4d127.076726?hl=ko
-    
+
     func test_location_near_chung_sim_dae_success() throws {
         mockLocationRepository.currentLocation = CLLocation(latitude: 37.542393, longitude: 127.076726)
 
@@ -68,7 +68,7 @@ final class LocationUseCaseTests: XCTestCase {
     }
 
     // https://www.google.co.kr/maps/place/37%C2%B032'33.5%22N+127%C2%B004'34.1%22E/data=!3m1!4b1!4m4!3m3!8m2!3d37.542649!4d127.076144?hl=ko
-    
+
     func test_location_near_chung_sim_dae_fail() throws {
         mockLocationRepository.currentLocation = CLLocation(latitude: 37.542649, longitude: 127.076144)
 
