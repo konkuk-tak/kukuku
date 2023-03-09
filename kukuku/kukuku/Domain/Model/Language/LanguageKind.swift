@@ -21,7 +21,7 @@ extension LanguageKind {
         switch value {
         case "korean": self.init(rawValue: 0)
         case "englishUS": self.init(rawValue: 1)
-        default: self.init(rawValue: 0)
+        default: return nil
         }
     }
 

@@ -89,7 +89,10 @@ final class ARGameViewController: UIViewController {
     private func cameraPermission() {
         AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
             if !isAllowed {
-                self?.showPermissionSettingAlert(title: "Alert Title Camera Permission", message: "Alert Description Camera Permission")
+                self?.showPermissionSettingAlert(
+                    title: "Alert Title Camera Permission",
+                    message: "Alert Description Camera Permission"
+                )
             }
         }
     }
