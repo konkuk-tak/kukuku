@@ -76,6 +76,7 @@
 		14644EA329B1A48500176342 /* JSONKonkukInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */; };
 		14644EA729B1A91A00176342 /* KonkukInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA629B1A91A00176342 /* KonkukInfoRepository.swift */; };
 		14644EAA29B1A9D000176342 /* print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14644EA929B1A9D000176342 /* print.swift */; };
+		14826EE029B974D200901EAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14826EE229B974D200901EAF /* InfoPlist.strings */; };
 		1482F5D029B1EC1C000B5320 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5CF29B1EC1C000B5320 /* LocationRepository.swift */; };
 		1482F5D329B1EC48000B5320 /* AuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5D229B1EC48000B5320 /* AuthorizationStatus.swift */; };
 		1482F5D729B1ECDE000B5320 /* DefaultLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5D629B1ECDE000B5320 /* DefaultLocationRepository.swift */; };
@@ -209,6 +210,8 @@
 		14644EA229B1A48500176342 /* JSONKonkukInfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONKonkukInfoList.swift; sourceTree = "<group>"; };
 		14644EA629B1A91A00176342 /* KonkukInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoRepository.swift; sourceTree = "<group>"; };
 		14644EA929B1A9D000176342 /* print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = print.swift; sourceTree = "<group>"; };
+		14826EE129B974D200901EAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14826EE329B974D400901EAF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1482F5CF29B1EC1C000B5320 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		1482F5D229B1EC48000B5320 /* AuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStatus.swift; sourceTree = "<group>"; };
 		1482F5D629B1ECDE000B5320 /* DefaultLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationRepository.swift; sourceTree = "<group>"; };
@@ -633,6 +636,7 @@
 				143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */,
 				14644E9729B1A11F00176342 /* KonkukInfoList_ko.json */,
 				14D5BC4B29B56D61007D2A3E /* Localizable.strings */,
+				14826EE229B974D200901EAF /* InfoPlist.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1329,6 +1333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A2F4A29AF34CA00ACFFDD /* LaunchScreen.storyboard in Resources */,
+				14826EE029B974D200901EAF /* InfoPlist.strings in Resources */,
 				1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */,
 				14D5BC4929B56D61007D2A3E /* Localizable.strings in Resources */,
 				142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */,
@@ -1508,6 +1513,15 @@
 				142A2F4929AF34CA00ACFFDD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14826EE229B974D200901EAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14826EE129B974D200901EAF /* en */,
+				14826EE329B974D400901EAF /* ko */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		14D5BC4B29B56D61007D2A3E /* Localizable.strings */ = {
