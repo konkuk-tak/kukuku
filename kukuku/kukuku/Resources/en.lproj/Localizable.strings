@@ -20,8 +20,17 @@
 "Error" = "Error";
 "error" = "error";
 
+"Set Button" = "set";
+
 // MARK: - Alert Message
 "Contact By Email" = "이메일로 문의하기";
+
+// AR Game
+"Alert Title Camera Permission" = "Camera Permission";
+"Alert Description Camera Permission" = "This app requires camera access to using AR";
+
+"Alert Title Location Permission" = "Location Permission";
+"Alert Description Location Permission" = "This app requires location access to check in the right place";
 
 // Home
 "Alert Title Key Chain Error" = "Key Chain Error";

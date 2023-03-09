@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  kukuku
+
+  Created by youtak on 2023/03/09.
+  
+*/
+
+NSCameraUsageDescription = "This app requires camera access to using AR";
+NSLocationWhenInUseUsageDescription = "This app requires location access to check in the right place";
