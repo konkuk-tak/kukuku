@@ -89,7 +89,7 @@ final class ARGameViewController: UIViewController {
     private func cameraPermission() {
         AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
             if !isAllowed {
-                self?.showPermissionSettingAlert(title: "카메라 권한이 없어요", message: "콘텐츠 이용을 위해 카메라 권한이 필요합니다.")
+                self?.showPermissionSettingAlert(title: "Alert Title Camera Permission", message: "Alert Description Camera Permission")
             }
         }
     }
@@ -97,7 +97,7 @@ final class ARGameViewController: UIViewController {
     private func handleAuthorizationStatus(_ authorizationStatus: AuthorizationStatus) {
         switch authorizationStatus {
         case .notDetermined, .denied:
-            showPermissionSettingAlert(title: "위치 권한이 없습니다.", message: "콘텐츠 이용을 위해 위치 권한이 필요합니다.")
+            showPermissionSettingAlert(title: "Alert Title Location Permission", message: "Alert Description Location Permission")
         case .allow:
             return
         }
@@ -107,7 +107,7 @@ final class ARGameViewController: UIViewController {
         showConfirmAlert(
             title: title,
             message: message,
-            confirmTitle: "설정하기",
+            confirmTitle: "Set Button",
             handler: {
                 PermissionManager.moveToiPhoneSetting()
             },
