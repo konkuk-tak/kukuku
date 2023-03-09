@@ -23,11 +23,50 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Test"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "140A08C029B9FBBA007AF4AA"
+            BuildableName = "kukukuUITests.xctest"
+            BlueprintName = "kukukuUITests"
+            ReferencedContainer = "container:kukuku.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "148ACE8429B821F7001C06A7"
+            BuildableName = "kukukuUseCaseTests.xctest"
+            BlueprintName = "kukukuUseCaseTests"
+            ReferencedContainer = "container:kukuku.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "148ACE8429B821F7001C06A7"
+               BuildableName = "kukukuUseCaseTests.xctest"
+               BlueprintName = "kukukuUseCaseTests"
+               ReferencedContainer = "container:kukuku.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "140A08C029B9FBBA007AF4AA"
+               BuildableName = "kukukuUITests.xctest"
+               BlueprintName = "kukukuUITests"
+               ReferencedContainer = "container:kukuku.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

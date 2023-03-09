@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		140A08BC29B9F826007AF4AA /* TestUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08BB29B9F826007AF4AA /* TestUserRepository.swift */; };
+		140A08C429B9FBBA007AF4AA /* kukukuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */; };
+		140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */; };
 		1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327829AF8982009B9B7F /* KuDefaultButton.swift */; };
 		1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327C29AF8C07009B9B7F /* HomeViewModel.swift */; };
 		1429327F29AF8C13009B9B7F /* KonkukInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */; };
@@ -130,6 +132,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		140A08C729B9FBBA007AF4AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142A2F3229AF34C900ACFFDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 142A2F3929AF34C900ACFFDD;
+			remoteInfo = kukuku;
+		};
 		148ACE8929B821F7001C06A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 142A2F3229AF34C900ACFFDD /* Project object */;
@@ -141,6 +150,9 @@
 
 /* Begin PBXFileReference section */
 		140A08BB29B9F826007AF4AA /* TestUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserRepository.swift; sourceTree = "<group>"; };
+		140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITests.swift; sourceTree = "<group>"; };
+		140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1429327829AF8982009B9B7F /* KuDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuDefaultButton.swift; sourceTree = "<group>"; };
 		1429327C29AF8C07009B9B7F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1429327E29AF8C13009B9B7F /* KonkukInfoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoListViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +279,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		140A08BE29B9FBBA007AF4AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		142A2F3729AF34C900ACFFDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +313,15 @@
 				140A08BB29B9F826007AF4AA /* TestUserRepository.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		140A08C229B9FBBA007AF4AA /* kukukuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */,
+				140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */,
+			);
+			path = kukukuUITests;
 			sourceTree = "<group>";
 		};
 		1429327729AF8974009B9B7F /* Common */ = {
@@ -407,6 +435,7 @@
 				1429329029AF8F4B009B9B7F /* .swiftlint.yml */,
 				142A2F3C29AF34C900ACFFDD /* kukuku */,
 				148ACE8629B821F7001C06A7 /* KukukuUseCaseTests */,
+				140A08C229B9FBBA007AF4AA /* kukukuUITests */,
 				142A2F3B29AF34C900ACFFDD /* Products */,
 				148ACE8E29B82610001C06A7 /* Frameworks */,
 			);
@@ -417,6 +446,7 @@
 			children = (
 				142A2F3A29AF34C900ACFFDD /* kukuku.app */,
 				148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */,
+				140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1251,6 +1281,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		140A08C029B9FBBA007AF4AA /* kukukuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 140A08C929B9FBBA007AF4AA /* Build configuration list for PBXNativeTarget "kukukuUITests" */;
+			buildPhases = (
+				140A08BD29B9FBBA007AF4AA /* Sources */,
+				140A08BE29B9FBBA007AF4AA /* Frameworks */,
+				140A08BF29B9FBBA007AF4AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				140A08C829B9FBBA007AF4AA /* PBXTargetDependency */,
+			);
+			name = kukukuUITests;
+			productName = kukukuUITests;
+			productReference = 140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		142A2F3929AF34C900ACFFDD /* kukuku */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142A2F4E29AF34CA00ACFFDD /* Build configuration list for PBXNativeTarget "kukuku" */;
@@ -1305,6 +1353,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					140A08C029B9FBBA007AF4AA = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 142A2F3929AF34C900ACFFDD;
+					};
 					142A2F3929AF34C900ACFFDD = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -1334,11 +1386,19 @@
 			targets = (
 				142A2F3929AF34C900ACFFDD /* kukuku */,
 				148ACE8429B821F7001C06A7 /* kukukuUseCaseTests */,
+				140A08C029B9FBBA007AF4AA /* kukukuUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		140A08BF29B9FBBA007AF4AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		142A2F3829AF34C900ACFFDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1386,6 +1446,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		140A08BD29B9FBBA007AF4AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */,
+				140A08C429B9FBBA007AF4AA /* kukukuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		142A2F3629AF34C900ACFFDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1511,6 +1580,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		140A08C829B9FBBA007AF4AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 142A2F3929AF34C900ACFFDD /* kukuku */;
+			targetProxy = 140A08C729B9FBBA007AF4AA /* PBXContainerItemProxy */;
+		};
 		148ACE8A29B821F7001C06A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 142A2F3929AF34C900ACFFDD /* kukuku */;
@@ -1669,6 +1743,60 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kukuku.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kukuku";
 			};
 			name = Test;
+		};
+		140A08CA29B9FBBA007AF4AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukukuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kukuku;
+			};
+			name = Debug;
+		};
+		140A08CB29B9FBBA007AF4AA /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukukuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kukuku;
+			};
+			name = Test;
+		};
+		140A08CC29B9FBBA007AF4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youtak.kukukuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kukuku;
+			};
+			name = Release;
 		};
 		142A2F4C29AF34CA00ACFFDD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1910,6 +2038,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		140A08C929B9FBBA007AF4AA /* Build configuration list for PBXNativeTarget "kukukuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140A08CA29B9FBBA007AF4AA /* Debug */,
+				140A08CB29B9FBBA007AF4AA /* Test */,
+				140A08CC29B9FBBA007AF4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		142A2F3529AF34C900ACFFDD /* Build configuration list for PBXProject "kukuku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
