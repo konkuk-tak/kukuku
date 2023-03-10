@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140925B529BAC3730001AF50 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */; };
 		140A08BC29B9F826007AF4AA /* TestUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08BB29B9F826007AF4AA /* TestUserRepository.swift */; };
 		140A08C429B9FBBA007AF4AA /* kukukuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */; };
 		140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */; };
@@ -149,6 +150,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		140A08BB29B9F826007AF4AA /* TestUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserRepository.swift; sourceTree = "<group>"; };
 		140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITests.swift; sourceTree = "<group>"; };
@@ -307,6 +309,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140925B329BAC35B0001AF50 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		140A08BA29B9F81C007AF4AA /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +694,7 @@
 		145A28AA29AF5B9B008CCBC7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				140925B329BAC35B0001AF50 /* Constant */,
 				1499FB9329B43C470072D355 /* Error */,
 				145C67CD29B313F90044544C /* DependencyFactory */,
 				14FE77E629B03B4300900EEC /* Protocol */,
@@ -1468,6 +1479,7 @@
 				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
 				142F018129B084EB001D5DCD /* SettingSection.swift in Sources */,
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
+				140925B529BAC3730001AF50 /* AccessibilityIdentifier.swift in Sources */,
 				14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
 				143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */,
