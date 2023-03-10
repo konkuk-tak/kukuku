@@ -7,11 +7,10 @@
 
 import XCTest
 
-final class SettingViewUITests: XCTestCase {
+final class SettingUITests: XCTestCase {
 
     private var app:XCUIApplication!
     private var settingButton: XCUIElement!
-    private var tableView: XCUIElement!
 
     override func setUpWithError() throws {
         // In UI tests it is    usually best to stop immediately when a failure occurs.
@@ -21,8 +20,6 @@ final class SettingViewUITests: XCTestCase {
 
         settingButton = app.buttons["HomeSettingButton"]
         settingButton.tap()
-
-//        tableView = app.tables["KonkukInfoListTableView"]
     }
 
     override func tearDownWithError() throws {

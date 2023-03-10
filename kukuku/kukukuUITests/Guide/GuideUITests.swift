@@ -9,7 +9,7 @@ import XCTest
 
 //@testable import kukuku
 
-final class GuideViewUITests: XCTestCase {
+final class GuideUITests: XCTestCase {
 
     private var app:XCUIApplication!
     private var guideButton: XCUIElement!

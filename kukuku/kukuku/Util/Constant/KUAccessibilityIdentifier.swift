@@ -20,6 +20,10 @@ enum KUAccessibilityIdentifier {
         func cell(index: Int) -> String { return "infoCell_\(index)"}
     }
 
+    struct KonkukInfoDetail {
+        static let completeButton = "CompleteButton"
+    }
+
     struct Guide {
         static let nextButton = "GuideNextButton"
     }

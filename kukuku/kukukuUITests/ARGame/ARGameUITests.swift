@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class ARGameViewUITests: XCTestCase {
+final class ARGameUITests: XCTestCase {
 
     private var app:XCUIApplication!
     private var arButton: XCUIElement!

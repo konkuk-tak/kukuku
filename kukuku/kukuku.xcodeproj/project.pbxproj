@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1404087929BB25E70032C680 /* ARGameViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087829BB25E70032C680 /* ARGameViewUITests.swift */; };
-		1404087C29BB32060032C680 /* SettingViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087B29BB32060032C680 /* SettingViewUITests.swift */; };
+		1404087929BB25E70032C680 /* ARGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087829BB25E70032C680 /* ARGameUITests.swift */; };
+		1404087C29BB32060032C680 /* SettingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087B29BB32060032C680 /* SettingUITests.swift */; };
+		1404087F29BB383F0032C680 /* KonkukInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087E29BB383F0032C680 /* KonkukInfoUITests.swift */; };
 		140925B529BAC3730001AF50 /* KUAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */; };
-		140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */; };
+		140925BE29BAC7B10001AF50 /* GuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925BD29BAC7B10001AF50 /* GuideUITests.swift */; };
 		140925C029BAC9AF0001AF50 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 140925BF29BAC9AF0001AF50 /* PinLayout */; };
 		140925C229BAC9AF0001AF50 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 140925C129BAC9AF0001AF50 /* FlexLayout */; };
 		140A08BC29B9F826007AF4AA /* TestUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08BB29B9F826007AF4AA /* TestUserRepository.swift */; };
@@ -154,10 +155,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1404087829BB25E70032C680 /* ARGameViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameViewUITests.swift; sourceTree = "<group>"; };
-		1404087B29BB32060032C680 /* SettingViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewUITests.swift; sourceTree = "<group>"; };
+		1404087829BB25E70032C680 /* ARGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameUITests.swift; sourceTree = "<group>"; };
+		1404087B29BB32060032C680 /* SettingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUITests.swift; sourceTree = "<group>"; };
+		1404087E29BB383F0032C680 /* KonkukInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUITests.swift; sourceTree = "<group>"; };
 		140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUAccessibilityIdentifier.swift; sourceTree = "<group>"; };
-		140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewUITests.swift; sourceTree = "<group>"; };
+		140925BD29BAC7B10001AF50 /* GuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUITests.swift; sourceTree = "<group>"; };
 		140A08BB29B9F826007AF4AA /* TestUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserRepository.swift; sourceTree = "<group>"; };
 		140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -320,7 +322,7 @@
 		1404087729BB25D60032C680 /* ARGame */ = {
 			isa = PBXGroup;
 			children = (
-				1404087829BB25E70032C680 /* ARGameViewUITests.swift */,
+				1404087829BB25E70032C680 /* ARGameUITests.swift */,
 			);
 			path = ARGame;
 			sourceTree = "<group>";
@@ -328,9 +330,17 @@
 		1404087A29BB31EB0032C680 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				1404087B29BB32060032C680 /* SettingViewUITests.swift */,
+				1404087B29BB32060032C680 /* SettingUITests.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		1404087D29BB38290032C680 /* KonkukInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1404087E29BB383F0032C680 /* KonkukInfoUITests.swift */,
+			);
+			path = KonkukInfo;
 			sourceTree = "<group>";
 		};
 		140925B329BAC35B0001AF50 /* Constant */ = {
@@ -352,7 +362,7 @@
 		140925BC29BAC7A10001AF50 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */,
+				140925BD29BAC7B10001AF50 /* GuideUITests.swift */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -368,10 +378,11 @@
 		140A08C229B9FBBA007AF4AA /* kukukuUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1404087A29BB31EB0032C680 /* Setting */,
+				140925B629BAC71B0001AF50 /* Launch */,
+				1404087D29BB38290032C680 /* KonkukInfo */,
 				1404087729BB25D60032C680 /* ARGame */,
 				140925BC29BAC7A10001AF50 /* Guide */,
-				140925B629BAC71B0001AF50 /* Launch */,
+				1404087A29BB31EB0032C680 /* Setting */,
 			);
 			path = kukukuUITests;
 			sourceTree = "<group>";
@@ -1507,10 +1518,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1404087929BB25E70032C680 /* ARGameViewUITests.swift in Sources */,
-				1404087C29BB32060032C680 /* SettingViewUITests.swift in Sources */,
+				1404087929BB25E70032C680 /* ARGameUITests.swift in Sources */,
+				1404087F29BB383F0032C680 /* KonkukInfoUITests.swift in Sources */,
+				1404087C29BB32060032C680 /* SettingUITests.swift in Sources */,
 				140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */,
-				140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */,
+				140925BE29BAC7B10001AF50 /* GuideUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
