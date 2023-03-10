@@ -26,6 +26,7 @@ final class GuideView: UIView {
         configureGuideView()
         configureSubViews()
         configureFlexLayout()
+        accessibilityIdentifier()
     }
 
     required init?(coder: NSCoder) {
@@ -87,6 +88,10 @@ final class GuideView: UIView {
             }
             .marginBottom(Constant.buttonMarginBottom)
         }
+    }
+
+    private func accessibilityIdentifier() {
+        button.accessibilityIdentifier = KUAccessibilityIdentifier.Guide.nextButton
     }
 }
 

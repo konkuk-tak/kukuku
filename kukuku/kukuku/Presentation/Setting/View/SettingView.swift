@@ -23,6 +23,7 @@ final class SettingView: KUContainTableView {
         configureSubview()
         configureTableView()
         configureConstraints()
+        accessibilityIdentifier()
     }
 
     required init?(coder: NSCoder) {
@@ -56,5 +57,11 @@ final class SettingView: KUContainTableView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+
+    private func accessibilityIdentifier() {
+        tableView.accessibilityIdentifier = KUAccessibilityIdentifier
+            .Setting
+            .tableView
     }
 }

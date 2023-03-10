@@ -39,6 +39,7 @@ final class KonkukInfoDetailView: UIView {
         configureView()
         configureSubView(konkukInfo: konkukInfo)
         configureFlexLayout()
+        accessibilityIdentifier()
         titleLabel.text = konkukInfo.title
         descriptionLabel.text = konkukInfo.description
     }
@@ -136,6 +137,11 @@ final class KonkukInfoDetailView: UIView {
         }
 
         completeButton.flex.position(.absolute).left(16).right(16).bottom(10)
+    }
+
+    private func accessibilityIdentifier() {
+        completeButton.accessibilityIdentifier = KUAccessibilityIdentifier
+            .KonkukInfoDetail.completeButton
     }
 }
 

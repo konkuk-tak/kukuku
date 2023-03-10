@@ -87,6 +87,9 @@ final class ARGameViewController: UIViewController {
     // MARK: - Permission
 
     private func cameraPermission() {
+        #if TEST
+
+        #else
         AVCaptureDevice.requestAccess(for: .video) { [weak self] isAllowed in
             if !isAllowed {
                 self?.showPermissionSettingAlert(
@@ -95,15 +98,20 @@ final class ARGameViewController: UIViewController {
                 )
             }
         }
+        #endif
     }
 
     private func handleAuthorizationStatus(_ authorizationStatus: AuthorizationStatus) {
+        #if TEST
+
+        #else
         switch authorizationStatus {
         case .notDetermined, .denied:
             showPermissionSettingAlert(title: "Alert Title Location Permission", message: "Alert Description Location Permission")
         case .allow:
             return
         }
+        #endif
     }
 
     private func showPermissionSettingAlert(title: String, message: String) {

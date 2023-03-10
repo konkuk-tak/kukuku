@@ -30,7 +30,11 @@ struct DependencyFactory {
     }
 
     static func userRepository() -> UserRepository {
+        #if TEST
+        return TestUserRepository()
+        #else
         return DefaultUserRepository()
+        #endif
     }
 
     static func developerCodeRepository() -> DeveloperCodeRepository {
