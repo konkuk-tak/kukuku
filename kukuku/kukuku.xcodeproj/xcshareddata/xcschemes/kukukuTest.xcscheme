@@ -32,16 +32,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "140A08C029B9FBBA007AF4AA"
-            BuildableName = "kukukuUITests.xctest"
-            BlueprintName = "kukukuUITests"
-            ReferencedContainer = "container:kukuku.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "148ACE8429B821F7001C06A7"
-            BuildableName = "kukukuUseCaseTests.xctest"
-            BlueprintName = "kukukuUseCaseTests"
+            BlueprintIdentifier = "142A2F3929AF34C900ACFFDD"
+            BuildableName = "kukuku.app"
+            BlueprintName = "kukuku"
             ReferencedContainer = "container:kukuku.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140925B529BAC3730001AF50 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */; };
+		140925B529BAC3730001AF50 /* KUAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */; };
+		140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */; };
+		140925C029BAC9AF0001AF50 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 140925BF29BAC9AF0001AF50 /* PinLayout */; };
+		140925C229BAC9AF0001AF50 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 140925C129BAC9AF0001AF50 /* FlexLayout */; };
 		140A08BC29B9F826007AF4AA /* TestUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08BB29B9F826007AF4AA /* TestUserRepository.swift */; };
-		140A08C429B9FBBA007AF4AA /* kukukuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */; };
 		140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */; };
 		1429327929AF8982009B9B7F /* KuDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327829AF8982009B9B7F /* KuDefaultButton.swift */; };
 		1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429327C29AF8C07009B9B7F /* HomeViewModel.swift */; };
@@ -150,10 +152,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUAccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewUITests.swift; sourceTree = "<group>"; };
 		140A08BB29B9F826007AF4AA /* TestUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserRepository.swift; sourceTree = "<group>"; };
 		140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITests.swift; sourceTree = "<group>"; };
 		140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kukukuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1429327829AF8982009B9B7F /* KuDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuDefaultButton.swift; sourceTree = "<group>"; };
 		1429327C29AF8C07009B9B7F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -285,6 +287,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140925C029BAC9AF0001AF50 /* PinLayout in Frameworks */,
+				140925C229BAC9AF0001AF50 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +316,25 @@
 		140925B329BAC35B0001AF50 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				140925B429BAC3730001AF50 /* AccessibilityIdentifier.swift */,
+				140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		140925B629BAC71B0001AF50 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		140925BC29BAC7A10001AF50 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */,
+			);
+			path = Guide;
 			sourceTree = "<group>";
 		};
 		140A08BA29B9F81C007AF4AA /* Test */ = {
@@ -328,8 +348,8 @@
 		140A08C229B9FBBA007AF4AA /* kukukuUITests */ = {
 			isa = PBXGroup;
 			children = (
-				140A08C329B9FBBA007AF4AA /* kukukuUITests.swift */,
-				140A08C529B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift */,
+				140925BC29BAC7A10001AF50 /* Guide */,
+				140925B629BAC71B0001AF50 /* Launch */,
 			);
 			path = kukukuUITests;
 			sourceTree = "<group>";
@@ -1306,6 +1326,10 @@
 				140A08C829B9FBBA007AF4AA /* PBXTargetDependency */,
 			);
 			name = kukukuUITests;
+			packageProductDependencies = (
+				140925BF29BAC9AF0001AF50 /* PinLayout */,
+				140925C129BAC9AF0001AF50 /* FlexLayout */,
+			);
 			productName = kukukuUITests;
 			productReference = 140A08C129B9FBBA007AF4AA /* kukukuUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1462,7 +1486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */,
-				140A08C429B9FBBA007AF4AA /* kukukuUITests.swift in Sources */,
+				140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1479,7 +1503,7 @@
 				1429327D29AF8C07009B9B7F /* HomeViewModel.swift in Sources */,
 				142F018129B084EB001D5DCD /* SettingSection.swift in Sources */,
 				142A2F4229AF34C900ACFFDD /* HomeViewController.swift in Sources */,
-				140925B529BAC3730001AF50 /* AccessibilityIdentifier.swift in Sources */,
+				140925B529BAC3730001AF50 /* KUAccessibilityIdentifier.swift in Sources */,
 				14D5BC5C29B588C0007D2A3E /* LanguageRepository.swift in Sources */,
 				142F019829B09D27001D5DCD /* SettingLanguageViewController.swift in Sources */,
 				143DEA2529B75D6F00EB3E38 /* CGRect+.swift in Sources */,
@@ -1762,6 +1786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -1780,6 +1805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -1798,6 +1824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YK6FBNFSV5;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -2112,6 +2139,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		140925BF29BAC9AF0001AF50 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+		140925C129BAC9AF0001AF50 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 145A289A29AF4F56008CCBC7 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
 		142A2F5229AF4A0400ACFFDD /* PinLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 142A2F5129AF4A0400ACFFDD /* XCRemoteSwiftPackageReference "PinLayout" */;
