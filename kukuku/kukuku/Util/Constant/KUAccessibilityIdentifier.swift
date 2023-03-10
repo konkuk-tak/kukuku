@@ -35,5 +35,7 @@ enum KUAccessibilityIdentifier {
 
     struct Alert {
         static let confirmAction = "AlertConfirmAction"
+        static let cancelAction = "AlertCancelAction"
+        static let okayAction = "AlertOkayAction"
     }
 }

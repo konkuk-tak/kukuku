@@ -14,6 +14,7 @@ extension UIViewController {
 
         if alertActions.isEmpty {
             let confirmAction = UIAlertAction(title: "okay".localized, style: .default)
+            confirmAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.okayAction
             sheet.addAction(confirmAction)
         } else {
             alertActions.forEach { alertAction in
@@ -37,6 +38,7 @@ extension UIViewController {
         let alertAction = UIAlertAction(title: confirmTitle.localized, style: .default) { _ in
             handler?()
         }
+        cancelAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.cancelAction
         alertAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.confirmAction
 
         return createAlert(title: title, message: message, alertActions: [cancelAction, alertAction])
@@ -55,6 +57,9 @@ extension UIViewController {
         let alertAction = UIAlertAction(title: "okay".localized, style: .default) { _ in
             handler(alert.textFields?[0].text)
         }
+        cancelAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.cancelAction
+        alertAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.confirmAction
+
         alert.addAction(cancelAction)
         alert.addAction(alertAction)
 

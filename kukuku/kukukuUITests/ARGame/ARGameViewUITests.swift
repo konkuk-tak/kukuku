@@ -25,7 +25,7 @@ final class ARGameViewUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_move_arView() throws {
+    func test_move_and_exit_arView() throws {
         arButton.tap()
         let exitButton = app.buttons["ARGameExitButton"]
         exitButton.tap()
