@@ -32,4 +32,8 @@ enum KUAccessibilityIdentifier {
     struct ARGame {
         static let exitButton = "ARGameExitButton"
     }
+
+    struct Alert {
+        static let confirmAction = "AlertConfirmAction"
+    }
 }

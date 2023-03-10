@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1404087929BB25E70032C680 /* ARGameViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1404087829BB25E70032C680 /* ARGameViewUITests.swift */; };
 		140925B529BAC3730001AF50 /* KUAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */; };
 		140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */; };
 		140925C029BAC9AF0001AF50 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 140925BF29BAC9AF0001AF50 /* PinLayout */; };
@@ -152,6 +153,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1404087829BB25E70032C680 /* ARGameViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameViewUITests.swift; sourceTree = "<group>"; };
 		140925B429BAC3730001AF50 /* KUAccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUAccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		140925BD29BAC7B10001AF50 /* GuideViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewUITests.swift; sourceTree = "<group>"; };
 		140A08BB29B9F826007AF4AA /* TestUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserRepository.swift; sourceTree = "<group>"; };
@@ -313,6 +315,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1404087729BB25D60032C680 /* ARGameView */ = {
+			isa = PBXGroup;
+			children = (
+				1404087829BB25E70032C680 /* ARGameViewUITests.swift */,
+			);
+			path = ARGameView;
+			sourceTree = "<group>";
+		};
 		140925B329BAC35B0001AF50 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +358,7 @@
 		140A08C229B9FBBA007AF4AA /* kukukuUITests */ = {
 			isa = PBXGroup;
 			children = (
+				1404087729BB25D60032C680 /* ARGameView */,
 				140925BC29BAC7A10001AF50 /* Guide */,
 				140925B629BAC71B0001AF50 /* Launch */,
 			);
@@ -1485,6 +1496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1404087929BB25E70032C680 /* ARGameViewUITests.swift in Sources */,
 				140A08C629B9FBBA007AF4AA /* kukukuUITestsLaunchTests.swift in Sources */,
 				140925BE29BAC7B10001AF50 /* GuideViewUITests.swift in Sources */,
 			);

@@ -37,6 +37,7 @@ extension UIViewController {
         let alertAction = UIAlertAction(title: confirmTitle.localized, style: .default) { _ in
             handler?()
         }
+        alertAction.accessibilityIdentifier = KUAccessibilityIdentifier.Alert.confirmAction
 
         return createAlert(title: title, message: message, alertActions: [cancelAction, alertAction])
     }
