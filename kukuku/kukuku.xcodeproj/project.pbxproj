@@ -1157,6 +1157,7 @@
 			children = (
 				145C67D529B333EB0044544C /* RealityComposerManager.swift */,
 				1458B7A329B4B9BF00EB4397 /* PermissionManager.swift */,
+				145C67BD29B2F85C0044544C /* DarkModeManager.swift */,
 				14D5BC6529B5A40F007D2A3E /* AppManager.swift */,
 			);
 			path = Manager;
@@ -1241,7 +1242,6 @@
 				14F9D52729B1C7030005B74F /* KeyChainManager.swift */,
 				14F9D53429B1DA450005B74F /* LocationManager.swift */,
 				145C67B729B2F5D30044544C /* UserDefaultManager.swift */,
-				145C67BD29B2F85C0044544C /* DarkModeManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
