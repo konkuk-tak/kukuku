@@ -11,8 +11,8 @@ final class SettingCheckCell: UITableViewCell {
 
     // MARK: - Property
 
-    let titleLabel = UILabel()
-    let checkImageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let checkImageView = UIImageView()
 
     private enum Constant {
         static let paddingHorizontal: CGFloat = 16
