@@ -10,8 +10,8 @@ import UIKit
 final class KonkukInfoListCell: UITableViewCell {
     // MARK: - Property
 
-    let iconView = UIImageView()
-    let titleLabel = UILabel()
+    private let iconView = UIImageView()
+    private let titleLabel = UILabel()
 
     private enum Constant {
         static let paddingHorizontal: CGFloat = 16

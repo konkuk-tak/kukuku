@@ -7,12 +7,16 @@
 
 import Foundation
 
-final class KeyChainManger {
+final class KeyChainManager {
 
-    static let main = KeyChainManger()
+    static let main = KeyChainManager()
     private init() {}
 
+    #if TEST
+    private let account = "testUserAccount"
+    #else
     private let account = "userAccount"
+    #endif
 
     private func createQuery(data: Data) -> CFDictionary {
         return [
@@ -51,7 +55,7 @@ final class KeyChainManger {
     }
 }
 
-extension KeyChainManger {
+extension KeyChainManager {
     func createUser(user: User) throws {
         guard let data = try? JSONEncoder().encode(user) else {
             throw KeychainError.jsonCoding

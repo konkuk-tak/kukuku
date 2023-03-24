@@ -12,7 +12,7 @@ final class GuideViewModel {
     private var guideUseCase: GuideUseCase
     private var guideInfoList: [GuideInfo] = []
     private (set)var currentIndex = 0
-    let currentLanguage: LanguageKind
+    private let currentLanguage: LanguageKind
 
     init(guideUseCase: GuideUseCase, currentLanguage: LanguageKind) {
         self.guideUseCase = guideUseCase

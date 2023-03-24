@@ -61,6 +61,17 @@
                ReferencedContainer = "container:kukuku.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "142219BC29CD2CE600E2E33C"
+               BuildableName = "kukukuServiceTests.xctest"
+               BlueprintName = "kukukuServiceTests"
+               ReferencedContainer = "container:kukuku.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
