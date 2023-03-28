@@ -27,7 +27,7 @@ jobs:
       env:
           DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
       run: |
-        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/Developer-Code.plist
+        echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
         ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
     
     - name: Cache SwiftPM
