@@ -25,26 +25,10 @@ jobs:
 
     - name: Create secret file
       env:
-          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_MODE_SECRET }}
+          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
       run: |
-        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/Developer-Code.plist
-        ls -al ${{ env.PROJECT }}
-
-    - name: Cache SwiftPM
-      uses: actions/cache@v3
-      with:
-          path: ~/Library/Developer/Xcode/DerivedData/${{ env.PROJECT }}*/SourcePackages/
-          key: ${{ runner.os }}-spm-${{ hashFiles('${{ env.PROJECT }}.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-spm-
-            
-    - name: Cache DerivedData
-      uses: actions/cache@v3
-      with:
-        path: ~/Library/Developer/Xcode/DerivedData
-        key: ${{ runner.os }}-iOS_derived_data-xcode
-        restore-keys: |
-          ${{ runner.os }}-iOS_derived_data-
+        echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
+        ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
   
     - name: Build iOS ${{ matrix.ios }} on ${{ matrix.simulator }}
       env:

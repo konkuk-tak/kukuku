@@ -101,7 +101,6 @@
 		1482F5EE29B20A51000B5320 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5ED29B20A51000B5320 /* GuideUseCase.swift */; };
 		1482F5F029B20A67000B5320 /* DefaultGuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */; };
 		1482F5F229B20BA5000B5320 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482F5F129B20BA5000B5320 /* Images.xcassets */; };
-		1489B93F29D2DAC000B3A454 /* Developer-Code.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1489B93E29D2DAC000B3A454 /* Developer-Code.plist */; };
 		148ACE9029B82610001C06A7 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE8F29B82610001C06A7 /* PinLayout */; };
 		148ACE9229B82613001C06A7 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 148ACE9129B82613001C06A7 /* FlexLayout */; };
 		148ACE9529B82753001C06A7 /* LanguageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ACE9429B82753001C06A7 /* LanguageUseCaseTests.swift */; };
@@ -166,6 +165,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1401140229D2F4980013E9CA /* DeveloperCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DeveloperCode.xcconfig; sourceTree = "<group>"; };
 		1404087829BB25E70032C680 /* ARGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameUITests.swift; sourceTree = "<group>"; };
 		1404087B29BB32060032C680 /* SettingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUITests.swift; sourceTree = "<group>"; };
 		1404087E29BB383F0032C680 /* KonkukInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonkukInfoUITests.swift; sourceTree = "<group>"; };
@@ -261,7 +261,6 @@
 		1482F5ED29B20A51000B5320 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5EF29B20A67000B5320 /* DefaultGuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGuideUseCase.swift; sourceTree = "<group>"; };
 		1482F5F129B20BA5000B5320 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1489B93E29D2DAC000B3A454 /* Developer-Code.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Developer-Code.plist"; sourceTree = "<group>"; };
 		148ACE8529B821F7001C06A7 /* kukukuUseCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kukukuUseCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		148ACE9429B82753001C06A7 /* LanguageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageUseCaseTests.swift; sourceTree = "<group>"; };
 		148ACE9929B82845001C06A7 /* MockLanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguageRepository.swift; sourceTree = "<group>"; };
@@ -767,7 +766,7 @@
 				142A2F4829AF34CA00ACFFDD /* LaunchScreen.storyboard */,
 				142A2F4629AF34CA00ACFFDD /* Assets.xcassets */,
 				1482F5F129B20BA5000B5320 /* Images.xcassets */,
-				1489B93E29D2DAC000B3A454 /* Developer-Code.plist */,
+				1401140229D2F4980013E9CA /* DeveloperCode.xcconfig */,
 				143DEA1729B6DA9700EB3E38 /* KonkukInfoList_en.json */,
 				14644E9729B1A11F00176342 /* KonkukInfoList_ko.json */,
 				14D5BC4B29B56D61007D2A3E /* Localizable.strings */,
@@ -1545,7 +1544,6 @@
 				142A2F4729AF34CA00ACFFDD /* Assets.xcassets in Resources */,
 				14D5BC4629B56A97007D2A3E /* Settings.bundle in Resources */,
 				143DEA1829B6DA9700EB3E38 /* KonkukInfoList_en.json in Resources */,
-				1489B93F29D2DAC000B3A454 /* Developer-Code.plist in Resources */,
 				14644EA029B1A44300176342 /* KonkukInfoList_ko.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1839,6 +1837,7 @@
 		};
 		140A08B829B9F6BD007AF4AA /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1401140229D2F4980013E9CA /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2160,6 +2159,7 @@
 		};
 		142A2F4F29AF34CA00ACFFDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1401140229D2F4980013E9CA /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2195,6 +2195,7 @@
 		};
 		142A2F5029AF34CA00ACFFDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1401140229D2F4980013E9CA /* DeveloperCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
