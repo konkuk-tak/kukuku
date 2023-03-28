@@ -27,7 +27,7 @@ jobs:
       env:
           DeveloperCode_SECRET: ${{ secrets.DEVELOPER_MODE_SECRET }}
       run: |
-        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/Developer-Code.plist
+        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/Developer-Code.plist
         ls -al ${{ env.PROJECT }}
     - name: Cache SwiftPM
       uses: actions/cache@v3
