@@ -13,15 +13,12 @@ jobs:
     strategy:
         matrix:
           include:
-            - ios: "15.0"
-              simulator: "iPhone 13 Pro"
+            - ios: "16.2"
+              simulator: "iPhone 14 Pro"
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-
-    - name: Select Xcode ${{ matrix.xcode }}
-      run: sudo xcode-select -switch /Applications/Xcode.app && /usr/bin/xcodebuild -version
 
     - name: Create secret file
       env:
@@ -34,7 +31,17 @@ jobs:
       env:
         XCODEPROJ: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
       run: >
-        xcodebuild build
+        xcodebuild clean build
         -project ${{ env.XCODEPROJ }}
         -scheme kukuku
+        -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
+
+    - name: Test
+      env:
+        XCODEPROJ: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
+      run: >
+        xcodebuild test
+        -project ${{ env.XCODEPROJ }}
+        -scheme kukuku
+        -configuration Test
         -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
