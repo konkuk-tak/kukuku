@@ -8,7 +8,7 @@ on:
     branches: [ release, develop ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: self-hosted
     strategy:
         matrix:
@@ -31,24 +31,15 @@ jobs:
       env:
         XCODEPROJ: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
       run: >
-        xcodebuild build
+        xcodebuild clean build
         -project ${{ env.XCODEPROJ }}
         -scheme kukuku
         -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
 
-  test:
-    needs: build
-    runs-on: self-hosted
-    strategy:
-        matrix:
-          include:
-            - ios: "15.0"
-              simulator: "iPhone 13 Pro"
     
-    steps:
     - name: Test
       run: >
-        xcodebuild clean test
+        xcodebuild test
         -project ${{ env.XCODEPROJ }}
         -scheme kukuku
         -configuration Test
