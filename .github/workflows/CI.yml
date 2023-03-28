@@ -60,4 +60,5 @@ jobs:
         xcodebuild clean test
         -project ${{ env.XCODEPROJ }}
         -scheme kukukuTest
+        -configuration Test
         -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
