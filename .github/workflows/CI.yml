@@ -13,8 +13,8 @@ jobs:
     strategy:
         matrix:
           include:
-            - ios: "16.2"
-              simulator: "iPhone 14 Pro"
+            - ios: "15.0"
+              simulator: "iPhone 13 Pro"
 
     steps:
     - name: Checkout
