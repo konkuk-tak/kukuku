@@ -20,9 +20,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Select Xcode ${{ matrix.xcode }}
-      run: sudo xcode-select -switch /Applications/Xcode.app && /usr/bin/xcodebuild -version
-
     - name: Create secret file
       env:
           DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
@@ -37,4 +34,30 @@ jobs:
         xcodebuild build
         -project ${{ env.XCODEPROJ }}
         -scheme kukuku
+        -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
+
+  test:
+    runs-on: self-hosted
+    strategy:
+        matrix:
+          include:
+            - ios: "15.0"
+              simulator: "iPhone 13 Pro"
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create secret file
+      env:
+          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
+      run: |
+        echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
+        ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
+
+    - name: Test
+      run: >
+        xcodebuild clean test
+        -project ${{ env.XCODEPROJ }}
+        -scheme kukukuTest
         -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
