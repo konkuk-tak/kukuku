@@ -25,10 +25,11 @@ jobs:
 
     - name: Create secret file
       env:
-          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_MODE_SECRET }}
+          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
       run: |
         echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/Developer-Code.plist
         ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
+    
     - name: Cache SwiftPM
       uses: actions/cache@v3
       with:
