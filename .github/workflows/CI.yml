@@ -13,24 +13,23 @@ jobs:
     strategy:
         matrix:
           include:
-            - xcode: "14.2"
-              ios: "16.2"
-              simulator: "iPhone 14 Pro"
+            - ios: "15.0"
+              simulator: "iPhone 13 Pro"
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Select Xcode ${{ matrix.xcode }}
-      run: sudo xcode-select -switch /Applications/Xcode_${{ matrix.xcode}}.app && /usr/bin/xcodebuild -version
+      run: sudo xcode-select -switch /Applications/Xcode.app && /usr/bin/xcodebuild -version
 
     - name: Create secret file
       env:
-          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_MODE_SECRET }}
+          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
       run: |
-        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/Developer-Code.plist
-        ls -al ${{ env.PROJECT }}
-
+        echo $DeveloperCode_SECRET | base64 -D -o ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/Developer-Code.plist
+        ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
+    
     - name: Cache SwiftPM
       uses: actions/cache@v3
       with:
@@ -43,7 +42,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/Library/Developer/Xcode/DerivedData
-        key: ${{ runner.os }}-iOS_derived_data-xcode_${{ matrix.xcode }}
+        key: ${{ runner.os }}-iOS_derived_data-xcode
         restore-keys: |
           ${{ runner.os }}-iOS_derived_data-
   
