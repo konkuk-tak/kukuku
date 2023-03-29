@@ -66,7 +66,6 @@ jobs:
               UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
             cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
           done        
-
       # 아카이브
       - name: Archive app
         run: >
@@ -83,21 +82,18 @@ jobs:
           -archivePath $XC_ARCHIVE
           -exportOptionsPlist ExportOptions.plist
           -exportPath . -allowProvisioningUpdates
-  
+      
       # P8 파일 생성
       - name: Install private API key P8
         env:
           APPSTORE_API_PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
           APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
         run: | 
-          pwd
           mkdir -p ~/private_keys
-          ls ~/private_keys/
-          echo -n "$APPSTORE_API_PRIVATE_KEY" | base64 --decode --output ~/private_keys/AuthKey_$APPSTORE_API_KEY_ID.p8 -
-      
+          echo -n "$APPSTORE_API_PRIVATE_KEY" > ~/private_keys/
+  
       - name: Upload app to TestFlight
         env:
           APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
           APPSTORE_ISSUER_ID : ${{ secrets.APPSTORE_ISSUER_ID  }}
-        run: xcrun altool --output-format xml --upload-app -f 'kukuku.ipa' -t ios --apiKey $APPSTORE_API_KEY_ID --apiIssuer $APPSTORE_ISSUER_ID
-  
+        run: xcrun altool --upload-app -f "kukuku.ipa" --type ios --apiKey $APPSTORE_API_KEY_ID --apiIssuer $APPSTORE_ISSUER_ID
