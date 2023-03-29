@@ -1,8 +1,5 @@
 name: deploy
 
-env:
-  PROJECT: 'kukuku'
-
 on:
   push:
     branches: [ release ]
@@ -11,9 +8,10 @@ jobs:
   deploy:
     runs-on: self-hosted
     env:
-      XC_PROJECT: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
-      XC_SCHEME: "${{ env.PROJECT }}"
-      XC_ARCHIVE: "$${{ env.PROJECT }}/{{ env.PROJECT }}.xcarchive"
+      PROJECT: 'kukuku'
+      XC_PROJECT: "kukuku/kukuku.xcodeproj"
+      XC_SCHEME: "kukuku"
+      XC_ARCHIVE: "kukuku/kukuku.xcarchive"
 
       # certificate 
       ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/kukuku_certification.p12.gpg' }}
