@@ -30,7 +30,11 @@ struct DependencyFactory {
     }
 
     static func userRepository() -> UserRepository {
+        #if TEST
+        return TestUserRepository()
+        #else
         return DefaultUserRepository()
+        #endif
     }
 
     static func developerCodeRepository() -> DeveloperCodeRepository {
@@ -86,7 +90,11 @@ struct DependencyFactory {
 
     static func konkukInfoListViewModel(userListCount: Int, currentLanguage: LanguageKind) -> KonkukInfoListViewModel {
         let konkukInfoUseCase = konkukInfoUseCase()
-        return KonkukInfoListViewModel(userListCount: userListCount, currentLanguage: currentLanguage, konkukInfoUseCase: konkukInfoUseCase)
+        return KonkukInfoListViewModel(
+            userListCount: userListCount,
+            currentLanguage: currentLanguage,
+            konkukInfoUseCase: konkukInfoUseCase
+        )
     }
 
     static func guideViewModel(currentLanguage: LanguageKind) -> GuideViewModel {

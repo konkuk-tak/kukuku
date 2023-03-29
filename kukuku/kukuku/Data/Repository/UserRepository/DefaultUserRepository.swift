@@ -10,18 +10,18 @@ import Foundation
 struct DefaultUserRepository: UserRepository {
 
     func createUser(user: User) throws {
-        try KeyChainManger.main.createUser(user: user)
+        try KeyChainManager.main.createUser(user: user)
     }
 
     func readUser() throws -> User {
-        try KeyChainManger.main.readUser()
+        try KeyChainManager.main.readUser()
     }
 
     func updateUser(user: User) throws {
-        try KeyChainManger.main.updateUser(user: user)
+        try KeyChainManager.main.updateUser(user: user)
     }
 
     func deleteUser() throws {
-        try KeyChainManger.main.deleteUser()
+        try KeyChainManager.main.deleteUser()
     }
 }

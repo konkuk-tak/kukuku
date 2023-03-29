@@ -27,6 +27,7 @@ class HomeView: UIView {
         configureHomeView()
         configureSubViews()
         configureFlexLayout()
+        accessibilityIdentifier()
     }
 
     required init?(coder: NSCoder) {
@@ -103,6 +104,13 @@ class HomeView: UIView {
             }
             .marginBottom(20)
         }
+    }
+
+    private func accessibilityIdentifier() {
+        konkukInfoListButton.accessibilityIdentifier = KUAccessibilityIdentifier.Home.konkukInfoListButton
+        guideButton.accessibilityIdentifier = KUAccessibilityIdentifier.Home.guideButton
+        settingButton.accessibilityIdentifier = KUAccessibilityIdentifier.Home.settingButton
+        arButton.accessibilityIdentifier = KUAccessibilityIdentifier.Home.arButton
     }
 }
 

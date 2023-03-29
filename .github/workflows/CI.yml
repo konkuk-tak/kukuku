@@ -1,0 +1,47 @@
+name: CI
+
+env:
+  PROJECT: 'kukuku'
+
+on:
+  pull_request:
+    branches: [ release, develop ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    strategy:
+        matrix:
+          include:
+            - ios: "16.2"
+              simulator: "iPhone 14 Pro"
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create secret file
+      env:
+          DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
+      run: |
+        echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
+        ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
+  
+    - name: Build iOS ${{ matrix.ios }} on ${{ matrix.simulator }}
+      env:
+        XCODEPROJ: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
+      run: >
+        xcodebuild clean build
+        -project ${{ env.XCODEPROJ }}
+        -scheme kukuku
+        -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'
+
+    - name: Test
+      env:
+        XCODEPROJ: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
+      run: >
+        xcodebuild test
+        -project ${{ env.XCODEPROJ }}
+        -scheme kukuku
+        -configuration Test
+        -destination 'platform=iOS Simulator,OS=${{ matrix.ios }},name=${{ matrix.simulator }}'

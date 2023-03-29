@@ -19,13 +19,13 @@ final class GuideViewController: UIViewController {
         return view
     }
 
-    private var viewModel: GuideViewModel
+    private var guideViewModel: GuideViewModel
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Life Cycle
 
     init(viewModel: GuideViewModel) {
-        self.viewModel = viewModel
+        self.guideViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -62,8 +62,8 @@ final class GuideViewController: UIViewController {
     }
 
     private func buttonTouchUpInside() {
-        let nextIndex = viewModel.nextIndex
-        if nextIndex < viewModel.infoListCount() {
+        let nextIndex = guideViewModel.nextIndex
+        if nextIndex < guideViewModel.infoListCount() {
             moveToNextPage(index: nextIndex)
         } else {
             navigationController?.popViewController(animated: true)
@@ -73,7 +73,7 @@ final class GuideViewController: UIViewController {
     private func moveToNextPage(index: Int) {
         guideView.moveToNextPage(index: index)
         guideView.updatePageControl(index)
-        if index == viewModel.infoListCount() - 1 {
+        if index == guideViewModel.infoListCount() - 1 {
             guideView.updateButtonTitle()
         }
     }
@@ -81,7 +81,7 @@ final class GuideViewController: UIViewController {
 
 extension GuideViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.infoListCount()
+        return guideViewModel.infoListCount()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,7 +91,7 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
         ) as? GuideCollectionCell else {
             return UICollectionViewCell()
         }
-        guard let guideInfo = viewModel.guideInfo(index: indexPath.row) else { return UICollectionViewCell() }
+        guard let guideInfo = guideViewModel.guideInfo(index: indexPath.row) else { return UICollectionViewCell() }
         cell.updateCell(guideInfo)
         return cell
     }

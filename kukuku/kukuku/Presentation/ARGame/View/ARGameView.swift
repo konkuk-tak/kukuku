@@ -38,6 +38,7 @@ final class ARGameView: UIView {
         configureView()
         configureSubView()
         configureConstraints()
+        accessibilityIdentifier()
     }
 
     required init?(coder: NSCoder) {
@@ -169,6 +170,10 @@ final class ARGameView: UIView {
             arView.scene.anchors.removeAll()
             hasHamburger = false
         }
+    }
+
+    private func accessibilityIdentifier() {
+        exitButton.accessibilityIdentifier = "ARGameExitButton"
     }
 }
 
