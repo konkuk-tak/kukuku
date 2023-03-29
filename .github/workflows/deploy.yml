@@ -20,7 +20,7 @@ jobs:
       
       # provisioning
       ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision.gpg' }}
-      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision.gpg' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision' }}
       PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISIONING_ENCRYPTION_KEY }} # gpg로 파일 암호화할 때 사용한 암호
       
       # certification export key
