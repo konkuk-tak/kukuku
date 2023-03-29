@@ -39,3 +39,4 @@ Core Location을 사용해 건국대학교 상허 박사 동상과 청심대 근
 ### XCTest
 <img width="200" src = "https://user-images.githubusercontent.com/71776532/227450145-9f072d8d-f1c9-490a-be99-9e4795166037.png" />
 Unit Test & UI Test를 진행합니다. 86%의 테스트 커버리지를 보여줍니다.
+
