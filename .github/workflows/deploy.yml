@@ -84,11 +84,18 @@ jobs:
           -exportOptionsPlist ExportOptions.plist
           -exportPath . -allowProvisioningUpdates
   
+      # P8 파일 생성
+      - name: Install private API key P8
+        env:
+          APPSTORE_API_PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+          APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+        run: | 
+          mkdir -p ~/private_keys
+          echo -n "$APPSTORE_API_PRIVATE_KEY" | base64 --decode --output ~/private_keys/AuthKey_$APPSTORE_API_KEY_ID.p8
+
       - name: Upload app to TestFlight
-        uses: apple-actions/upload-testflight-build@v1
-        with:
-          app-path: 'kukuku.ipa'
-          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
-          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
-          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+        env:
+          APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          APPSTORE_ISSUER_ID : ${{ secrets.API_ISSUER  }}
+        run: xcrun altool --output-format xml --upload-app -f 'kukuku.ipa' -t ios --apiKey $APPSTORE_API_KEY_ID --apiIssuer $APPSTORE_ISSUER_ID
   
