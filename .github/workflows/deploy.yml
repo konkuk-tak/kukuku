@@ -42,8 +42,7 @@ jobs:
       # 키체인 초기화 - 임시 키체인 생성
       - name: Configure Keychain 
         run: |
-          security delete-keychain "$KEYCHAIN" || true
-          security create-keychain -p "" "$KEYCHAIN"
+          security create-keychain -p "" "$KEYCHAIN" || true
           security list-keychains -s "$KEYCHAIN"
           security default-keychain -s "$KEYCHAIN"
           security unlock-keychain -p "" "$KEYCHAIN"
