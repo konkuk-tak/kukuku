@@ -1,19 +1,17 @@
 name: deploy
 
-env:
-  PROJECT: 'kukuku'
-
 on:
   push:
-    branches: [ release/* ]
+    branches: [ release ]
 
 jobs:
   deploy:
     runs-on: self-hosted
     env:
-      XC_PROJECT: "${{ env.PROJECT }}/${{ env.PROJECT }}.xcodeproj"
-      XC_SCHEME: "${{ env.PROJECT }}"
-      XC_ARCHIVE: "$${{ env.PROJECT }}/{{ env.PROJECT }}.xcarchive"
+      PROJECT: 'kukuku'
+      XC_PROJECT: "kukuku/kukuku.xcodeproj"
+      XC_SCHEME: "kukuku"
+      XC_ARCHIVE: "kukuku/kukuku.xcarchive"
 
       # certificate 
       ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/kukuku_certification.p12.gpg' }}
@@ -22,7 +20,7 @@ jobs:
       
       # provisioning
       ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision.gpg' }}
-      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision.gpg' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/kukuku_GithubActions.mobileprovision' }}
       PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISIONING_ENCRYPTION_KEY }} # gpg로 파일 암호화할 때 사용한 암호
       
       # certification export key
@@ -44,6 +42,7 @@ jobs:
       # 키체인 초기화 - 임시 키체인 생성
       - name: Configure Keychain 
         run: |
+          security delete-keychain $KEYCHAIN
           security create-keychain -p "" "$KEYCHAIN"
           security list-keychains -s "$KEYCHAIN"
           security default-keychain -s "$KEYCHAIN"
