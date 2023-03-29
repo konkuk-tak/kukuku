@@ -26,7 +26,7 @@ jobs:
       # certification export key
       CERT_EXPORT_KEY: ${{ secrets.CERT_EXPORT_PWD }}
       
-      KEYCHAIN: ${{ 'test.keychain' }}
+      KEYCHAIN: ${{ 'deploy.keychain' }}
    
     steps:
       - name: Checkout
