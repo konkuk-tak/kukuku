@@ -6,7 +6,7 @@ env:
 on:
   push:
     branches: [ release/* ]
-    
+
 jobs:
   deploy:
     runs-on: self-hosted
@@ -30,19 +30,19 @@ jobs:
       
       KEYCHAIN: ${{ 'test.keychain' }}
    
-   steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       
-    - name: Create secret file
-      env:
+      - name: Create secret file
+        env:
           DeveloperCode_SECRET: ${{ secrets.DEVELOPER_CODE_SECRET }}
-      run: |
-        echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
-        ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
+        run: |
+          echo $DeveloperCode_SECRET > ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/DeveloperCode.xcconfig
+          ls -al ${{ env.PROJECT }}/${{ env.PROJECT }}/Resources/
         
-     # 키체인 초기화 - 임시 키체인 생성
-     - name: Configure Keychain 
+      # 키체인 초기화 - 임시 키체인 생성
+      - name: Configure Keychain 
         run: |
           security create-keychain -p "" "$KEYCHAIN"
           security list-keychains -s "$KEYCHAIN"
